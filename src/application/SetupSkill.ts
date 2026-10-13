@@ -25,6 +25,7 @@ export const MANAGED_SKILL_FILES = [
   "references/javascript-applications.md",
   "references/android-applications.md",
   "references/runtime-observation.md",
+  "references/web-feature-attribution.md",
   "references/evidence-workflows.md",
 ] as const;
 

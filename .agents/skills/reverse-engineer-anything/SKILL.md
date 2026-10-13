@@ -2,7 +2,7 @@
 name: reverse-engineer-anything
 description: Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.
 metadata:
-  version: "41"
+  version: "42"
 ---
 
 # REA
@@ -274,12 +274,15 @@ as complete while required questions remain open.
   [references/android-applications.md](references/android-applications.md)
 - Passive browser/Electron observation and static/runtime reconciliation:
   [references/runtime-observation.md](references/runtime-observation.md)
-- Evidence paging, comparisons, residual unknowns, and verification:
+- Captured browser script export, source-map locations, and module attribution:
+  [references/web-feature-attribution.md](references/web-feature-attribution.md)
+- Evidence paging, comparisons, residual unknowns, and exporting or resuming an investigation:
   [references/evidence-workflows.md](references/evidence-workflows.md)
 
 ## Finish the task
 
 Explain findings in plain language and tie them to returned evidence. When the
 user asks to build something, use normal coding tools and separate observed
-behavior from design choices. Close an opened native session with
-`close_binary` when the investigation is complete.
+behavior from design choices. Before closing or switching a target, export any
+Evidence needed for a handoff using the evidence-workflows guide. Close an
+opened native session with `close_binary` when the investigation is complete.
