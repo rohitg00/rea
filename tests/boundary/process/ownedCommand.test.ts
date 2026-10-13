@@ -6,6 +6,7 @@ import { beforeAll, expect, it, vi } from "vitest";
 import {
   OwnedCommandFailure,
   runOwnedCommand,
+  type OwnedCommandCleanupRetainer,
 } from "../../../src/process/OwnedCommand.js";
 import { spawnOwnedProviderProcess } from "../../../src/process/ProviderProcess.js";
 import {
@@ -341,3 +342,63 @@ it("preserves original command failure together with failed cleanup resource ide
     snapshot: { exitCode: 2 },
   });
 });
+
+it.each([0, 7])(
+  "transfers cleanup ownership and diagnostics without changing exit %s",
+  async (exitCode) => {
+    const retained: Parameters<OwnedCommandCleanupRetainer>[] = [];
+    let cleanupAllowed = false;
+    const request = command(
+      `process.stdout.write("completed-output"); process.exitCode = ${exitCode}`,
+    );
+    try {
+      const result = await runOwnedCommand(
+        request,
+        { timeoutMs: 2000, diagnosticBytes: 1024 },
+        {
+          retainCleanup: (...state) => {
+            retained.push(state);
+          },
+          launcher: async (input) => {
+            const launched = await spawnOwnedProviderProcess(input);
+            return {
+              ...launched,
+              cleanup: async () =>
+                cleanupAllowed
+                  ? (launched.cleanup?.() ??
+                    cleanupOwnedProcessGroup(launched.ownership))
+                  : { cleaned: false, reason: "Cleanup confirmation refused" },
+            };
+          },
+        },
+      ).then(
+        (snapshot) => ({ snapshot }),
+        (cause: unknown) => ({ cause }),
+      );
+      expect(result).toMatchObject(
+        exitCode === 0
+          ? { snapshot: { exitCode, stdout: { text: "completed-output" } } }
+          : {
+              cause: {
+                reason: "process",
+                cleanupFailure: null,
+                snapshot: { exitCode, stdout: { text: "completed-output" } },
+              },
+            },
+      );
+      expect(retained).toHaveLength(1);
+      expect(retained[0]?.[1]).toEqual({
+        status: "incomplete",
+        reason: "Cleanup confirmation refused",
+        cleanupResult: {
+          cleaned: false,
+          reason: "Cleanup confirmation refused",
+        },
+      });
+    } finally {
+      cleanupAllowed = true;
+      for (const [owner] of retained)
+        expect(await owner.stop()).toEqual({ status: "verified-cleanup" });
+    }
+  },
+);

@@ -23,6 +23,7 @@ import { createToolResultDelivery } from "../../../src/server/toolResult.js";
 import { PrivateRuntimeRoot } from "../../../src/process/PrivateRuntimeRoot.js";
 import { SqliteDatabaseProvider } from "../../../src/sqlite/SqliteDatabaseProvider.js";
 import { spawnOwnedProviderProcess } from "../../../src/process/ProviderProcess.js";
+import { cleanupOwnedProcessGroup } from "../../../src/process/ProcessOwnership.js";
 import { fileURLToPath } from "node:url";
 import {
   createSqliteDatabaseFixture,
@@ -119,17 +120,18 @@ it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE)(
   },
 );
 
-it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE)(
-  "records completed SQLite evidence before delivering a cleanup failure",
-  async () => {
+it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE).each(["snapshot", "worker"] as const)(
+  "records completed SQLite evidence before delivering a %s cleanup failure",
+  async (cleanup) => {
     const workspace = await createTestWorkspace("rea-sqlite-mcp-retention-");
     const database = createSqliteDatabaseFixture(workspace.root);
     database.close();
     let removalAllowed = false;
+    let rootPath = "";
     const provider = new SqliteDatabaseProvider(
       process.env,
-      (spawn) =>
-        spawnOwnedProviderProcess({
+      async (spawn) => {
+        const launched = await spawnOwnedProviderProcess({
           ...spawn,
           arguments: spawn.arguments.map((argument, index) =>
             index === 1
@@ -141,15 +143,31 @@ it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE)(
                 )
               : argument,
           ),
-        }),
+        });
+        return {
+          ...launched,
+          cleanup: async () => {
+            if (cleanup === "worker" && !removalAllowed)
+              return {
+                cleaned: false,
+                reason: "Worker cleanup confirmation denied",
+              };
+            return (
+              launched.cleanup?.() ??
+              cleanupOwnedProcessGroup(launched.ownership)
+            );
+          },
+        };
+      },
       async () => {
         const root = await PrivateRuntimeRoot.create({
           parent: workspace.root,
         });
+        rootPath = root.path;
         return {
           path: root.path,
           close: async () => {
-            if (!removalAllowed)
+            if (cleanup === "snapshot" && !removalAllowed)
               throw new Error(
                 "Snapshot cleanup denied after completed observation",
               );
@@ -177,6 +195,8 @@ it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE)(
         arguments: { path: database.path, table: "records", columns: ["id"] },
       });
       expect(result.isError).toBe(true);
+      expect(parseMcpToolError(result).error.code).toBe("cleanup_incomplete");
+      await expect(access(rootPath)).resolves.toBeUndefined();
       const error = z
         .object({
           error: z.object({
@@ -212,6 +232,7 @@ it.runIf(SQLITE_NATIVE_LIMITS_AVAILABLE)(
       removalAllowed = true;
       await client.close();
       await server.close();
+      await expect(access(rootPath)).rejects.toMatchObject({ code: "ENOENT" });
       await session.close();
       await removeTestWorkspace(workspace.root);
     }

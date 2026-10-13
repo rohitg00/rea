@@ -1,6 +1,7 @@
 import type {
   OwnedProviderProcessSpawnOptions,
   ProviderProcessSnapshot,
+  ProviderProcessStopResult,
   SpawnedOwnedProviderProcess,
 } from "./ProviderProcess.js";
 import {
@@ -15,6 +16,11 @@ import {
   ProviderStartupDeadline,
   waitForAbortableDelay,
 } from "./ProviderDeadline.js";
+
+export type OwnedCommandCleanupRetainer = (
+  owner: ProviderProcessSupervisor,
+  failure: Extract<ProviderProcessStopResult, { status: "incomplete" }>,
+) => void;
 
 /** A short-lived command failed its lifecycle or complete-output contract. */
 export class OwnedCommandFailure extends Error {
@@ -46,7 +52,7 @@ export const runOwnedCommand = async (
   options: {
     readonly signal?: AbortSignal;
     /** Synchronously accept unresolved cleanup ownership; execution still returns its original outcome. Must not throw. */
-    readonly retainCleanup?: (owner: ProviderProcessSupervisor) => void;
+    readonly retainCleanup?: OwnedCommandCleanupRetainer;
     readonly launcher?: (
       input: OwnedProviderProcessSpawnOptions,
     ) => Promise<SpawnedOwnedProviderProcess>;
@@ -85,7 +91,7 @@ const collectOwnedCommand = async (
   ) => Promise<SpawnedOwnedProviderProcess>,
   deadline: ProviderStartupDeadline,
   callerSignal?: AbortSignal,
-  retainCleanup?: (owner: ProviderProcessSupervisor) => void,
+  retainCleanup?: OwnedCommandCleanupRetainer,
 ): Promise<ProviderProcessSnapshot> => {
   const signal = deadline.signal;
   let launched: SpawnedOwnedProviderProcess;
@@ -195,7 +201,7 @@ const collectOwnedCommand = async (
   const stopped = await supervisor.stop();
   const snapshot = supervisor.snapshot();
   if (stopped.status === "incomplete" && retainCleanup !== undefined)
-    retainCleanup(supervisor);
+    retainCleanup(supervisor, stopped);
   else if (stopped.status === "incomplete")
     throw new OwnedCommandFailure(
       failure?.reason ?? "process",
