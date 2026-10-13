@@ -12,6 +12,7 @@ import type {
   JavaScriptSemanticCallable,
   JavaScriptSemanticScope,
 } from "./javascriptSemanticIr.js";
+import type { JavaScriptModuleResolutionMode } from "./javascriptModuleResolutionMode.js";
 
 /** Internal initializer plus a destructuring/member projection. */
 interface JavaScriptSemanticInitializer {
@@ -63,7 +64,7 @@ export interface JavaScriptSemanticScopeState {
 /** Shared state for semantic collection and evaluation. */
 export interface JavaScriptSemanticAnalysisState {
   /** Effective loader for static imports in this source artifact. */
-  readonly staticImportResolutionMode: "import" | "require";
+  readonly staticImportResolutionMode: JavaScriptModuleResolutionMode;
   readonly parentsByNode: WeakMap<t.Node, t.Node>;
   readonly scopes: JavaScriptSemanticScopeState[];
   readonly scopesById: Map<string, JavaScriptSemanticScopeState>;

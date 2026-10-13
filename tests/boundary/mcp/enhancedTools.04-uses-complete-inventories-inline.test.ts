@@ -144,14 +144,26 @@ describe("enhanced MCP tools", () => {
     );
     expect(result).toEqual({
       document: "fixture",
+      image_base: "0x1000",
       segments: [
-        { name: "__TEXT", start: "0x1000", end: "0x1800", length: 2048 },
-        { name: "__DATA", start: "0x1800", end: "0x2000", length: 2048 },
+        {
+          name: "__TEXT",
+          start: "0x1000",
+          end: "0x1800",
+          length: 2048,
+          image_base: "0x1000",
+        },
+        {
+          name: "__DATA",
+          start: "0x1800",
+          end: "0x2000",
+          length: 2048,
+          image_base: "0x1000",
+        },
       ],
       segment_count: 2,
       procedure_count: 2,
       string_count: 700,
-      image_base: "0x1000",
     });
   });
 

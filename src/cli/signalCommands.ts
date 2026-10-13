@@ -1,9 +1,6 @@
 import { inspectSignalDecodersInputSchema } from "../domain/signals/signalDecoders.js";
 import { z } from "incur";
 import type { SignalRecordingService } from "../application/signals/SignalRecordingService.js";
-import { AnalysisError } from "../domain/analysisErrorBase.js";
-import { analysisErrorWithCleanupFailure } from "../domain/analysisErrorCleanup.js";
-import { ProviderCleanupError } from "../domain/providerCleanupError.js";
 import { resolve } from "node:path";
 import { createSignalRecordingService } from "../composition/signals.js";
 import {
@@ -13,10 +10,10 @@ import {
 } from "../domain/signals/signalRecording.js";
 import { CLI_COMMANDS } from "../cliCommandNames.js";
 import { logCliCommand } from "../cliLogging.js";
-import { projectAnalysisError } from "../domain/analysisErrorProjection.js";
 import type { Logger } from "pino";
 import type { CliInstance } from "./types.js";
 import { withCommandCancellation } from "./commandCancellation.js";
+import { finishAnalysisCommand } from "./finishAnalysisCommand.js";
 export const registerSignalCommands = (
   cli: CliInstance,
   logger: Logger,
@@ -26,32 +23,6 @@ export const registerSignalCommands = (
     "decode" | "inspectDecoders" | "close"
   > = createSignalRecordingService(environment),
 ): void => {
-  const finish = async (
-    result: Awaited<ReturnType<SignalRecordingService["decode"]>>,
-    operation: string,
-  ) => {
-    // A one-shot command must retry retained cleanup before discarding its owner.
-    try {
-      await service.close();
-    } catch (cause) {
-      const cleanup =
-        cause instanceof AnalysisError
-          ? cause
-          : new ProviderCleanupError(
-              "sigrok-recording",
-              [],
-              { reason: String(cause) },
-              { cause, operation: operation },
-            );
-      if (result.ok) cleanup.retainPartialObservation(result.value);
-      return projectAnalysisError(
-        result.ok
-          ? cleanup
-          : analysisErrorWithCleanupFailure(result.error, cleanup, operation),
-      );
-    }
-    return result.ok ? result.value : projectAnalysisError(result.error);
-  };
   cli.command(CLI_COMMANDS.inspectSignalDecoders, {
     description: "Search installed sigrok decoders or selected decoder help",
     options: z
@@ -82,11 +53,14 @@ export const registerSignalCommands = (
     run: ({ options: { all, ...options } }) =>
       withCommandCancellation((signal) =>
         logCliCommand(logger, CLI_COMMANDS.inspectSignalDecoders, async () =>
-          finish(
-            await service.inspectDecoders(
-              { ...options, ...(all ? { limit: null } : {}) },
-              { signal },
-            ),
+          finishAnalysisCommand(
+            () =>
+              service.inspectDecoders(
+                { ...options, ...(all ? { limit: null } : {}) },
+                { signal },
+              ),
+            service,
+            "sigrok-recording",
             "inspect_signal_decoders",
           ),
         ),
@@ -127,15 +101,20 @@ export const registerSignalCommands = (
     run: ({ args, options: { all_lines, ...options } }) =>
       withCommandCancellation((signal) =>
         logCliCommand(logger, CLI_COMMANDS.decodeSignalRecording, async () => {
-          const result = await service.decode(
-            {
-              ...options,
-              ...(all_lines ? { line_limit: null } : {}),
-              path: resolve(args.path),
-            },
-            { signal },
+          return finishAnalysisCommand(
+            () =>
+              service.decode(
+                {
+                  ...options,
+                  ...(all_lines ? { line_limit: null } : {}),
+                  path: resolve(args.path),
+                },
+                { signal },
+              ),
+            service,
+            "sigrok-recording",
+            "decode_signal_recording",
           );
-          return finish(result, "decode_signal_recording");
         }),
       ),
   });

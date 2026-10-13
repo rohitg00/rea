@@ -2,6 +2,7 @@ import { access } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, it, onTestFinished } from "vitest";
 import { AnalysisCancelledError } from "../../../src/domain/analysisErrorCore.js";
+import { ArtifactResourceScope } from "../../../src/artifacts/ArtifactResourceScope.js";
 import {
   createTestWorkspace,
   removeTestWorkspace,
@@ -40,6 +41,7 @@ it.each(["pre-aborted", "aborted-during-probe"] as const)(
           REA_PWNDBG_VENV_PATH: join(workspace.root, "missing-venv"),
         },
         rootPath: workspace.root,
+        resources: new ArtifactResourceScope(),
         diagnostics,
         options: { signal: controller.signal },
         probePath,

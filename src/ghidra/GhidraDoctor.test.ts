@@ -1,9 +1,10 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { runDoctor, type DoctorHost } from "../application/Doctor.js";
 import { createDoctorHostFixture } from "../application/Doctor.fixture.js";
 import { providerRegistrationEnvironment } from "../application/SetupRegistrationEnvironment.js";
 import { WINDOWS_NATIVE_AUTHORITY_UNAVAILABLE_REASON } from "../process/WindowsAuthority.js";
+import * as windowsAuthority from "../process/WindowsAuthority.js";
 import {
   inspectGhidraInstallation,
   type GhidraInstallationHost,
@@ -173,6 +174,16 @@ describe("Ghidra doctor integration", () => {
 });
 
 describe("Windows Ghidra doctor authority", () => {
+  beforeEach(() => {
+    vi.spyOn(windowsAuthority, "hasWindowsNativeAuthority").mockReturnValue(
+      false,
+    );
+    vi.spyOn(
+      windowsAuthority,
+      "windowsNativeAuthorityUnavailableReason",
+    ).mockReturnValue(WINDOWS_NATIVE_AUTHORITY_UNAVAILABLE_REASON);
+  });
+  afterEach(() => vi.restoreAllMocks());
   it("distinguishes a valid Windows installation from unavailable native authority", async () => {
     const ghidra = inspection({
       installDir: "C:\\tools\\ghidra_12.1.4_PUBLIC",

@@ -61,7 +61,13 @@ afterEach(async () => {
 });
 
 describe("native macOS provider discovery", () => {
-  it.each(["ordinary.fixture", "  spaced.fixture  ", " leading", "trailing "])(
+  it.each([
+    "ordinary.fixture",
+    "  spaced.fixture  ",
+    " leading",
+    "trailing ",
+    "literal\r\nidentifier\r",
+  ])(
     "preserves the exact signing identifier %j reported by codesign",
     (identifier) => {
       const parsed = parseCodeSignature(
@@ -74,31 +80,68 @@ describe("native macOS provider discovery", () => {
     },
   );
 
-  it("separates echoed path and identifier text from signature fields", () => {
-    const path = "/apps/x\nAuthority=Forged\nIdentifier=forged";
-    const identifier = "x\nFormat=forged\nAuthority=Forged-5555";
-    const parsed = parseCodeSignature(
-      [
-        `Executable=${path}`,
-        `Identifier=${identifier}`,
-        "Format=Mach-O thin (arm64)",
-        "CodeDirectory v=20400 size=342 flags=0x2(adhoc) hashes=2+2",
-        "CDHash=6aee90e6",
-        "Signature=adhoc",
-        "TeamIdentifier=not set",
-        "",
-      ].join("\r\n"),
-      false,
-      ["/elsewhere", path],
-    );
-    expect(parsed).toMatchObject({
-      identifier,
-      format: "Mach-O thin (arm64)",
-      authorities: [],
-      cdhashes: ["6aee90e6"],
-      team_identifier: null,
-    });
-  });
+  it.each(["\n", "\r\n"])(
+    "separates echoed path and identifier text from signature fields (%j)",
+    (newline) => {
+      const path = "/apps/x\r\nAuthority=Forged\nIdentifier=forged";
+      const identifier = "x\r\nFormat=forged\nAuthority=Forged-5555\r";
+      const parsed = parseCodeSignature(
+        [
+          `Executable=${path}`,
+          `Identifier=${identifier}`,
+          "Format=Mach-O thin (arm64)",
+          "CodeDirectory v=20400 size=342 flags=0x2(adhoc) hashes=2+2",
+          "CDHash=6aee90e6",
+          "Signature=adhoc",
+          "TeamIdentifier=not set",
+          "",
+        ].join(newline),
+        false,
+        ["/elsewhere", path],
+      );
+      expect(parsed).toMatchObject({
+        identifier,
+        format: "Mach-O thin (arm64)",
+        authorities: [],
+        cdhashes: ["6aee90e6"],
+        team_identifier: null,
+      });
+    },
+  );
+
+  it.each([
+    { executable: "", paths: [], newline: "\r\n", identifier: "fixture" },
+    {
+      executable: "Executable=/apps/fixture\r\n",
+      paths: [],
+      newline: "\r\n",
+      identifier: "fixture\nFormat=payload\r",
+    },
+    {
+      executable: "Executable=/apps/fixture\n",
+      paths: ["/elsewhere"],
+      newline: "\n",
+      identifier: "fixture\r\nFormat=payload\r",
+    },
+    {
+      executable: "Executable=/apps/fixture\r\n",
+      paths: ["/elsewhere"],
+      newline: "\r\n",
+      identifier: "fixture\r",
+    },
+  ])(
+    "frames the identifier without a matching executable path: %j",
+    ({ executable, paths, newline, identifier }) => {
+      const parsed = parseCodeSignature(
+        `${executable}Identifier=${identifier}${newline}Format=Mach-O thin (arm64)${newline}TeamIdentifier=not set${newline}`,
+        false,
+        paths,
+      );
+      expect(parsed.identifier).toBe(identifier);
+      expect(parsed.format).toBe("Mach-O thin (arm64)");
+      expect(parsed.team_identifier).toBeNull();
+    },
+  );
 
   it.each(["timeout", "output-limit"] as const)(
     "preserves %s resolution failures with their captured output and cleanup status",

@@ -68,6 +68,7 @@ import {
 import { isJavaScriptRpcClientFactory } from "./javascriptRpcEndpoints.js";
 import { createSemanticModuleInterop } from "./javascriptModuleInterop.js";
 import { SemanticPropertyPathCoverage } from "./javascriptSemanticPropertyPaths.js";
+import type { JavaScriptModuleResolutionMode } from "./javascriptModuleResolutionMode.js";
 
 interface BindPatternInput {
   readonly pattern: t.Node;
@@ -138,7 +139,7 @@ export function* indexJavaScriptBindingsSteps(
 /** Recover semantics from an already parsed JavaScript artifact. */
 export const analyzeParsedJavaScriptSemantics = (
   file: ParsedJavaScriptSource,
-  staticImportResolutionMode: "import" | "require" = "import",
+  staticImportResolutionMode: JavaScriptModuleResolutionMode = "import",
 ): JavaScriptSemanticIr =>
   completeSemanticSteps(
     analyzeParsedJavaScriptSemanticsSteps(file, staticImportResolutionMode),
@@ -152,7 +153,7 @@ export const analyzeParsedJavaScriptSemantics = (
  */
 export function* analyzeParsedJavaScriptSemanticsSteps(
   file: ParsedJavaScriptSource,
-  staticImportResolutionMode: "import" | "require" = "import",
+  staticImportResolutionMode: JavaScriptModuleResolutionMode = "import",
 ): Generator<void, JavaScriptSemanticIr> {
   const state = createState(file.program, staticImportResolutionMode);
   yield* collectDefinitionsSteps(file.program, state);
@@ -539,7 +540,7 @@ const bindingOrigin = (
 
 const createState = (
   program: t.Program,
-  staticImportResolutionMode: "import" | "require" = "import",
+  staticImportResolutionMode: JavaScriptModuleResolutionMode = "import",
 ): JavaScriptSemanticAnalysisState => {
   const root: JavaScriptSemanticScopeState = {
     scopeId: semanticScopeId("program", program),
@@ -1216,8 +1217,11 @@ const addBinding = (input: AddBindingInput): void => {
   if (directOrigin !== undefined)
     binding.directOrigins.push(
       directOrigin.resolutionMode === undefined &&
-        state.staticImportResolutionMode === "require"
-        ? { ...directOrigin, resolutionMode: "require" }
+        state.staticImportResolutionMode !== "import"
+        ? {
+            ...directOrigin,
+            resolutionMode: state.staticImportResolutionMode,
+          }
         : directOrigin,
     );
   binding.runtimeImport ||= runtimeImport === true;

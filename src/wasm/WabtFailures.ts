@@ -20,12 +20,19 @@ export const wabtFailure = (
   path: string,
 ): AnalysisError => {
   if (cause instanceof AnalysisError) return cause;
+  const artifactCleanup =
+    cause instanceof ArtifactReaderFailure ? cause.cleanup : undefined;
+  const cleanupOptions =
+    artifactCleanup === undefined ? {} : { cleanup: artifactCleanup };
   const reason = cause instanceof Error ? cause.message : String(cause);
   if (
     (cause instanceof ArtifactReaderFailure && cause.reason === "cancelled") ||
     (cause instanceof Error && cause.name === "AbortError")
   )
-    return new AnalysisCancelledError("inspect_wasm_artifact", { cause });
+    return new AnalysisCancelledError("inspect_wasm_artifact", {
+      cause,
+      ...cleanupOptions,
+    });
   if (cause instanceof OwnedCommandFailure) {
     const capturedOutput =
       cause.snapshot === null
@@ -85,6 +92,7 @@ export const wabtFailure = (
       reason,
       {
         cause,
+        ...cleanupOptions,
         userMessage: `${reason} Supply WABT 1.0.42 via absolute REA_WABT_BIN_DIRECTORY; REA does not install tools.`,
       },
     );
@@ -97,7 +105,7 @@ export const wabtFailure = (
       "inspect_wasm_artifact",
       path,
       reason,
-      { cause },
+      { cause, ...cleanupOptions },
     );
   if (
     phase === "artifact" &&
@@ -109,11 +117,16 @@ export const wabtFailure = (
       "inspect_wasm_artifact",
       path,
       cause.code,
-      { cause },
+      { cause, ...cleanupOptions },
     );
   if (phase === "artifact")
-    return new AnalysisInputError("inspect_wasm_artifact", { cause }, [
-      { path: ["path"], reason: "invalid_value", message: reason },
-    ]);
-  return new AnalysisOutputError("inspect_wasm_artifact", reason, { cause });
+    return new AnalysisInputError(
+      "inspect_wasm_artifact",
+      { cause, ...cleanupOptions },
+      [{ path: ["path"], reason: "invalid_value", message: reason }],
+    );
+  return new AnalysisOutputError("inspect_wasm_artifact", reason, {
+    cause,
+    ...cleanupOptions,
+  });
 };

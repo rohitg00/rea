@@ -16,6 +16,7 @@ import {
 import {
   DYLIB_RESOLUTION_LIMITATIONS,
   deriveFindings,
+  type TracedRootSlice,
 } from "./dylibResolutionFindings.js";
 
 /**
@@ -568,6 +569,7 @@ export const traceDylibLoading = async (
   for (const path of request.unclassified ?? [])
     images.set(path, await view.image(path));
   const roots: DylibTrace["roots"][number][] = [];
+  const rootSlices: TracedRootSlice[] = [];
   const edges: Edge[] = [];
   const withoutArchitecture: string[] = [];
   const environmentRoots = new Set<string>();
@@ -597,6 +599,7 @@ export const traceDylibLoading = async (
       )
         environmentRoots.add(root);
       roots.push({ image: root, architecture: slice.architecture });
+      rootSlices.push({ image: root, slice });
       edges.push(
         ...(await traceProcess(
           {
@@ -641,7 +644,7 @@ export const traceDylibLoading = async (
         facts.status === "parsed" ? facts.slices.map(withoutDependencies) : [],
     })),
     edges,
-    findings: deriveFindings(edges, roots, images),
+    findings: deriveFindings(edges, rootSlices),
     coverage: {
       status:
         unparsed.length === 0 &&

@@ -817,6 +817,13 @@ const provenanceForBindingValue = (
   binding: JavaScriptSemanticBindingState,
   context: EvaluationContext,
 ): JavaScriptBindingProvenance => {
+  if (binding.kind === "parameter" || binding.kind === "catch")
+    return semanticUnresolvedProvenance(
+      "unknown",
+      binding.kind === "parameter"
+        ? "Parameter provenance depends on caller arguments."
+        : "Catch binding provenance depends on the thrown value.",
+    );
   if (binding.directOrigins.length > 0)
     return semanticOriginsProvenance(binding.directOrigins);
   if (binding.initializers.length === 0) return semanticLocalProvenance();
@@ -890,6 +897,14 @@ const provenanceForExpression = (
   const required = semanticRequireOrigin(node, context.state);
   if (required !== undefined)
     return semanticOriginsProvenance([required.origin]);
+  if (t.isSequenceExpression(node)) {
+    const finalExpression = node.expressions.at(-1);
+    return finalExpression === undefined
+      ? semanticUnresolvedProvenance("unknown", "Empty sequence expression.")
+      : provenanceForExpression(finalExpression, nestedContext(context));
+  }
+  if (t.isAssignmentExpression(node) && node.operator === "=")
+    return provenanceForExpression(node.right, nestedContext(context));
   if (t.isIdentifier(node)) {
     const binding = resolveSemanticBindingState(context.state, node, node.name);
     return binding === undefined
@@ -961,8 +976,24 @@ const provenanceForExpression = (
           "Conditional provenance is unresolved.",
         );
   }
-  return semanticLocalProvenance();
+  if (isLocallyCreatedValue(node)) return semanticLocalProvenance();
+  return semanticUnresolvedProvenance(
+    "unknown",
+    `Unsupported ${node.type} provenance.`,
+  );
 };
+
+const isLocallyCreatedValue = (node: t.Node): boolean =>
+  readExactJavaScriptLiteral(node).found ||
+  t.isObjectExpression(node) ||
+  t.isArrayExpression(node) ||
+  t.isFunctionExpression(node) ||
+  t.isArrowFunctionExpression(node) ||
+  t.isClassExpression(node) ||
+  t.isTemplateLiteral(node) ||
+  t.isUnaryExpression(node) ||
+  t.isBinaryExpression(node) ||
+  t.isUpdateExpression(node);
 
 const mergeValues = (
   values: readonly JavaScriptSemanticValue[],

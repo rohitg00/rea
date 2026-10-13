@@ -1,4 +1,5 @@
 import {
+  chmod,
   cp,
   mkdir,
   readFile,
@@ -7,6 +8,7 @@ import {
   writeFile,
 } from "node:fs/promises";
 import { dirname, join, matchesGlob } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { afterAll, beforeAll, expect, it } from "vitest";
 import { parse } from "yaml";
@@ -78,12 +80,13 @@ async function classify(
   head: string,
   event = "pull_request",
   full = false,
+  skipFull = false,
 ) {
   const output = join(directory, "scope-output");
   await writeFile(output, "");
   const result = await execFileAsync(
     process.execPath,
-    [new URL("../../../scripts/ci/plan.mjs", import.meta.url).pathname],
+    [fileURLToPath(new URL("../../../scripts/ci/plan.mjs", import.meta.url))],
     {
       cwd: directory,
       env: {
@@ -92,12 +95,28 @@ async function classify(
         HEAD_SHA: head,
         GITHUB_EVENT_NAME: event,
         CI_FULL: String(full),
+        CI_SKIP_FULL: String(skipFull),
         GITHUB_OUTPUT: output,
       },
     },
   );
   return z.record(z.string(), z.unknown()).parse(JSON.parse(result.stdout));
 }
+
+it("reuses only scheduled qualification and preserves every explicit full request", async () => {
+  const { directory, base } = await fixture();
+  const reused = await classify(directory, base, base, "schedule", false, true);
+  expect(reused.tier).toBe("reused");
+  const { CI_FLAGS } = await loadScopes();
+  for (const flag of CI_FLAGS) expect(reused[flag]).toBe(false);
+  for (const event of ["workflow_dispatch", "pull_request", "schedule"])
+    expect(
+      (await classify(directory, base, base, event, true, true)).tier,
+    ).toBe("full");
+  expect(
+    (await classify(directory, base, base, "push", false, true)).tier,
+  ).toBe("fast");
+});
 
 it("keeps every translated root README and authored guide on the documentation lane", async () => {
   const { directory, base } = await fixture();
@@ -161,13 +180,148 @@ it("retains complete checks when implementation is renamed into documentation", 
   });
 });
 
-it("retains the complete main-push baseline even for documentation", async () => {
+it("keeps main pushes scoped when a successful ancestor baseline is available", async () => {
   const { directory, base } = await fixture();
   const head = await change(directory, ["README_ja.md"]);
   expect(await classify(directory, base, head, "push")).toMatchObject({
+    tier: "fast",
+    code: false,
+    package: false,
+    docs: true,
+    matrix: {
+      include: [
+        { os: "ubuntu-latest", platform: "linux", architecture: "x64" },
+      ],
+    },
+  });
+});
+
+it("includes changes from earlier cancelled pushes since the last successful baseline", async () => {
+  const { directory, base } = await fixture();
+  await change(directory, ["src/evm/client.ts"]);
+  const head = await change(directory, ["README.md"]);
+  expect(await classify(directory, base, head, "push")).toMatchObject({
+    tier: "fast",
+    code: true,
+    evm: true,
+    runtime: true,
+    package: false,
+  });
+});
+
+it.each(["", "not-a-commit"])(
+  "fails closed to all lanes for a missing or invalid push baseline (%s)",
+  async (base) => {
+    const { directory } = await fixture();
+    const head = await change(directory, ["README.md"]);
+    const plan = await classify(directory, base, head, "push");
+    expect(plan).toMatchObject({
+      tier: "fast",
+      code: true,
+      package: true,
+      evm: true,
+      browser: true,
+      reasons: expect.arrayContaining([expect.stringContaining("baseline")]),
+    });
+    const { CI_FLAGS } = await loadScopes();
+    for (const flag of CI_FLAGS) expect(plan[flag]).toBe(true);
+  },
+);
+
+it("selects only a trusted successful ancestor from recent CI push runs", async () => {
+  const { directory, base } = await fixture();
+  const head = await change(directory, ["src/evm/client.ts"]);
+  const bin = join(directory, "fake-bin");
+  await mkdir(bin);
+  const gh = join(bin, "gh");
+  await writeFile(gh, '#!/bin/sh\ncat "$GH_FIXTURE_RESPONSE"\n');
+  await chmod(gh, 0o755);
+  const response = join(directory, "runs.json");
+  await writeFile(
+    response,
+    JSON.stringify({
+      workflow_runs: [
+        {
+          event: "push",
+          conclusion: "success",
+          head_branch: "main",
+          head_repository: { full_name: "untrusted/fork" },
+          head_sha: base,
+        },
+        {
+          event: "push",
+          conclusion: "success",
+          head_branch: "main",
+          head_repository: { full_name: "owner/repo" },
+          head_sha: base,
+        },
+      ],
+    }),
+  );
+  const output = join(directory, "baseline-output");
+  const result = await execFileAsync(
+    process.execPath,
+    [new URL("../../../scripts/ci/baseline.mjs", import.meta.url).pathname],
+    {
+      cwd: directory,
+      env: {
+        ...process.env,
+        PATH: `${bin}:${process.env.PATH}`,
+        GH_FIXTURE_RESPONSE: response,
+        CI_REPOSITORY: "owner/repo",
+        CI_DEFAULT_BRANCH: "main",
+        HEAD_SHA: head,
+        GITHUB_OUTPUT: output,
+      },
+    },
+  );
+  expect(JSON.parse(result.stdout)).toEqual({ base, reason: "" });
+  expect(await readFile(output, "utf8")).toBe(`base=${base}\nreason=\n`);
+});
+
+it("returns an empty baseline when GitHub lookup fails", async () => {
+  const { directory, base } = await fixture();
+  const head = await change(directory, ["src/evm/client.ts"]);
+  const bin = join(directory, "fake-bin");
+  await mkdir(bin);
+  const gh = join(bin, "gh");
+  await writeFile(gh, "#!/bin/sh\nexit 1\n");
+  await chmod(gh, 0o755);
+  const result = await execFileAsync(
+    process.execPath,
+    [new URL("../../../scripts/ci/baseline.mjs", import.meta.url).pathname],
+    {
+      cwd: directory,
+      env: {
+        ...process.env,
+        PATH: `${bin}:${process.env.PATH}`,
+        CI_REPOSITORY: "owner/repo",
+        CI_DEFAULT_BRANCH: "main",
+        HEAD_SHA: head,
+      },
+    },
+  );
+  expect(JSON.parse(result.stdout)).toMatchObject({
+    base: "",
+    reason: expect.stringContaining("Could not read"),
+  });
+  expect(head).not.toBe(base);
+});
+
+it("fails closed when the successful push baseline is not an ancestor", async () => {
+  const { directory, base } = await fixture();
+  await git(directory, ["switch", "-c", "unrelated"]);
+  const unrelated = await change(directory, ["other.txt"]);
+  await git(directory, ["switch", "main"]);
+  const head = await change(directory, ["README.md"]);
+  expect(await classify(directory, unrelated, head, "push")).toMatchObject({
+    tier: "fast",
     code: true,
     package: true,
+    evm: true,
+    browser: true,
   });
+  expect(head).not.toBe(base);
 });
 
 it("fails classification rather than treating an invalid Git comparison as a scope", async () => {
@@ -207,7 +361,8 @@ it("retains native Inspector verification on every documented package host", asy
   );
   expect(packageInspector.if).toBeUndefined();
   expect(
-    (await classify((await fixture()).directory, "", "", "push")).matrix,
+    (await classify((await fixture()).directory, "", "", "workflow_dispatch"))
+      .matrix,
   ).toEqual({
     include: [
       { os: "ubuntu-latest", platform: "linux", architecture: "x64" },
@@ -227,7 +382,14 @@ it("retains native Inspector verification on every documented package host", asy
 it.each([
   [
     "src/evm/client.ts",
-    { code: true, runtime: true, evm: true, browser: false, package: false },
+    {
+      code: true,
+      runtime: true,
+      evm: true,
+      browser: false,
+      package: false,
+      sqlite: false,
+    },
   ],
   [
     "src/browser/execution/evaluate.ts",
@@ -324,6 +486,38 @@ it.each([
     "src/process/ProcessOwnership.test.ts",
     { code: true, package: true, apple: false, evm: false, browser: false },
   ],
+  [
+    "src/sqlite/SqliteDatabaseProvider.ts",
+    { code: true, sqlite: true, runtime: true, package: false },
+  ],
+  [
+    "src/application/sqlite/SqliteDatabaseService.test.ts",
+    { code: true, sqlite: true, runtime: false },
+  ],
+  [
+    "tests/boundary/sqlite/sqliteDatabaseProvider.test.ts",
+    { code: true, sqlite: true, runtime: false },
+  ],
+  [
+    "tests/fixtures/sqlite/database.ts",
+    { code: true, sqlite: true, runtime: false },
+  ],
+  ["tests/acceptance/sqliteDatabaseCli.test.ts", { code: true, sqlite: true }],
+  [
+    "tests/boundary/mcp/serverLifecycleMcp.test.ts",
+    { code: true, sqlite: true },
+  ],
+  ["src/process/OwnedCommand.ts", { code: true, sqlite: true, runtime: true }],
+  ["src/server/createServer.ts", { code: true, sqlite: true, runtime: true }],
+  [
+    "src/contracts/toolContracts.ts",
+    { code: true, sqlite: true, runtime: true },
+  ],
+  [
+    "src/domain/analysisErrorProjection.ts",
+    { code: true, sqlite: true, runtime: true },
+  ],
+  ["src/domain/javascript/example.ts", { code: true, sqlite: false }],
 ])("selects the appropriate lanes for %s", async (path, expected) => {
   const { directory, base } = await fixture();
   const head = await change(directory, [path]);
@@ -363,6 +557,52 @@ it("scopes package script edits while retaining broad dependency checks", async 
     code: true,
     browser: true,
     package: true,
+  });
+});
+
+it.each(["test:sqlite", "test:sqlite:run"])(
+  "routes %s script changes to the SQLite runtime matrix",
+  async (script) => {
+    const { directory } = await fixture();
+    const base = await change(
+      directory,
+      ["package.json"],
+      JSON.stringify({ scripts: { [script]: "vitest run" } }),
+    );
+    const head = await change(
+      directory,
+      ["package.json"],
+      JSON.stringify({
+        scripts: { [script]: "vitest run --reporter=default" },
+      }),
+    );
+    expect(await classify(directory, base, head)).toMatchObject({
+      code: true,
+      sqlite: true,
+      evm: false,
+      package: false,
+    });
+  },
+);
+
+it("keeps unrelated test script changes off the SQLite runtime matrix", async () => {
+  const { directory } = await fixture();
+  const base = await change(
+    directory,
+    ["package.json"],
+    JSON.stringify({ scripts: { "test:domain": "vitest run src/domain" } }),
+  );
+  const head = await change(
+    directory,
+    ["package.json"],
+    JSON.stringify({
+      scripts: { "test:domain": "vitest run src/domain --reporter=default" },
+    }),
+  );
+  expect(await classify(directory, base, head)).toMatchObject({
+    code: true,
+    sqlite: false,
+    evm: false,
   });
 });
 
@@ -419,10 +659,19 @@ it.each([
 );
 
 it("rejects skipped selected work while allowing unselected lanes to skip", async () => {
-  const command = new URL("../../../scripts/ci/required.mjs", import.meta.url)
-    .pathname;
+  const command = fileURLToPath(
+    new URL("../../../scripts/ci/required.mjs", import.meta.url),
+  );
+  const { CI_FLAGS } = await loadScopes();
   const jobs = {
-    changes: { result: "success", outputs: { evm: "true" } },
+    changes: {
+      result: "success",
+      outputs: {
+        ...Object.fromEntries(CI_FLAGS.map((flag) => [flag, "false"])),
+        tier: "fast",
+        evm: "true",
+      },
+    },
     static: { result: "success" },
     test: { result: "success" },
     evm: { result: "success" },
@@ -458,7 +707,10 @@ it.each([
     "src/process/capture/example.test.ts",
     { code: true, runtime: false, browser: false, package: false },
   ],
-  [".nvmrc", { code: true, package: true, browser: true, evm: true }],
+  [
+    ".nvmrc",
+    { code: true, package: true, browser: true, evm: true, sqlite: true },
+  ],
   [
     "tsconfig.build.json",
     { code: true, package: true, browser: true, evm: true },
@@ -595,8 +847,10 @@ it.each(["workflow_dispatch", "schedule"])(
   async (event) => {
     const { directory, base } = await fixture();
     expect(await classify(directory, base, base, event)).toMatchObject({
+      tier: "full",
       code: true,
       package: true,
+      sqlite: true,
       evm: true,
       browser: true,
     });
@@ -610,7 +864,14 @@ it("honors ci:full for successive PR revisions", async () => {
   for (const head of [first, second]) {
     expect(
       await classify(directory, base, head, "pull_request", true),
-    ).toMatchObject({ code: true, package: true, evm: true, browser: true });
+    ).toMatchObject({
+      tier: "full",
+      code: true,
+      package: true,
+      sqlite: true,
+      evm: true,
+      browser: true,
+    });
   }
 });
 
@@ -650,7 +911,7 @@ const INTEL_HOST = {
   architecture: "x64",
 };
 
-it("keeps macOS x64 package verification for ci:full and non-PR events", async () => {
+it("keeps macOS x64 package verification only for full qualification", async () => {
   const { directory, base } = await fixture();
   const head = await change(directory, ["src/windows/Example.ts"]);
   const matrix = z.object({ include: z.array(z.unknown()) });
@@ -661,7 +922,8 @@ it("keeps macOS x64 package verification for ci:full and non-PR events", async (
   expect(pullRequest).toHaveLength(3);
   expect(pullRequest).not.toContainEqual(INTEL_HOST);
   expect(await hosts("pull_request", true)).toContainEqual(INTEL_HOST);
-  for (const event of ["push", "schedule", "workflow_dispatch"])
+  expect(await hosts("push", false)).not.toContainEqual(INTEL_HOST);
+  for (const event of ["schedule", "workflow_dispatch"])
     expect(await hosts(event, false)).toContainEqual(INTEL_HOST);
 });
 
@@ -674,6 +936,7 @@ const workflowFile = async (name: string): Promise<unknown> =>
   );
 
 const scopesSchema = z.object({
+  CI_FLAGS: z.array(z.string()),
   SCOPES: z.record(z.string(), z.array(z.string())),
   MANUAL_VERIFIERS: z.array(z.string()),
 });

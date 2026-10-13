@@ -9,6 +9,7 @@ import { wasmArtifactModule } from "../composition/wasm.js";
 import { registerWasmTools } from "./registerWasmTools.js";
 import { snapshotEnvironment } from "../process/snapshotEnvironment.js";
 import { createPeResourcesService } from "../composition/binaryDiagnostics.js";
+import type { PeResourcesService } from "../application/binaryDiagnostics/PeResourcesService.js";
 import { registerPeResourcesTool } from "./registerPeResourcesTool.js";
 import type { EvmInterfaceService } from "../application/evm/EvmInterfaceService.js";
 import { evmInterfaceModule } from "../composition/evm.js";
@@ -280,6 +281,10 @@ export const createServer = (
     options.webSourceLocation ?? createWebSourceLocationService(environment);
   const webModuleTrace =
     options.webModuleTrace ?? createWebModuleTraceService(environment);
+  const goBinary = options.goBinary ?? createGoBinaryService();
+  const peResources = createPeResourcesService();
+  const webNetworkCapture =
+    options.webNetworkCapture ?? createWebNetworkCaptureService(environment);
   const javascriptRecovery =
     options.javascriptRecovery ?? createJavaScriptRecoveryProvider(environment);
   const artifactResources = new ArtifactResourceScope();
@@ -345,6 +350,9 @@ export const createServer = (
       recordedCrash.close(),
       webSourceLocation.close(),
       webModuleTrace.close(),
+      goBinary.close(),
+      peResources.close(),
+      webNetworkCapture.close(),
       javascriptRecovery.close?.() ?? Promise.resolve(),
       artifactResources.close(),
       firmwareAnalysis.close(),
@@ -388,6 +396,9 @@ export const createServer = (
     recordEvidenceWithUnknown,
     withAdmittedAnalysis: analysisAdmission,
     artifactResources,
+    goBinary,
+    peResources,
+    webNetworkCapture,
   };
   registerBinaryAnalysisTools(toolContext);
   registerFridaTools(
@@ -517,6 +528,9 @@ const registerConfiguredAnalysisTools = (
     evidenceById,
     recordEvidence,
     withAdmittedAnalysis,
+    goBinary,
+    peResources,
+    webNetworkCapture,
   }: ServerToolContext,
   android: AndroidAnalysisPort,
   wasmArtifact: Pick<WasmArtifactService, "inspect" | "close">,
@@ -556,14 +570,14 @@ const registerConfiguredAnalysisTools = (
   );
   registerPeResourcesTool(
     server,
-    createPeResourcesService(),
+    peResources,
     toolLogger,
     recordEvidence,
     withAdmittedAnalysis,
   );
   registerGoTools(
     server,
-    options.goBinary ?? createGoBinaryService(),
+    goBinary,
     toolLogger,
     recordEvidence,
     withAdmittedAnalysis,
@@ -628,7 +642,7 @@ const registerConfiguredAnalysisTools = (
   );
   registerWebNetworkCaptureTool(
     server,
-    options.webNetworkCapture ?? createWebNetworkCaptureService(environment),
+    webNetworkCapture,
     toolLogger,
     recordEvidence,
     withAdmittedAnalysis,
@@ -673,6 +687,9 @@ const createSessionRecorders = (
 });
 
 interface ServerToolContext extends ReturnType<typeof createSessionRecorders> {
+  readonly goBinary: GoBinaryService;
+  readonly peResources: PeResourcesService;
+  readonly webNetworkCapture: WebNetworkCaptureService;
   readonly artifactResources: ArtifactResourceScope;
   readonly server: EvidenceMcpServer;
   readonly session: BinarySessionPort | undefined;

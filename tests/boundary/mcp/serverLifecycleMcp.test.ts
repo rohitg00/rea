@@ -34,6 +34,9 @@ import {
 } from "../../support/workspace/workspaceFixture.js";
 import { z } from "zod";
 import { createDeferred } from "../../fixtures/binarySession.js";
+import { GoBinaryService } from "../../../src/application/go/GoBinaryService.js";
+import { WebNetworkCaptureService } from "../../../src/application/WebNetworkCaptureService.js";
+import { AnalysisUnsupportedTargetError } from "../../../src/domain/analysisErrorCore.js";
 
 const resources: Array<{ close(): Promise<void> }> = [];
 
@@ -332,6 +335,68 @@ it("awaits SQLite cleanup and retries its retained owner after failed server shu
   }
   await server.close();
   expect(attempts).toBe(2);
+});
+
+it("closes the bound Go and web-capture services and retries failed shutdown", async () => {
+  let goCalls = 0;
+  let goCloseAttempts = 0;
+  let captureCloseAttempts = 0;
+  let cleanupAllowed = false;
+  const goBinary = new GoBinaryService({
+    identity: { id: "go-fixture", name: "Go fixture", version: "1" },
+    inspect: async ({ path }) => {
+      goCalls += 1;
+      return err(
+        new AnalysisUnsupportedTargetError(
+          "inspect_go_binary",
+          path,
+          "fixture rejection",
+        ),
+      );
+    },
+    close: async () => {
+      goCloseAttempts += 1;
+      if (!cleanupAllowed) throw new Error("Go cleanup refused");
+    },
+  });
+  const webNetworkCapture = new WebNetworkCaptureService({
+    inspect: async () => {
+      throw new Error("No capture inspection requested");
+    },
+    close: async () => {
+      captureCloseAttempts += 1;
+      if (!cleanupAllowed) throw new Error("Capture cleanup refused");
+    },
+  });
+  const server = createServer(
+    { kind: "fixed", analysis: { execute: async () => ok(null) } },
+    { goBinary, webNetworkCapture },
+  );
+  const client = new Client({ name: "bound-service-lifecycle", version: "1" });
+  const [clientTransport, serverTransport] =
+    InMemoryTransport.createLinkedPair();
+  resources.push(client, server);
+  try {
+    await server.connect(serverTransport);
+    await client.connect(clientTransport);
+    const result = await client.callTool({
+      name: "inspect_go_binary",
+      arguments: { path: "/tmp/go-fixture" },
+    });
+    expect(result.isError).toBe(true);
+    expect(goCalls).toBe(1);
+
+    await expect(server.close()).rejects.toBeInstanceOf(AggregateError);
+    expect(goCloseAttempts).toBe(1);
+    expect(captureCloseAttempts).toBe(1);
+
+    cleanupAllowed = true;
+    await server.close();
+    expect(goCloseAttempts).toBe(2);
+    expect(captureCloseAttempts).toBe(2);
+  } finally {
+    cleanupAllowed = true;
+  }
 });
 
 afterEach(async () => {

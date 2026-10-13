@@ -533,7 +533,20 @@ const addModuleLink = (
   },
   referenceNode: t.Node,
 ): void => {
-  const collected = { ...link, callableId: link.callableId ?? null };
+  const resolutionMode =
+    link.resolutionMode ??
+    (link.kind === "import" ||
+    link.kind === "re-export" ||
+    link.kind === "type-import"
+      ? state.staticImportResolutionMode
+      : link.kind === "require"
+        ? "require"
+        : undefined);
+  const collected = {
+    ...link,
+    ...(resolutionMode === undefined ? {} : { resolutionMode }),
+    callableId: link.callableId ?? null,
+  };
   state.moduleLinks.push(collected);
   if (link.localName !== null) {
     const binding = resolveSemanticBindingState(

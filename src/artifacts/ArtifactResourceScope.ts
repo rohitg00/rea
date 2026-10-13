@@ -57,6 +57,10 @@ export class ArtifactResourceScope {
   #draining: Promise<void> | undefined;
   #closed = false;
 
+  get hasPending(): boolean {
+    return this.#pending.size > 0;
+  }
+
   /** Admit a resource operation while the scope remains open. */
   async run<T>(operation: () => Promise<T>): Promise<T> {
     while (true) {

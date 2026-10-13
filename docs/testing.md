@@ -263,17 +263,62 @@ CI owns coverage; aggregate and domain/contract thresholds are maintained in
 Coverage does not replace named boundary or real-provider scenarios.
 
 CI runs six native Vitest shards without retries. Each shard emits a blob
-report; the merge job produces aggregate coverage plus JUnit and JSON timing
+report; the merge job produces JUnit and JSON diagnostics, a module timing
+report, plus aggregate coverage during full qualification. It retains available
 reports even when a shard fails, uploads available diagnostics, and writes the
 slowest files to the workflow summary. Partial reports are marked diagnostic
 only. Failed, cancelled, or missing selected shards still fail the required gate,
-and aggregate coverage thresholds remain enforced by the merge command.
-Only successful complete merges publish the small `test-timings` artifact, with
+and aggregate coverage thresholds remain enforced in full qualification.
+Only successful complete full-tier merges publish the small `test-timings` artifact, with
 checkout-relative paths; the build job downloads that artifact for the sequencer
-instead of the coverage/JUnit bundle. Missing history falls back to native
+instead of the coverage/JUnit bundle. Timing weights come from Vitest module
+diagnostics and include tests and hooks, worker preparation, environment,
+imports, and setup. Import timings already include transform waits, which are
+not added again. The weights describe file costs under the measured worker and
+coverage settings; their sum is not workflow elapsed time. The diagnostic
+artifact retains the phase breakdown, while shard history keeps only each
+file's total. Legacy test-body-only history and missing history fall back to native
 sharding. Static checks, documentation, build, package verification, and
 real-system lanes remain separate jobs so one kind of evidence cannot stand in
-for another.
+for another. Workflow syntax and expression validation runs inside the required
+static-check job when workflow changes select it, avoiding a separate runner.
+Native, provider, fixture, SQLite compatibility, and website lanes wait for
+static checks to succeed before allocating their runners. This avoids spending
+those runner slots on revisions that already fail static validation. Portable
+test shards and documentation checks remain independent of static results, so
+they can still provide diagnostic feedback. The required gate rejects skipped
+selected lanes when static checks fail; passing revisions retain all selected
+coverage. This ordering reduces peak demand on invalid revisions but can add
+static-check waiting to otherwise passing runs; it is not a measured reduction
+in end-to-end latency.
+
+Core jobs have execution limits of five minutes for classification, ten minutes
+for static checks, builds, docs, and report merging, and thirty minutes per
+portable test shard. These limits leave headroom for cold setup and full coverage
+while preventing a hung job from holding the active main run for hours. They do
+not bound runner queue waiting. Timeouts still fail the required gate.
+
+The separate `CI timings` workflow batches recent completed CI and Release runs
+hourly or on manual dispatch. It uploads `ci-job-timings-batch` with raw API pages and
+a normalized point-in-time report for each collected workflow attempt, plus a
+batch manifest describing examined coverage, failures, and limits. Overlapping
+lookback windows may collect an attempt again; identify records by run ID and
+attempt. Each batch examines at most 100 completed runs per workflow created in
+the preceding 24 hours, with a four-minute API collection budget. It collects the
+latest attempt of each selected run and does not claim an exhaustive archive.
+It runs the reporter from the trusted default branch with read-only permissions,
+treating workflow runs as API data. It does not allocate a new reporter job for
+every completed, cancelled, or skipped workflow. Reports separate queue
+waiting (`created_at` to `started_at`) from completed execution and report
+percentiles plus matched `npm ci` and artifact-step durations.
+Queue excludes dependency waiting before job creation and does not establish
+whether account concurrency or runner availability caused the wait. Queued jobs with
+placeholder start times, skipped jobs, and missing or invalid timestamps remain
+unknown. The reporter targets each selected run and attempt explicitly.
+Summed job elapsed time is parallel work, not workflow wall time, CPU time,
+memory usage, or billing. Step names identify samples, not complete transfer
+costs. Its queue, execution, and failures are independent of the required gate
+and publication. CPU time and peak process-family memory are not measured by this API.
 
 The build job saves portable Turbo outputs across runs. Eight Linux real-system
 lanes restore this cache without waiting for the build job. The shared action
@@ -697,6 +742,44 @@ specifications, independent mappings, unchanged bytes, and decompilation of a
 known return value. AArch64 remains covered by deterministic tests rather than
 this real-provider lane. See [raw binary analysis](raw-binary.md).
 
+`npm run verify:ghidra:address-context` runs on Linux with a caller-installed
+Ghidra, full JDK, and an x86-64 ELF GCC toolchain (`CC` selects another compatible
+compiler). It builds
+`tests/conformance/c/pie-address-context.c` as a PIE ELF without executing it.
+The compiled CLI and real stdio MCP workflow must expose the measured image
+base, retain segment address spaces, agree on the overview, resolve explicit and
+numeric file offsets, and reject unmapped analysis addresses with actionable
+guidance. It checks the reverse `address-to-file-offset` mapping, file-coordinate
+Evidence locations, and the suggested CLI search and load-image commands.
+The verifier compares mapped bytes with the source file and checks source
+identity, session preservation after failed lookup, owned runtime cleanup, and
+verified empty process lineage. This lane does not establish Windows or macOS
+real-provider coverage.
+
+For source-identity boundaries that a normal single-file import cannot create,
+`tests/conformance/ghidra/ReaFileOffsetSourceProbe.java` exercises the production
+bridge against real Ghidra `FileBytes`. It rejects auxiliary and partial sources,
+checks the original target's round trip, and retains ambiguity when duplicate
+target bytes have distinct loaded mappings. Injected decompiler failures and
+cancellation verify that completed source/function resolution facts and backend
+failure codes survive; these injections do not establish natural engine failures.
+On Windows, after creating the
+source-owned PE fixture, run from the repository root:
+
+```powershell
+node scripts/create-ghidra-windows-fixture.mjs
+$proofRoot = Join-Path $env:TEMP 'rea-file-offset-source-proof'
+New-Item -ItemType Directory -Path $proofRoot -Force | Out-Null
+Copy-Item bridge/ghidra/ReaGhidraBridge.java, bridge/ghidra/ReaGhidraExtensions.java, tests/conformance/ghidra/ReaFileOffsetSourceProbe.java -Destination $proofRoot
+& "$env:GHIDRA_INSTALL_DIR/support/analyzeHeadless.bat" $proofRoot source-proof -import "$PWD/build/fixtures/rea-ghidra-windows.exe" -scriptPath $proofRoot -postScript ReaFileOffsetSourceProbe.java -deleteProject
+```
+
+Require the `REA_FILE_OFFSET_SOURCE_OK` marker and no script errors; Ghidra may
+exit successfully even when a post-script fails. The probe edits only its
+temporary analysis database and does not execute the fixture. This producer
+regression supplements public CLI/MCP coverage and does not establish Linux
+host behavior or native process-supervision controls.
+
 ## Apple Interface Builder archives
 
 `npm run verify:interface-builder` compiles the source-owned AppKit XIB into a
@@ -717,7 +800,7 @@ or the GitHub issue and pull-request templates run formatting and
 generated-document validation, including the small onboarding example consistency
 suite, without the source-test shards or native package
 lanes. Classification compares the PR head with its merge base, so later
-base-branch changes do not expand that scope. Static and coverage aggregate jobs
+base-branch changes do not expand that scope. Static and portable-test aggregate jobs
 remain present and fail if classification fails. Every code change retains the
 complete six-shard Linux suite; individual test files are not selected by
 imports or filenames.
@@ -736,6 +819,12 @@ lane. Edits to verifier entrypoints run only by manual, licensed or self-hosted
 workflows run static checks and the Linux suite. Website changes run website
 checks. Provider workflow changes validate the workflow and run that provider's
 verifier. Manual-provider/Android workflow changes run workflow validation only.
+The four-version SQLite compatibility matrix has its own `sqlite` scope for
+SQLite implementation, contracts, CLI/MCP registration, fixtures, and shared
+runtime boundaries. SQLite and server-lifecycle test edits and the SQLite npm
+scripts also select it. Unrelated code edits retain the complete portable suite
+on the pinned Node version without starting four additional compatibility jobs.
+Full qualification retains every SQLite version.
 Shared process/contract/CLI boundaries, dependencies, other packaging inputs,
 unknown paths, and changes to the planner select the full baseline. Package
 script-only edits select their owning verifier when its entrypoint is
@@ -746,38 +835,84 @@ verification stays manual. Renames account for both paths.
 This narrower selection trades PR-time coverage for runner capacity. A change to
 unowned shared runtime code that fails only on arm64, macOS, Windows, the Apple
 artifact lane, or a provider lane that does not own the file is not caught on
-the PR; the main-push full baseline reports it after merge. Ownership globs do
+the PR; scheduled full qualification reports it after merge. Ownership globs do
 not follow imports. Use the `ci:full` label when a change may have native-host
 or provider effects outside its owners.
 
-Main pushes and manual dispatch retain the full baseline, including all portable
-provider lanes and the native matrix below. A `ci:full` PR label selects the full
-baseline on the next PR run; manual dispatch can request it immediately. Each
+Ordinary main pushes use the same owner scopes as PRs. Their diff starts at a
+successful ancestor push run of this CI workflow, rather than the preceding
+push: changes from failed or cancelled intermediate runs remain in scope.
+Missing, untrusted, or non-ancestor history selects every lane. The lookup is
+bounded to the last 100 successful push runs; lookup failures broaden selection.
+Every code change still runs all six portable shards, without coverage
+instrumentation in this fast tier. This deliberately avoids relying on an
+import graph for generated files, filesystem inputs, subprocesses, or bridges.
+
+Scheduled qualification is admitted hourly at minute 23. A forced full run at
+03:23 UTC refreshes runner and dependency drift every day. Other hourly runs
+can reuse a successful full-qualification receipt for the exact source SHA
+from the same repository's trusted CI workflow on its default branch. Both the
+receipt and original workflow run must be less than 24 hours old, so retrying an
+old gate cannot renew stale proof. Missing, expired, failed, foreign, or uncertain proof runs full
+validation; API lookup failure also runs full. Lookups examine at most 100 named
+receipts and three candidate runs within a 20-second budget. Reused runs select
+no validation lanes, identify the original run, and produce no new receipt, so
+reuse cannot indefinitely extend proof freshness. They make no fresh provider
+observation. Manual dispatch, `ci:full`, and exact release qualification always
+run full validation.
+
+Full qualification includes aggregate coverage,
+every portable provider lane, and all native hosts below. Adding `ci:full`
+immediately starts the separate `Full PR qualification` workflow against the
+label event's merge revision; subsequent PR revisions also select the full tier
+in normal CI while that label remains. Unrelated labels do not start validation
+jobs or replace the main CI checks. Manual dispatch also requests full validation.
+Fast-tier broad fallbacks retain all owner lanes and the three-host
+package matrix; Intel macOS and coverage remain full-tier obligations. Each
 classification job records its selection and broad-fallback reasons in the run
 summary. Representative Git-diff cases live in
 `tests/boundary/filesystem/ciChangeScope.test.ts`.
 
-`CI required` checks classification and every selected lane, rejecting failed,
-cancelled, or unexpectedly skipped work. Existing required check names are
-preserved; changing branch protection to require the new aggregate is a separate
-repository-settings operation. Newer commits cancel superseded CI for the same
-PR or main branch. Release publication has its own concurrency group and retains
-its package verification and public-registry canary. Licensed/self-hosted
+`CI required` always runs and checks classification and every selected lane,
+rejecting failed, cancelled, or unexpectedly skipped work. It rejects missing or
+unknown tiers and requires every canonical scope to be explicitly `true` or
+`false`; incomplete classification cannot silently omit verification lanes.
+Branch protection
+should require this aggregate, `Static checks`, `Portable tests`, and
+`Conventional PR title`. Title validation runs separately on PR opening,
+reopening, commits, and edits; correcting a title refreshes only this lightweight
+check. It reads title text through an environment variable, executes no PR code,
+and has no token permissions. Its separate concurrency group cannot cancel
+test runs. Fast PR runs cancel superseded feedback for the same PR. Main push
+runs keep one active run and the latest pending run for that branch.
+Scheduled/manual qualification has a separate concurrency group: active work
+finishes and only the latest pending run is retained. Release qualification uses
+its exact source SHA and cannot be cancelled by newer main pushes. Provider and
+website lanes inherit their caller's scheduling; reusable
+workflows have no independent cancellation group. Direct manual lane dispatches
+run independently on disposable hosted runners. Publication
+requires that qualification to succeed and consumes its exact verified tarball,
+checking source SHA, workflow run, run attempt, package/Node version and SHA-256
+before npm publication. Earlier attempts from the same workflow run are accepted
+when rerunning failed publisher jobs; future attempts and other runs are rejected.
+The public-registry canary still verifies the published package. Licensed/self-hosted
 provider workflows and the Android smoke test retain their explicit triggers.
 
 CI exercises the pinned Node.js runtime on native hosted runners:
 
-| Host                  | Runner             | Baseline checks                                                                          |
-| --------------------- | ------------------ | ---------------------------------------------------------------------------------------- |
-| Linux x64             | `ubuntu-latest`    | Installed package and real Node Inspector CLI/MCP                                        |
-| Linux arm64 (aarch64) | `ubuntu-24.04-arm` | Installed package and real Node Inspector CLI/MCP                                        |
-| macOS 15 arm64        | `macos-15`         | Installed package and real Node Inspector CLI/MCP                                        |
-| macOS 15 x64          | `macos-15-intel`   | Installed package and real Node Inspector CLI/MCP (main, dispatch and `ci:full` only)    |
-| Windows x64           | `windows-latest`   | Curated capabilities, native controls, installed package and real Node Inspector CLI/MCP |
+| Host                  | Runner             | Baseline checks                                                                             |
+| --------------------- | ------------------ | ------------------------------------------------------------------------------------------- |
+| Linux x64             | `ubuntu-latest`    | Installed package and real Node Inspector CLI/MCP                                           |
+| Linux arm64 (aarch64) | `ubuntu-24.04-arm` | Installed package and real Node Inspector CLI/MCP                                           |
+| macOS 15 arm64        | `macos-15`         | Installed package and real Node Inspector CLI/MCP                                           |
+| macOS 15 x64          | `macos-15-intel`   | Installed package and real Node Inspector CLI/MCP (hourly, dispatch, release and `ci:full`) |
+| Windows x64           | `windows-latest`   | Curated capabilities, native controls, installed package and real Node Inspector CLI/MCP    |
 
-macOS x64 is the slowest package host. Pull requests without the `ci:full` label
-omit it, so darwin x64 installed-package and Inspector regressions surface on
-the main-push full baseline rather than on the PR.
+macOS x64 is the slowest package host. Ordinary PRs and main pushes omit it,
+so darwin x64 installed-package and Inspector regressions surface in full
+qualification. Schedule admission can be delayed by GitHub; the hourly trigger
+does not guarantee an hourly completed result. Release publication waits for
+its own complete result at the exact released revision.
 
 Package lanes assert the actual Node platform/architecture before verification
 and record those values with the Node version. The package matrix runs up to
@@ -803,17 +938,24 @@ The Linux source-test shards download a shared runtime and generated test
 metadata snapshot produced by the build job with `npm run test:prepare`. The
 snapshot includes `dist/`, generated skills, the MCP tool catalog, product
 catalog, and managed-conformance metadata. Each shard still installs the locked
-dependencies and runs its assigned coverage-enabled tests; it no longer
+dependencies and runs its assigned tests; full qualification enables coverage. It no longer
 regenerates the same metadata independently.
 
-The build job also retrieves the merged timing report from the last successful
-default-branch push and includes that same report in each shard's snapshot.
+The build job also finds an available `test-timings` artifact from a successful
+trusted default-branch scheduled or manual qualification and includes that same
+report in each shard's snapshot. The bounded lookup verifies the artifact's
+producer; newer schedules that reuse qualification without producing timings do
+not hide the last full run's artifact.
 CI assigns discovered files by historical duration, with a deterministic
 fallback weight for new files, rather than dividing only by file count. Every
-discovered file still belongs to exactly one shard; worker limits, project
-ordering, coverage instrumentation, and aggregate thresholds remain unchanged.
+discovered file still belongs to exactly one shard; worker limits and project
+ordering remain unchanged. The merge job rejects successful reports with missing,
+unexpected, or duplicate portable files. Coverage instrumentation and aggregate
+thresholds remain enforced in full qualification.
 Missing or unusable history falls back to Vitest's default assignment. Only
-timing data is reused; persistent compile caches remain disabled.
+timing data is reused; live provider results are never cached. Turbo outputs are
+restored by task hash, with trusted default-branch runs as cache writers and PRs
+as restore-only consumers. npm caches hold downloads, not `node_modules`.
 
 These native baseline checks complement the Linux source-test shards and the
 separate Apple-artifact and real-provider lanes. Actual Hopper, Ghidra, IDA,

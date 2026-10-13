@@ -36,6 +36,7 @@ coverage/
 .vitest/
 .vitest-reports/
 test-results.xml
+test-timings.json
 .turbo/
 .cache/
 docs/.vitepress/cache/

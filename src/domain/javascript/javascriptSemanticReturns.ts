@@ -123,9 +123,7 @@ export const resolveSemanticModuleCallables = (
         : undefined;
     return {
       ...link,
-      ...(resolutionMode === "import" || resolutionMode === "require"
-        ? { resolutionMode }
-        : {}),
+      ...(resolutionMode !== undefined ? { resolutionMode } : {}),
       callableId: resolved.length === 1 ? (resolved[0] ?? null) : null,
     };
   });

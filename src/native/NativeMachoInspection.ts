@@ -9,8 +9,15 @@ import {
 import { jsonValueSchema, type JsonValue } from "../domain/jsonValue.js";
 import { err, ok, type Result } from "../domain/result.js";
 import type { NativeCommandCapture } from "./CommandRunner.js";
+import {
+  MACHO_ARCHITECTURE_POLICIES,
+  selectMachoArchitectureName,
+} from "./MachoArchitectureSelection.js";
 import { parseDyldSymbols } from "./parsers/dyldInfo.js";
-import { parseLipoArchitectures } from "./parsers/lipo.js";
+import {
+  parseLipoArchitectures,
+  type LipoArchitecture,
+} from "./parsers/lipo.js";
 import { withoutEchoedPathHeader } from "./parsers/echoedPath.js";
 import { parseOtoolLoadCommands } from "./parsers/otool.js";
 import { reconcileMachoUuid } from "./parsers/machoUuid.js";
@@ -68,8 +75,7 @@ export const inspectNativeMacho = async (
   const lipo = captures.find(({ tool }) => tool === "lipo");
   if (lipo === undefined) throw new TypeError("Missing lipo capture");
   const architectures = parseLipoArchitectures(lipo.stdout);
-  const availableArchitectures = architectures.map(({ name }) => name);
-  const selection = selectArchitecture(context.target, availableArchitectures);
+  const selection = selectArchitecture(context.target, architectures);
   if (selection.status === "absent")
     return err(
       new AnalysisOutputError(
@@ -397,25 +403,24 @@ type ArchitectureSelection =
 
 const selectArchitecture = (
   target: BinaryTarget,
-  available: readonly string[],
+  available: readonly LipoArchitecture[],
 ): ArchitectureSelection => {
-  if (target.kind !== "executable" || target.availableArchitectures.length < 2)
+  // BinaryTarget lists CPU families and lipo lists slices. A universal file
+  // can hold several slices of one family (arm64e and arm64e.x1), and slice
+  // tools without -arch print every slice.
+  if (
+    target.kind !== "executable" ||
+    (target.availableArchitectures.length < 2 && available.length < 2)
+  )
     return { status: "unfiltered" };
   const normalized =
     target.architecture === "x86" ? "i386" : target.architecture;
-  if (available.includes(normalized))
-    return { status: "selected", architecture: normalized };
-  // BinaryTarget intentionally normalizes ARM64 CPU subtypes. Recover the
-  // concrete arm64e slice name from lipo before invoking slice-aware tools.
-  if (normalized === "arm64") {
-    const arm64e = available.find((architecture) => architecture === "arm64e");
-    if (arm64e !== undefined)
-      return { status: "selected", architecture: arm64e };
-    const variant = available.find((architecture) =>
-      /^arm64e\.[A-Za-z0-9_]+$/u.test(architecture),
-    );
-    if (variant !== undefined)
-      return { status: "selected", architecture: variant };
-  }
+  const policy = MACHO_ARCHITECTURE_POLICIES[target.architecture];
+  const selected =
+    policy === undefined
+      ? available.find(({ name }) => name === normalized)?.name
+      : selectMachoArchitectureName(policy, available);
+  if (selected !== undefined)
+    return { status: "selected", architecture: selected };
   return { status: "absent", architecture: normalized };
 };

@@ -32,37 +32,38 @@ msgid "Thoughts on reverse engineering."
 msgstr "리버스 엔지니어링에 대한 생각."
 
 #. {ph0}: <br />
-#: website/public/blog/index.html:200
+#: website/public/blog/index.html:214
 #, python-brace-format
 msgctxt "page:blog/index.html"
 msgid "Game reconstruction{ph0}Essay"
 msgstr "게임 재구성{ph0}에세이"
 
-#: website/public/blog/index.html:202
+#: website/public/blog/index.html:216
 msgctxt "page:blog/index.html"
 msgid "The industrial revolution in reverse engineering"
 msgstr "리버스 엔지니어링의 산업 혁명"
 
-#: website/public/blog/index.html:203
+#: website/public/blog/index.html:217
 msgctxt "page:blog/index.html"
 msgid ""
 "What manual RE and reconstructing TH08, TH095 and TH04 taught me about "
 "agents, verification and knowledge that compounds across projects."
 msgstr "어떤 매뉴얼 다시고 재구성TH08,TH095및TH04에 대해 가르쳐 에이전트,검증 및 지는 화합물에 걸쳐 프로젝트입니다."
 
-#: website/public/blog/index.html:208
+#: website/public/blog/index.html:207 website/public/blog/index.html:222
 msgctxt "page:blog/index.html"
 msgid "Read the article"
 msgstr "기사 읽기"
 
-#: website/public/blog/index.html:211
+#: website/public/blog/index.html:225
 msgctxt "page:blog/index.html"
 msgid "By N0zoM1z0 · 10 October 2026"
 msgstr "여N0zoM1z0·10 월 2026"
 
 #. {ph0}: <span aria-hidden="true">
 #. {ph1}: </span>
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
+#: website/public/blog/reverse-engineering-models/index.html:883
 #: website/public/blog/touhou-reconstruction/index.html:1080
 #: website/public/examples/dino-lab/index.html:475
 #: website/public/faq/index.html:573
@@ -96,6 +97,8 @@ msgid ""
 msgstr "리버스 엔지니어링에 대한 생각,실제 경험을 바탕으로 REA 그리고 인공지능 요원들도"
 
 #: website/public/blog/index.html:75 website/public/blog/index.html:88
+#: website/public/blog/reverse-engineering-models/index.html:75
+#: website/public/blog/reverse-engineering-models/index.html:88
 #: website/public/blog/touhou-reconstruction/index.html:75
 #: website/public/blog/touhou-reconstruction/index.html:88
 #: website/public/examples/dino-lab/index.html:75
@@ -130,6 +133,7 @@ msgid ""
 msgstr "REA -소프트웨어가 어떻게 작동하는지 알아보십시오. 코딩 에이전트로 리버스 엔지니어링."
 
 #: website/public/blog/index.html:108
+#: website/public/blog/reverse-engineering-models/index.html:108
 #: website/public/blog/touhou-reconstruction/index.html:108
 #: website/public/examples/dino-lab/index.html:109
 #: website/public/faq/index.html:108
@@ -150,6 +154,7 @@ msgid "REA home"
 msgstr "REA 홈"
 
 #: website/public/blog/index.html:112
+#: website/public/blog/reverse-engineering-models/index.html:112
 #: website/public/blog/touhou-reconstruction/index.html:112
 #: website/public/examples/dino-lab/index.html:113
 #: website/public/faq/index.html:112
@@ -170,6 +175,7 @@ msgid "Main navigation"
 msgstr "주 메뉴"
 
 #: website/public/blog/index.html:130
+#: website/public/blog/reverse-engineering-models/index.html:130
 #: website/public/blog/touhou-reconstruction/index.html:130
 #: website/public/examples/dino-lab/index.html:131
 #: website/public/faq/index.html:130
@@ -190,6 +196,7 @@ msgid "REA on GitHub"
 msgstr "GitHub에서 REA 보기"
 
 #: website/public/blog/index.html:150
+#: website/public/blog/reverse-engineering-models/index.html:150
 #: website/public/blog/touhou-reconstruction/index.html:150
 #: website/public/examples/dino-lab/index.html:151
 #: website/public/faq/index.html:150
@@ -210,6 +217,7 @@ msgid "Join REA on Discord"
 msgstr "REA Discord 참여"
 
 #: website/public/blog/index.html:169
+#: website/public/blog/reverse-engineering-models/index.html:169
 #: website/public/blog/touhou-reconstruction/index.html:169
 #: website/public/examples/dino-lab/index.html:170
 #: website/public/faq/index.html:169
@@ -229,7 +237,7 @@ msgctxt "shared"
 msgid "Follow REA on X"
 msgstr "X에서 REA 팔로우"
 
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
 msgctxt "page:blog/index.html"
 msgid "Back to top"
 msgstr "맨 위로"
@@ -10852,6 +10860,7 @@ msgid "Same spacing: 256 ÷ 16 = 16 angle units = 22.5°"
 msgstr "같은 간격:256÷16=16 각도 단위=22.5°"
 
 #: website/public/blog/index.html:114
+#: website/public/blog/reverse-engineering-models/index.html:114
 #: website/public/blog/touhou-reconstruction/index.html:114
 #: website/public/examples/dino-lab/index.html:115
 #: website/public/faq/index.html:114
@@ -10872,6 +10881,7 @@ msgid "Showcases"
 msgstr "사례"
 
 #: website/public/blog/index.html:115
+#: website/public/blog/reverse-engineering-models/index.html:115
 #: website/public/blog/touhou-reconstruction/index.html:115
 #: website/public/examples/dino-lab/index.html:116
 #: website/public/faq/index.html:115
@@ -10892,6 +10902,7 @@ msgid "Blog"
 msgstr "블로그"
 
 #: website/public/blog/index.html:113
+#: website/public/blog/reverse-engineering-models/index.html:113
 #: website/public/blog/touhou-reconstruction/index.html:113
 #: website/public/examples/dino-lab/index.html:114
 #: website/public/faq/index.html:113
@@ -10912,6 +10923,7 @@ msgid "Get started"
 msgstr "시작하기"
 
 #: website/public/blog/index.html:116
+#: website/public/blog/reverse-engineering-models/index.html:116
 #: website/public/blog/touhou-reconstruction/index.html:116
 #: website/public/examples/dino-lab/index.html:117
 #: website/public/faq/index.html:116
@@ -10931,7 +10943,8 @@ msgctxt "shared"
 msgid "Guides"
 msgstr "가이드"
 
-#: website/public/blog/index.html:222
+#: website/public/blog/index.html:236
+#: website/public/blog/reverse-engineering-models/index.html:875
 #: website/public/blog/touhou-reconstruction/index.html:1072
 #: website/public/examples/dino-lab/index.html:467
 #: website/public/faq/index.html:565
@@ -10951,7 +10964,8 @@ msgctxt "shared"
 msgid "Source"
 msgstr "소스 코드"
 
-#: website/public/blog/index.html:223
+#: website/public/blog/index.html:237
+#: website/public/blog/reverse-engineering-models/index.html:876
 #: website/public/blog/touhou-reconstruction/index.html:1073
 #: website/public/examples/dino-lab/index.html:468
 #: website/public/faq/index.html:566
@@ -10971,7 +10985,8 @@ msgctxt "shared"
 msgid "MIT license"
 msgstr "MIT 라이선스"
 
-#: website/public/blog/index.html:224
+#: website/public/blog/index.html:238
+#: website/public/blog/reverse-engineering-models/index.html:877
 #: website/public/blog/touhou-reconstruction/index.html:1074
 #: website/public/examples/dino-lab/index.html:469
 #: website/public/faq/index.html:567
@@ -10991,7 +11006,8 @@ msgctxt "shared"
 msgid "Join the community"
 msgstr "커뮤니티 참여"
 
-#: website/public/blog/index.html:225
+#: website/public/blog/index.html:239
+#: website/public/blog/reverse-engineering-models/index.html:878
 #: website/public/blog/touhou-reconstruction/index.html:1075
 #: website/public/examples/dino-lab/index.html:470
 #: website/public/faq/index.html:568
@@ -11926,6 +11942,1222 @@ msgstr ""
 "HTTP 요청과 응답 본문을 살펴보려면 {ph0}Fiddler Everywhere: SAZ 캡처, MCP 및 공개 스킬{ph1}을 "
 "사용하세요. SAZ ?? HAR 1.2로 내보내면 REA에서 오프라인 캡처 Evidence를 얻을 수 있으며, Everywhere의 "
 "MCP 서버를 연결하여 에이전트와 함께 캡처된 트래픽을 살펴볼 수도 있습니다."
+
+#. {ph0}: <br />
+#: website/public/blog/index.html:200
+#, python-brace-format
+msgctxt "page:blog/index.html"
+msgid "Model specialization{ph0}Essay"
+msgstr "전문 모델{ph0}에세이"
+
+#: website/public/blog/index.html:202
+msgctxt "page:blog/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "리버스 엔지니어링에는 더 큰 모델이 필요할까?"
+
+#: website/public/blog/index.html:203
+msgctxt "page:blog/index.html"
+msgid ""
+"What Touhou reconstruction suggests about general models, specialist models "
+"and learning from compiler feedback."
+msgstr "Touhou 재구축 경험을 바탕으로 범용 모델, 전문 모델, 컴파일러 피드백을 통한 학습을 생각해 봅니다."
+
+#: website/public/blog/index.html:210
+msgctxt "page:blog/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "작성자: N0zoM1z0 · 2026년 10월 13일"
+
+#: website/public/blog/reverse-engineering-models/index.html:103
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Skip to content"
+msgstr "개인정보보호정책"
+
+#. {ph0}: <a href="../../">
+#. {ph1}: </a>
+#. {ph2}: <a href="../">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:194
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Home{ph1} / {ph2}Blog{ph3} / Models and RE"
+msgstr "{ph0}홈{ph1} / {ph2}블로그{ph3} / 모델 및 리버스 엔지니어링"
+
+#: website/public/blog/reverse-engineering-models/index.html:197
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Essay"
+msgstr "에세이"
+
+# Reviewed for technical meaning and readability; preserve the distinction
+# between historical evidence and proposed experiments.
+#: website/public/blog/reverse-engineering-models/index.html:198
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "리버스 엔지니어링에 더 큰 모델이 필요할까?"
+
+#: website/public/blog/reverse-engineering-models/index.html:199
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "작성자: N0zoM1z0 · 2026년 10월 13일"
+
+#: website/public/blog/reverse-engineering-models/index.html:201
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Takeaway"
+msgstr "핵심 요점"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:203
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Model capability changes the hypotheses an agent can find.{ph1} Later "
+"sessions have solved problems that earlier work left unresolved."
+msgstr ""
+"{ph0}모델 기능은 AI 에이전트가 제안할 수 있는 가설에 영향을 미칩니다.{ph1} 이후 세션에서는 이전 작업에서 해결되지 않은 "
+"문제를 해결했습니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:211
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A familiar compiler gives specialization something concrete to "
+"learn.{ph1} Some exact matches depend on narrow, reusable source patterns."
+msgstr ""
+"{ph0}익숙한 컴파일러는 특화 모델이 학습할 수 있는 구체적인 패턴을 제공합니다.{ph1} 일부 정확한 기계 코드 일치는 재사용 가능한"
+" 특정 소스 코드 패턴에 따라 달라집니다."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#: website/public/blog/reverse-engineering-models/index.html:218
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Give repository knowledge a fair comparison.{ph1} A smaller model with "
+"good retrieval may already know enough to make progress."
+msgstr ""
+"{ph0}공정한 비교에 저장소 지식을 포함합니다.{ph1} 지식 검색이 좋은 소규모 모델은 이미 진행하기에 충분한 정보를 가지고 있을 수"
+" 있습니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:223
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Train the next useful experiment, and test its oracle.{ph1} The value "
+"of feedback depends on what the checker actually verifies."
+msgstr ""
+"{ph0}다음 유용한 실험을 선택하도록 모델을 훈련시키고 검증 검사기를 테스트합니다.{ph1} 피드백은 검사기가 올바른 것을 검증하는 "
+"정도까지만 유용합니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:230
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Measure accepted reconstruction against time and cost.{ph1} That is the"
+" result I want from the whole agent."
+msgstr ""
+"{ph0}시간 및 비용과 함께 검증된 재구성 결과를 평가합니다.{ph1} 이것이 제가 전체 AI 에이전트 워크플로에 대해 측정하고 싶은 "
+"것입니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:241
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "In this article"
+msgstr "이 기사 에서"
+
+#. {ph0}: <a href="#model-capability">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:243
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What better models changed{ph1}"
+msgstr "{ph0}더 강한 모델이 바꾼 것{ph1}"
+
+#. {ph0}: <a href="#specialization">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:244
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Why specialize?{ph1}"
+msgstr "{ph0}전문화해야 하는 이유{ph1}"
+
+#. {ph0}: <a href="#repository-knowledge">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:245
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Where experience lives{ph1}"
+msgstr "{ph0}이 경험은 어디에 저장되어야 합니까?{ph1}"
+
+#. {ph0}: <a href="#learning-search">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:246
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Learning the next experiment{ph1}"
+msgstr "{ph0}다음 유용한 실험 학습{ph1}"
+
+#. {ph0}: <a href="#re-and-rl">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:247
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}RE and reinforcement learning{ph1}"
+msgstr "{ph0}리버스 엔지니어링 및 강화 학습{ph1}"
+
+#. {ph0}: <a href="#oracle">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:248
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}When the oracle is wrong{ph1}"
+msgstr "{ph0}검증체커가 잘못된 경우{ph1}"
+
+#. {ph0}: <a href="#comparison">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:249
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}A comparison worth running{ph1}"
+msgstr "{ph0}실행할 가치가 있는 비교{ph1}"
+
+#. {ph0}: <a href="#future-agent">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:250
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What kind of agent?{ph1}"
+msgstr "{ph0}어떤 에이전트가 필요할까?{ph1}"
+
+#: website/public/blog/reverse-engineering-models/index.html:258
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What better models changed"
+msgstr "더 강한 모델이 바꾼 것"
+
+#: website/public/blog/reverse-engineering-models/index.html:259
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Since August 2026, I have been exploring how much reverse engineering an "
+"agent can carry out with access to a program and a way to check its work. "
+"Most of my experience comes from reconstructing games, especially Touhou. As"
+" I have changed models, the repositories have kept a record of what each "
+"session managed to recover."
+msgstr ""
+"2026년 8월부터, 프로그램에 접근하고 자신의 작업을 검증할 수 있는 에이전트가 리버스 엔지니어링을 얼마나 수행할 수 있는지 탐구해 "
+"왔다. 내 경험은 주로 게임, 특히 Touhou 재구성에서 나온다. 모델을 바꿔 가며 작업하는 동안 저장소에는 각 세션이 무엇을 "
+"복원했는지 기록이 쌓였다."
+
+#: website/public/blog/reverse-engineering-models/index.html:267
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of that work aims at exact reconstruction: we compile the maintained "
+"source under a pinned historical toolchain and check whether it reproduces "
+"the target function. When a later model succeeds where earlier work stalled,"
+" the source changes show what made that progress possible."
+msgstr ""
+"이 작업의 상당 부분은 정확한 재구성을 목표로 한다. 버전을 고정한 당시의 툴체인으로 유지 관리 중인 소스 코드를 컴파일하고, 대상 "
+"함수가 재현되는지 확인한다. 이전에 막혔던 문제를 나중 모델이 해결하면, 소스 변경을 통해 무엇이 진전을 가능하게 했는지 살펴볼 수 "
+"있다."
+
+#: website/public/blog/reverse-engineering-models/index.html:274
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The temporary values had to stay alive together"
+msgstr "임시 변수에는 수명이 겹치는 것이 필요했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:275
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of a TH09 attack function's logic had already been reconstructed, but "
+"the compiler still stored temporary results differently from the original. "
+"The remaining problem was how long those results needed to stay alive and "
+"when their storage could be reused."
+msgstr ""
+"TH09 공격 함수의 논리 대부분은 이미 재구성되었지만 컴파일러는 여전히 원본과 다르게 임시 결과를 저장했습니다. 남은 문제는 해당 "
+"결과를 유지하는 데 필요한 기간과 해당 저장소를 언제 재사용할 수 있는지였습니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:282
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A {ph0}GPT-6-Sol checkpoint{ph1} recorded this mismatch after testing "
+"several ordinary source arrangements. When {ph2}GPT-6.1-Sol returned to the "
+"problem{ph3}, it found a useful hypothesis about how long those temporary "
+"values needed to stay alive."
+msgstr ""
+"여러 가지 일반적인 소스 코드 배열을 테스트한 후 {ph0}GPT-6-Sol 세션 레코드{ph1}에서 이러한 불일치를 보고했습니다. "
+"{ph2}GPT-6.1-Sol이 문제를 다시 조사했을 때{ph3} 이러한 임시 변수의 수명에 대한 유용한 가설을 제안했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:296
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The function produced temporary results and copied them into animation "
+"positions. In C++, a temporary result stays alive until the expression using"
+" it finishes. Grouping the real operations into one expression kept those "
+"results alive together, so the compiler could no longer reuse the same "
+"storage for all of them."
+msgstr ""
+"이 함수는 임시 결과를 생성하고 이를 애니메이션 위치에 복사했습니다. C++에서 임시 결과는 이를 사용하는 표현식이 완료될 때까지 활성 "
+"상태로 유지됩니다. 실제 작업을 하나의 표현식으로 그룹화하면 해당 결과가 함께 유지되므로 컴파일러는 더 이상 모든 작업에 대해 동일한 "
+"저장소를 재사용할 수 없습니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:303
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"One result still shared storage with a value used later for collision "
+"checks. Giving that value its own lifetime resolved the remaining overlap. "
+"After several targeted experiments, {ph0}a clean rebuild confirmed that the "
+"full function matched{ph1}."
+msgstr ""
+"한 결과는 나중에 충돌 확인을 위해 사용되는 값으로 여전히 저장 공간을 공유합니다. 해당 값에 고유한 수명을 부여하면 나머지 중복이 "
+"해결되었습니다. 여러 번의 대상 실험 후 {ph0}소스에서 깔끔하게 재컴파일하여 전체 함수가 {ph1}과 일치함을 확인했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:312
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What interests me is how the discovery and the tests worked together. The "
+"lifetime hypothesis gave the agent a new direction; compiler feedback helped"
+" it refine that hypothesis into a source arrangement that matched."
+msgstr ""
+"나는 발견과 테스트가 어떻게 서로를 지원하는지에 관심이 있습니다. 임시 개체 수명에 대한 가설은 AI 에이전트에 새로운 방향을 "
+"제시했습니다. 컴파일러 피드백은 해당 가설을 일치하는 소스 코드 배열로 구체화하는 데 도움이 되었습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:318
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A different control-flow graph"
+msgstr "다른 제어 흐름 그래프"
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:319
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A second TH09 function shows why that new direction can matter. Here, the "
+"obstacle was how several branches shared their final work. "
+"{ph0}GPT-6.1-Sol's earlier work{ph1} got parts of the function to match, but"
+" the branches still joined up differently from the original."
+msgstr ""
+"두 번째 TH09 함수는 새로운 방향이 중요한 이유를 보여줍니다. 여기서 장애물은 여러 지점이 최종 작업을 공유하는 방식이었습니다. "
+"{ph0}GPT-6.1-Sol의 이전 작업{ph1}에서는 일치하는 함수의 일부를 얻었지만 분기는 여전히 원본과 다르게 결합되었습니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:330
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}GPT-6-Astra changed the surrounding control-flow graph{ph1}. The main "
+"paths now led to a shared final update and return. In that source structure,"
+" the compiler combined the branches in the same way as the original. The "
+"complete function matched, and a {ph2}separate rebuild check confirmed "
+"it{ph3}."
+msgstr ""
+"{ph0}GPT-6-Astra이 주변 제어 흐름 그래프{ph1}를 변경했습니다. 이제 주요 경로는 공유된 최종 업데이트 및 복귀로 "
+"이어졌습니다. 해당 소스 구조에서 컴파일러는 원본과 동일한 방식으로 분기를 결합했습니다. 전체 함수이 일치했으며 {ph2}별도의 재구축 "
+"검사를 통해 이를 확인했습니다{ph3}."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:342
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Changing the representation opened a more productive search space.{ph1}"
+" Both cases give me a reason to take general model capability seriously: an "
+"agent can keep trying local variations for a long time before finding a "
+"better way to express the surrounding work."
+msgstr ""
+"{ph0}표현을 변경하면 보다 생산적인 검색 공간이 열렸습니다.{ph1} 두 경우 모두 일반 모델 기능을 진지하게 받아들여야 하는 이유가"
+" 됩니다. 에이전트는 주변 작업을 표현하는 더 나은 방법을 찾기 전에 오랫동안 지역 변형을 계속 시도할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:351
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"At the same time, the later sessions started with earlier source and "
+"recorded failures. That accumulated work was part of their advantage. The "
+"history lets us inspect the discoveries and their checks; a controlled "
+"comparison would help separate the effect of the model from the experience "
+"it inherited."
+msgstr ""
+"다만 이후 세션은 이전 소스 코드와 실패 기록을 이어받았다. 그 축적도 이점의 일부였다. 이력에서 발견과 검증 과정을 확인할 수는 "
+"있지만, 모델 자체의 효과와 물려받은 경험의 효과를 구분하려면 조건을 맞춘 비교가 필요하다."
+
+#: website/public/blog/reverse-engineering-models/index.html:358
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is where the question becomes interesting to me. Some of the progress "
+"came from finding a new representation, while much of the remaining work "
+"involved testing source forms against a familiar compiler. How much needs "
+"broad reasoning ability, and how much could a model learn through repeated "
+"experience with that compiler and code?"
+msgstr ""
+"이것이 나에게 그 질문을 흥미롭게 만드는 이유이다. 새로운 표현을 찾는 과정에서 약간의 진전이 있었습니다. 나머지 작업의 대부분은 익숙한"
+" 컴파일러에 대해 다양한 소스 코드 배열을 테스트하는 것과 관련되었습니다. 이 중 얼마나 폭넓은 추론 능력이 필요한가요? 해당 컴파일러와"
+" 코드를 반복적으로 사용하여 모델이 얼마나 학습할 수 있습니까?"
+
+#: website/public/blog/reverse-engineering-models/index.html:368
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why might a specialist do well?"
+msgstr "특화된 AI 모델이 왜 좋은 성과를 낼 수 있을까요?"
+
+#: website/public/blog/reverse-engineering-models/index.html:369
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Touhou gives us a concrete reason to expect that experience to help. Much of"
+" the game code comes from the same author, ZUN, so recurring habits are a "
+"reasonable starting assumption. The repositories back that up with useful "
+"examples: related loops and helper arrangements have supplied hypotheses "
+"across games."
+msgstr ""
+"Touhou은 그 경험이 도움이 될 것으로 기대하는 구체적인 이유를 제공합니다. 대부분의 게임 코드는 동일한 작성자인 ZUN에서 "
+"제공되므로 반복되는 습관은 합리적인 시작 가정입니다. 저장소는 유용한 예를 통해 이를 뒷받침합니다. 관련 루프 및 도우미 배열은 게임 "
+"전반에 걸쳐 가설을 제공했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:376
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those source patterns become more specific when we include the compiler. "
+"Under a particular version and set of options, small changes in source can "
+"produce repeatable differences in machine code. Some of those differences "
+"are surprisingly obscure."
+msgstr ""
+"이러한 소스 패턴은 컴파일러를 포함하면 더욱 구체적이 됩니다. 특정 버전 및 옵션 세트에서는 소스의 작은 변경으로 인해 기계어 코드에 "
+"반복 가능한 차이가 발생할 수 있습니다. 이러한 차이점 중 일부는 놀라울 정도로 모호합니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: <code>Supervisor::LoadDat</code>
+#. {ph4}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:382
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In TH095, for example, {ph0}even the name used for a local variable could "
+"change where VC7.1 stored it{ph1}. Moving the declaration alone did not "
+"solve the layout, but an earlier background function had revealed a naming "
+"pattern that affected the compiler's choice. That gave us a more promising "
+"hypothesis for {ph2}the reconstruction of {ph3}{ph4}."
+msgstr ""
+"예를 들어 TH095에서는 {ph0}로컬 변수의 이름도 VC7.1이 변수를 저장한 위치에 영향을 미칠 수 있습니다{ph1}. 선언을 "
+"이동해도 스토리지 레이아웃이 해결되지 않았습니다. 그러나 이전 백그라운드 함수에서는 컴파일러의 선택에 영향을 미치는 명명 패턴이 "
+"드러났습니다. 이는 {ph2}{ph3}{ph4} 재구성에 대한 더 유망한 가설을 제시했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:396
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reusing that pattern for the file-size variable produced the required layout"
+" without adding storage. The full function then matched."
+msgstr ""
+"파일 크기 변수에 해당 패턴을 재사용하면 저장소를 추가하지 않고도 필요한 레이아웃이 생성되었습니다. 그런 다음 전체 함수이 일치했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:401
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is the sort of narrow detail a general model may not know when it "
+"arrives. A specialist trained on this compiler could encounter many such "
+"cases and learn which source variations are worth testing first."
+msgstr ""
+"이는 범용 AI 모델이 처음 문제에 직면했을 때 알 수 없는 매우 구체적인 세부 사항입니다. 이 컴파일러에 특화된 모델은 이러한 사례를 "
+"많이 확인하고 먼저 테스트할 가치가 있는 소스 코드 변형을 학습할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:407
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The opportunity is especially clear in final matching problems where we "
+"already understand the behavior. We are then asking which ordinary source "
+"form this compiler turns into the observed instructions. Specialization "
+"could help the model propose those forms more efficiently, while the target "
+"still determines which hypotheses survive."
+msgstr ""
+"우리가 이미 동작을 이해하고 있는 최종 매칭 문제에서 기회는 특히 분명합니다. 그런 다음 이 컴파일러가 관찰된 명령으로 변환하는 일반적인"
+" 소스 코드 배열을 묻습니다. 전문화는 모델이 이러한 형태를 보다 효율적으로 제안하는 데 도움이 될 수 있으며, 목표는 여전히 어떤 "
+"가설이 살아남는지 결정합니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:415
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The useful patterns would have to retain their context, though. TH08 uses an"
+" earlier Visual C++ version than TH095 and TH09. TH04 uses a different DOS-"
+"era compiler, and its {ph0}player reconstruction{ph1} needed different "
+"hypotheses about source patterns and how the compiled code was combined into"
+" an executable. Shared authorship gives us a prior, but each target tells us"
+" whether it applies. Distinguishing those contexts is part of what a "
+"specialist would need to learn."
+msgstr ""
+"유용한 패턴에는 적용 조건이 함께 남아야 한다. TH08은 TH095와 TH09보다 오래된 Visual C++ 버전을 사용한다. "
+"TH04은 DOS 시대의 다른 컴파일러를 사용하며, {ph0}플레이어 코드 재구성{ph1}에는 소스 패턴과 실행 파일의 링크 방식에 관한"
+" 다른 가설이 필요했다. 같은 저자라는 사실은 초기 가정을 제공하지만, 그것이 적용되는지는 각 대상에서 확인해야 한다. 이런 맥락을 "
+"구별하는 것도 특화 모델이 배울 일이다."
+
+#: website/public/blog/reverse-engineering-models/index.html:431
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Where should that experience live?"
+msgstr "이 경험은 어디에 저장되어야 합니까?"
+
+#. {ph0}: <a href="../touhou-reconstruction/">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:432
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before deciding to teach those patterns through model training, I would look"
+" at the knowledge we already keep in the repository. In the {ph0}previous "
+"essay{ph1}, I wrote about it becoming the project's working memory. That "
+"memory includes compiler lessons, along with the source and failed "
+"experiments that made them useful."
+msgstr ""
+"모델 훈련을 통해 이러한 패턴을 가르치기로 결정하기 전에 우리가 이미 저장소에 보관하고 있는 지식을 살펴보겠습니다. {ph0}이전 "
+"에세이{ph1}에서는 그것이 프로젝트의 작업 메모리가 되는 것에 대해 썼습니다. 그 메모리에는 컴파일러 교훈과 이를 유용하게 만든 소스 "
+"및 실패한 실험이 포함됩니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:441
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"By retrieving that record, an agent can start with a known result and "
+"inspect how we reached it. It can also avoid alternatives that have already "
+"failed in the same context. The starting point improves without changing the"
+" model's weights."
+msgstr ""
+"에이전트는 해당 기록을 검색하여 알려진 결과로 시작하고 해당 기록에 어떻게 도달했는지 검사할 수 있습니다. 또한 동일한 맥락에서 이미 "
+"실패한 대안을 피할 수도 있습니다. 모델의 훈련된 매개변수를 변경하지 않고도 시작점이 향상됩니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:447
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"When reconstructing TH09's enemy-spawn function, a {ph0}GPT-6-Luna-max "
+"session{ph1} drew a hypothesis from TH08's corresponding source family. That"
+" earlier source suggested how to structure the loop and handle failures "
+"within it. TH09's own evidence supplied the game-specific details, and clean"
+" rebuilds confirmed the complete match."
+msgstr ""
+"TH09의 적 생성 함수를 재구성할 때, {ph0}GPT-6-Luna-max 세션{ph1}은 TH08의 관련 소스 코드에서 가설을 "
+"얻었다. 이전 코드는 루프의 구성과 내부 실패 처리에 대한 단서를 제공했다. TH09 자체의 증거로 게임별 세부 사항을 채웠고, 소스에서"
+" 새로 빌드해 함수 전체의 일치를 확인했다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:458
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}\"The model did not know that compiler quirk\" and \"the model could "
+"not use it\" are different problems.{ph1} Retrieval may solve the first, but"
+" turning that fact into a useful candidate still takes work. And if the "
+"candidate fails, the model must decide what the result means for its next "
+"attempt. Knowing the relevant pattern is only the beginning of that process."
+msgstr ""
+"{ph0}\"모델이 컴파일러의 이상한 점을 몰랐습니다\"와 \"모델이 이를 사용할 수 없었습니다\"는 다른 문제입니다.{ph1} 검색을 "
+"통해 첫 번째 문제를 해결할 수 있지만 해당 사실을 유용한 후보로 바꾸는 작업은 여전히 필요합니다. 그리고 후보 소스 코드가 실패하면 "
+"모델은 다음 시도에서 결과가 무엇을 의미하는지 결정해야 합니다. 관련 패턴을 아는 것은 해당 프로세스의 시작일뿐입니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:468
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For that reason, I would include a smaller general model with good retrieval"
+" in any comparison. Giving it the same library of experience would help us "
+"identify what training adds: better candidate generation, better decisions "
+"after feedback, or both."
+msgstr ""
+"그러한 이유로 저는 어떤 비교에서도 검색 성능이 좋은 더 작은 범용 AI 모델을 포함하겠습니다. 동일한 경험 라이브러리를 제공하면 교육이"
+" 추가하는 것이 무엇인지 식별하는 데 도움이 됩니다. 즉, 더 나은 후보 코드 생성, 피드백 후 더 나은 결정 또는 둘 다입니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:476
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Learning the next useful experiment"
+msgstr "다음 유용한 실험 학습"
+
+#: website/public/blog/reverse-engineering-models/index.html:477
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those decisions after feedback are what I would most like to study. In "
+"agentic reconstruction, the model proposes an explanation and tests it "
+"against the program. Even when the candidate fails, the result can narrow "
+"the remaining possibilities and suggest a more useful next experiment."
+msgstr ""
+"피드백 이후의 결정은 제가 가장 연구하고 싶은 것입니다. 에이전트 재구성에서 모델은 설명을 제안하고 이를 프로그램에 대해 테스트합니다. "
+"후보 소스 코드가 실패하더라도 그 결과는 남은 가능성을 좁히고 보다 유용한 다음 실험을 제안할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:484
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Consider the temporary-results example again. Its final source shows the "
+"arrangement that worked, but the route to that source contains more "
+"information. Each of the following experiments helped identify what still "
+"needed to change."
+msgstr ""
+"임시 결과 예제를 다시 고려해보세요. 최종 소스에는 제대로 작동한 배열이 표시되지만 해당 소스로의 경로에는 더 많은 정보가 포함되어 "
+"있습니다. 다음 각 실험은 여전히 ​​변경해야 할 사항을 식별하는 데 도움이 되었습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:497
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Experiment"
+msgstr "실험"
+
+#: website/public/blog/reverse-engineering-models/index.html:498
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What its result taught us"
+msgstr "그 결과가 우리에게 가르쳐준 것"
+
+#: website/public/blog/reverse-engineering-models/index.html:503
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Try a different way to copy the results"
+msgstr "결과를 복사하는 다른 방법을 시도해 보세요."
+
+#: website/public/blog/reverse-engineering-models/index.html:504
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The copy code changes, but the function still differs."
+msgstr "복사 코드는 변경되지만 기능은 여전히 다릅니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:509
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Use the returned values directly"
+msgstr "반환된 값을 직접 사용"
+
+#: website/public/blog/reverse-engineering-models/index.html:510
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Copying follows the original pattern, but temporary storage still differs."
+msgstr "복사는 원래 패턴을 따르지만 임시 저장소는 여전히 다릅니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:516
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the temporary results alive together"
+msgstr "모든 임시 변수를 동시에 유효한 상태로 유지"
+
+#: website/public/blog/reverse-engineering-models/index.html:517
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"They get separate storage, but one still overlaps a value used later for "
+"collision checks."
+msgstr "별도의 저장소를 갖지만 하나는 나중에 충돌 검사에 사용되는 값과 여전히 겹칩니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:523
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the collision-check value separate"
+msgstr "충돌 검사 값을 별도로 유지하십시오."
+
+#: website/public/blog/reverse-engineering-models/index.html:524
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A clean rebuild confirms the complete match."
+msgstr "소스에서 완전히 재컴파일하면 완전한 일치가 확인됩니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:529
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Selected experiments from the attack-function reconstruction above, grouped "
+"by what they taught us."
+msgstr "위의 공격 함수 재구성에서 선택한 실험을 우리에게 가르친 내용을 기준으로 그룹화했습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:533
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A training record that keeps this sequence can teach more than the final "
+"source alone. It connects each proposed change to an observed result and the"
+" next decision. Keeping ineffective variations matters too: they tell a "
+"later agent which hypotheses have already been tested in that context."
+msgstr ""
+"이 시퀀스를 유지하는 훈련 기록은 최종 소스보다 더 많은 것을 가르칠 수 있습니다. 이는 제안된 각 변경 사항을 관찰된 결과 및 다음 "
+"결정에 연결합니다. 비효과적인 변형을 유지하는 것도 중요합니다. 이는 해당 맥락에서 어떤 가설이 이미 테스트되었는지 나중에 에이전트에게 "
+"알려줍니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:540
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}I would want the model to learn how to use feedback.{ph1} A neutral "
+"result is a reason to reconsider the variation; a changed mismatch may point"
+" to another cause. When local edits stop being informative, the agent should"
+" be able to revisit the source representation or inspect the evidence again."
+msgstr ""
+"{ph0}모델이 피드백을 사용하는 방법을 배우기를 원합니다.{ph1} 중립적인 결과는 변화를 재고해야 하는 이유입니다. 변경된 불일치는 "
+"다른 원인을 가리킬 수도 있습니다. 로컬 편집이 더 이상 정보를 제공하지 않으면 에이전트는 소스 표현을 다시 방문하거나 증거를 다시 "
+"검사할 수 있어야 합니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:549
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Learning to make those choices requires autonomy. Sometimes the useful next "
+"step is inspecting another caller rather than compiling another edit. A "
+"rigid sequence of required rewrites would remove that choice, along with "
+"part of the behavior we want the model to learn."
+msgstr ""
+"그러한 선택을 하는 방법을 배우려면 자율성이 필요합니다. 때때로 유용한 다음 단계는 다른 편집 내용을 컴파일하는 대신 다른 호출자를 "
+"검사하는 것입니다. 필수 재작성의 엄격한 순서는 모델이 학습하기를 원하는 동작의 일부와 함께 해당 선택을 제거합니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:558
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why RE is interesting for reinforcement learning"
+msgstr "강화 학습에 리버스 엔지니어링이 흥미로운 이유"
+
+#: website/public/blog/reverse-engineering-models/index.html:559
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Bounded reconstruction gives us a practical environment for studying these "
+"choices. Once the target and compiler are pinned, many source experiments "
+"produce quick, repeatable feedback. The agent can compile a candidate, "
+"inspect the mismatch and use that observation to choose its next step."
+msgstr ""
+"범위가 정해진 재구성은 이런 선택을 연구할 실용적인 환경을 제공한다. 대상과 컴파일러 버전을 고정하면 많은 소스 코드 실험에서 빠르고 "
+"반복 가능한 피드백을 얻을 수 있다. 에이전트는 후보 코드를 컴파일하고 차이를 살펴본 뒤 다음 단계를 선택할 수 있다."
+
+#: website/public/blog/reverse-engineering-models/index.html:566
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reinforcement learning could train that decision-making process through the "
+"feedback it receives. A candidate accepted by a defined check gives us a "
+"concrete outcome, while the sequence of attempts lets us observe how much "
+"work it took to reach it."
+msgstr ""
+"강화 학습은 이런 피드백을 통해 의사 결정 과정을 훈련할 수 있다. 정의된 검증을 통과한 후보는 구체적인 결과가 되고, 시도 기록은 그 "
+"결과에 도달하는 데 얼마나 많은 작업이 필요했는지 보여 준다."
+
+#. {ph0}: <a href="https://aclanthology.org/2024.emnlp-main.203/" >
+#. {ph1}: </a >
+#. {ph2}: <a href="https://arxiv.org/html/2606.16162v1">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:572
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"There is already research supporting this direction. {ph0}LLM4Decompile{ph1}"
+" studies models specialized for decompilation. {ph2}AutoDecompiler{ph3} "
+"trains multi-turn refinement using compiler and execution feedback. Their "
+"studies focus on functional recovery. For this work, I would use them as a "
+"starting point for the related task of finding source that matches a "
+"historical compiler's output."
+msgstr ""
+"이미 이 방향을 뒷받침하는 연구가 있다. {ph0}LLM4Decompile{ph1}은 디컴파일에 특화된 모델을 연구한다. "
+"{ph2}AutoDecompiler{ph3}는 컴파일과 실행 피드백으로 여러 차례 개선하는 과정을 학습한다. 이 연구들은 기능 복원에 "
+"초점을 맞춘다. 나는 이를 출발점으로 삼아, 당시 컴파일러의 출력과 일치하는 소스 코드를 찾는 관련 과제를 연구하고 싶다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:584
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To reach such a well-defined task, though, we may first need to establish "
+"what a function owns or devise a new runtime measurement. In TH08, for "
+"example, a {ph0}collision difference led back to how the original program "
+"handled floating-point calculations{ph1}. Before the agent could test a "
+"useful correction, it had to work out what to measure."
+msgstr ""
+"그처럼 명확한 과제를 만들려면, 먼저 함수가 어떤 리소스를 책임지는지 확인하거나 실행 중인 프로그램의 동작을 관찰할 새로운 방법을 "
+"설계해야 할 수 있다. TH08에서는 {ph0}충돌 판정의 차이를 추적하다가 원본 프로그램의 부동 소수점 계산 방식에 도달했다{ph1}."
+" 에이전트는 유용한 수정을 검증하기 전에 무엇을 측정할지부터 알아내야 했다."
+
+#: website/public/blog/reverse-engineering-models/index.html:595
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This suggests another role for a broadly capable model: helping make the "
+"problem checkable in the first place. Once that check exists, we can "
+"investigate how far a learned search policy can get with it."
+msgstr ""
+"이는 광범위하게 역량을 갖춘 모델의 또 다른 역할을 제시합니다. 즉, 우선 문제를 확인할 수 있도록 돕는 것입니다. 해당 검사가 존재하면"
+" 학습된 검색 정책이 얼마나 멀리까지 도달할 수 있는지 조사할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:603
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "When the oracle is wrong"
+msgstr "검증체커가 잘못된 경우"
+
+#: website/public/blog/reverse-engineering-models/index.html:604
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Once we train against that check, its coverage becomes part of what the "
+"model learns. I call the reference or checker an oracle. Even if it gives a "
+"repeatable answer, we still need to understand what that answer covers."
+msgstr ""
+"검증 결과를 학습에 사용하면 그 검증의 범위도 학습 환경의 일부가 된다. 나는 이런 참조 기준이나 검증기를 oracle이라고 부른다. "
+"반복 가능한 답이라도, 실제로 무엇을 확인한 답인지 이해해야 한다."
+
+#: website/public/blog/reverse-engineering-models/index.html:610
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"TH08 showed how much can hide outside that coverage. Some reconstructed "
+"functions passed their exact comparisons with wrong floating constants. The "
+"comparator adjusted relocated addresses before checking instructions, but it"
+" checked the values behind those addresses only when they had been "
+"explicitly recorded for verification. Other literal references could pass "
+"without their values being examined."
+msgstr ""
+"TH08은 해당 적용 범위 외부에 얼마나 많은 것을 숨길 수 있는지 보여주었습니다. 재구성된 일부 함수는 잘못된 부동 상수와의 정확한 "
+"비교를 통과했습니다. 비교기는 명령을 확인하기 전에 재배치된 주소를 조정했지만 확인을 위해 명시적으로 기록된 경우에만 해당 주소 뒤에 "
+"있는 값을 확인했습니다. 다른 리터럴 참조는 해당 값을 검사하지 않고 통과할 수 있습니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <code>1.0f</code>
+#. {ph3}: <code>32.0f</code>
+#: website/public/blog/reverse-engineering-models/index.html:619
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To close that gap, a {ph0}wider audit{ph1} found incorrect constants in "
+"functions that had already been accepted. In one calculation, the "
+"reconstructed source added {ph2} where the original added {ph3}."
+msgstr ""
+"이러한 격차를 해소하기 위해 {ph0}광범위한 감사{ph1}를 통해 이미 검증을 통과한 함수에서 잘못된 상수가 발견되었습니다. 한 "
+"계산에서는 재구성된 소스 코드에 {ph2}가 추가된 반면 원본 코드에는 {ph3}가 추가되었습니다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:629
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A learner rewarded by the old check could learn to produce the wrong "
+"reconstruction.{ph1} We had not trained an RL model against this oracle; the"
+" observed failure was in the check itself. But using that check as a reward "
+"would have made the same blind spot part of the learning environment."
+msgstr ""
+"{ph0}기존 검증으로 보상하면 모델이 잘못된 재구성을 학습할 수도 있다.{ph1} 이 검증기로 RL 모델을 훈련한 것은 아니다. 실제로"
+" 관찰한 실패는 검증 자체의 오류였다. 하지만 이를 보상으로 사용했다면 같은 사각지대가 학습 환경에 들어갔을 것이다."
+
+#. {ph0}: <a href="https://arxiv.org/html/2609.05370v1" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:639
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A functional test can have a similar blind spot. {ph0}Differential-fuzzing "
+"research on LLM decompilers{ph1} has found behavior differences beyond the "
+"supplied tests. Passing those tests therefore needs to be read in terms of "
+"the cases they exercise, just as an instruction match needs to be read in "
+"terms of the bytes and data it checks."
+msgstr ""
+"기능 테스트에도 비슷한 사각지대가 있을 수 있습니다. {ph0}LLM 디컴파일러에서 차등 퍼징을 사용한 연구{ph1}에서는 제공된 테스트"
+" 외부의 동작 차이를 발견했습니다. 그러므로 우리는 그것이 수행되는 사례의 관점에서 합격 테스트를 이해해야 합니다. 마찬가지로 명령어 "
+"일치는 확인하는 바이트와 데이터 측면에서 이해되어야 합니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:649
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before using either kind of check as a reward, I would test it with "
+"deliberate failures. I would also keep final acceptance outside the "
+"candidate's editable source, so the model has to satisfy the check through "
+"its reconstruction. Otherwise, something like a byte array copied from the "
+"target could satisfy a naive score without recovering useful source."
+msgstr ""
+"어느 검증이든 보상으로 사용하기 전에는 의도적으로 틀린 결과를 넣어 시험해 보고 싶다. 최종 승인 기준도 에이전트가 수정할 수 있는 소스"
+" 코드 밖에 두어야 한다. 올바르게 재구성해 검증을 통과하도록 해야 하기 때문이다. 그렇지 않으면 대상에서 복사한 바이트 배열이 유용한 "
+"소스 복원 없이 단순한 채점 기준을 통과할 수 있다."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:657
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Improving the learner and improving its oracle belong to the same "
+"research problem.{ph1} As the learner gets better at optimizing the feedback"
+" we give it, understanding that feedback becomes more important too."
+msgstr ""
+"{ph0}학습 모델의 개선과 검증기의 개선은 같은 연구 문제다.{ph1} 모델이 우리가 주는 피드백을 더 잘 최적화할수록, 그 피드백 "
+"자체를 이해하는 일도 중요해진다."
+
+#: website/public/blog/reverse-engineering-models/index.html:667
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A comparison worth running"
+msgstr "실행할 가치가 있는 비교"
+
+#: website/public/blog/reverse-engineering-models/index.html:668
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"With those checks in place, I would start the comparison on a fixed VC7.1 "
+"task family. First, I would establish baselines for a strong general model "
+"and a smaller one. Adding repository knowledge to the smaller model would "
+"show what retrieval changes. From there, supervised specialization and an "
+"RL-trained version would let us examine what training adds."
+msgstr ""
+"이러한 점검을 마친 후 고정된 VC7.1 작업 계열에 대한 비교를 시작합니다. 첫째, 강력한 범용 AI 모델과 더 작은 모델에 대한 "
+"기준선을 설정하겠습니다. 더 작은 모델에 저장소 지식을 추가하면 검색이 어떻게 변경되는지 확인할 수 있습니다. 거기에서 감독 전문화와 "
+"RL 훈련 버전을 통해 훈련에 추가되는 것이 무엇인지 검토할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:676
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To make those comparisons informative, each model would receive the same "
+"target evidence and tools. For the training-specific comparisons, I would "
+"keep the base model and available knowledge fixed as well. Repeated trials "
+"would help distinguish a reliable search strategy from a lucky candidate."
+msgstr ""
+"이러한 비교를 유익하게 만들기 위해 각 모델은 동일한 대상 증거와 도구를 받게 됩니다. 훈련별 비교를 위해 기본 모델과 사용 가능한 "
+"지식도 고정된 상태로 유지합니다. 반복적인 시도는 우연히 성공한 후보 솔루션과 신뢰할 수 있는 검색 전략을 구별하는 데 도움이 됩니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:683
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would then separate two starting conditions: reconstructing a function "
+"from its instructions, and closing the last few differences in maintained "
+"source. A specialist might be excellent at the second task while a general "
+"model does much of the work needed to reach it. Measuring them separately "
+"would reveal that division of work."
+msgstr ""
+"그런 다음 두 가지 시작 조건을 분리합니다. 즉, 명령에서 함수를 재구성하는 것과 유지 관리되는 소스에서 마지막 몇 가지 차이점을 닫는 "
+"것입니다. 특화 AI 모델은 두 번째 작업에 탁월할 수 있지만 범용 AI 모델은 두 번째 작업에 도달하는 데 필요한 많은 작업을 "
+"수행합니다. 그것들을 개별적으로 측정하면 업무 분할이 드러날 것입니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:691
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both tasks need genuinely held-out examples. Because related Touhou games "
+"share engine code, holding out a game's name would still allow nearly "
+"identical functions to appear in training. I would instead hold out source "
+"families and keep their accepted answers out of both training and retrieval."
+msgstr ""
+"두 과제 모두 학습 데이터와 검색 자료에서 제외한 테스트 사례가 필요하다. 관련 Touhou 게임은 엔진 코드를 공유하므로, 게임 하나만"
+" 제외해도 거의 같은 함수가 학습 데이터에 남을 수 있다. 대신 관련 소스 코드 계열 전체를 따로 남겨 두고, 검증된 정답을 학습 "
+"데이터와 검색 라이브러리 양쪽에서 제외하겠다."
+
+#: website/public/blog/reverse-engineering-models/index.html:698
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"On those examples, the outcome would be complete, independently validated "
+"matches. Giving each model the same candidate or compile budget would help "
+"compare search quality. Measuring elapsed time and total cost, including "
+"compilation, would tell us whether that quality produces an efficient "
+"workflow. Training costs would need their own accounting too."
+msgstr ""
+"측정할 결과는 완전하고 독립적으로 검증된 일치다. 후보 제안 수나 컴파일 횟수의 예산을 같게 하면 탐색 품질을 비교할 수 있다. 컴파일을"
+" 포함한 총 시간과 비용은 그 품질이 효율적인 워크플로로 이어지는지 보여 준다. 학습 비용은 별도로 계산해야 한다."
+
+#: website/public/blog/reverse-engineering-models/index.html:706
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both views matter because a cheaper proposal can become an expensive "
+"workflow if it causes more uninformative compiles. Conversely, a slower "
+"model may pay for itself by finding a useful experiment sooner. The "
+"comparison should capture those costs."
+msgstr ""
+"두 측정 모두 중요합니다. 유용한 정보를 제공하지 않는 컴파일이 더 많이 발생하면 값싼 제안으로 인해 비용이 많이 드는 작업 흐름이 "
+"발생할 수 있습니다. 반대로, 유용한 실험을 더 빨리 발견하면 느린 모델이 더 경제적일 수 있습니다. 비교에는 이러한 비용이 포함되어야 "
+"합니다."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:712
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Counting accepted results also keeps intermediate progress in perspective. "
+"One TH09 {ph0}replay-save candidate{ph1} looked promising because the "
+"compiled function had the expected size, but a full comparison still found "
+"substantial differences. Changes in how the compiler arranges instructions "
+"can also make a candidate look closer without resolving the underlying "
+"problem. Such diagnostics can guide the next experiment, but I would "
+"validate any reward for \"getting closer\" against the full acceptance "
+"check."
+msgstr ""
+"승인된 결과를 계산하면 중간 진행 상황을 관점에서 볼 수 있습니다. 하나의 TH09 {ph0}재생 저장 후보{ph1}는 컴파일된 함수의 "
+"크기가 예상과 같았기 때문에 유망해 보였지만 전체 비교에서는 여전히 상당한 차이가 발견되었습니다. 컴파일러가 명령을 배열하는 방식을 "
+"변경하면 근본적인 문제를 해결하지 않고도 후보가 더 가까워 보이게 만들 수도 있습니다. 이러한 진단은 다음 실험의 지침이 될 수 있지만 "
+"전체 승인 확인에 대해 \"가까워지는\" 것에 대한 보상을 검증하겠습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:727
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would be interested in the pattern across these results. If a specialist "
+"does well within a familiar compiler family, does that advantage survive a "
+"toolchain change? And once both models have good retrieval, how much does "
+"training still add? The answers would help us decide where each kind of "
+"model is most useful."
+msgstr ""
+"나는 이러한 결과의 패턴에 관심이 있습니다. 전문화된 AI 모델이 친숙한 컴파일러 제품군 내에서 잘 작동한다면 툴체인 변경 후에도 해당 "
+"장점이 유지됩니까? 두 AI 모델 모두 좋은 검색 결과를 얻은 후에도 훈련을 통해 얼마나 추가되나요? 답변은 각 모델 종류가 가장 유용한"
+" 위치를 결정하는 데 도움이 됩니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:736
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What kind of agent does this suggest?"
+msgstr "어떤 에이전트가 필요할까?"
+
+#: website/public/blog/reverse-engineering-models/index.html:737
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"If the models turn out to help at different stages, a useful arrangement "
+"might be a broad agent with access to a specialist. Once a task becomes a "
+"familiar compiler search, it could ask the specialist for candidates. If the"
+" results stop making sense, the broader agent could return to the target "
+"evidence or investigate the measurement itself."
+msgstr ""
+"모델이 여러 단계에서 도움이 되는 것으로 밝혀지면 특화 AI 모델에 액세스할 수 있는 광범위한 에이전트가 유용한 배열이 될 수 있습니다."
+" 작업이 익숙한 컴파일러 검색이 되면 특화 AI 모델에 후보를 요청할 수 있습니다. 결과가 더 이상 이해되지 않는 경우 더 넓은 범위의 "
+"에이전트는 대상 증거로 돌아가거나 측정 자체를 조사할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:745
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In that arrangement, specialization becomes a tool the agent can choose as "
+"the investigation develops. The agent keeps the freedom to change direction "
+"that made the earlier breakthroughs possible."
+msgstr ""
+"이러한 배열에서 전문화는 조사가 진행됨에 따라 에이전트가 선택할 수 있는 도구가 됩니다. 에이전트는 이전의 돌파구를 가능하게 했던 방향을"
+" 자유롭게 변경할 수 있습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:750
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This follows naturally from the industrial shift I described in the previous"
+" essay. Being able to run many more experiments changes how we organize the "
+"work. It also gives us a reason to ask which decisions need broad judgment "
+"and which improve through repeated experience with a particular craft."
+msgstr ""
+"이는 이전 에세이에서 설명한 산업 변화에서 자연스럽게 나온 것입니다. 더 많은 실험을 실행할 수 있게 되면 작업 구성 방식이 변경됩니다."
+" 또한 어떤 결정에 폭 넓은 판단이 필요한지, 어떤 결정은 특정 기술에 대한 반복적인 경험을 통해 개선되는지 질문할 이유를 제공합니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:757
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For now, the strongest general model has earned its place in my workflow by "
+"opening problems I had left unresolved. Those successes are what make me "
+"want to examine the work more closely: how much depended on the model's "
+"breadth, and how much could be handled by a model trained in this particular"
+" kind of reconstruction?"
+msgstr ""
+"지금까지 가장 강한 범용 모델은 내가 해결하지 못했던 문제를 풀어내며 워크플로에서 자리를 얻었다. 그 성공 때문에 작업을 더 자세히 "
+"살펴보고 싶다. 얼마나 많은 부분이 모델의 폭넓은 능력에 의존했을까? 이 종류의 재구성을 전문적으로 학습한 모델은 어디까지 담당할 수 "
+"있을까?"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:765
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}The repositories give us a way to test the question.{ph1} I would like "
+"to use that record to build the comparison and see what we learn."
+msgstr ""
+"{ph0}저장소는 질문을 테스트할 수 있는 방법을 제공합니다.{ph1} 해당 기록을 사용하여 비교를 구축하고 배운 내용을 확인하고 "
+"싶습니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:775
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Evidence and model attribution"
+msgstr "증거 및 모델 속성"
+
+#: website/public/blog/reverse-engineering-models/index.html:783
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The examples describe historical function-level comparisons recorded in the "
+"linked commits. Whole-game runtime checks are separate milestones. Source "
+"and matching records were reviewed on 13 October 2026."
+msgstr ""
+"예제에서는 연결된 커밋에 기록된 기능 수준 비교 기록을 설명합니다. 전체 게임 런타임 확인은 별도의 마일스톤입니다. 출처 및 일치 기록은"
+" 2026년 10월 13일에 검토되었습니다."
+
+#. {ph0}: <code>gpt-dots</code>
+#. {ph1}: <code>gpt-web</code>
+#: website/public/blog/reverse-engineering-models/index.html:789
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The TH09 label {ph0} identifies GPT-6-Astra. {ph1} changed with the model "
+"used at the time, so that label alone does not identify an individual run. "
+"Explicit model names in the other cited commits establish their recorded "
+"attribution; the histories do not contain uniform per-run cost or effort "
+"measurements."
+msgstr ""
+"TH09 라벨 {ph0}은 GPT-6-Astra을 의미합니다. {ph1}과(와) 관련된 모델은 시간이 지남에 따라 변경되었으므로 "
+"라벨만으로는 특정 실행에 사용된 모델을 식별할 수 없습니다. 다른 인용 커밋의 명시적인 모델 이름은 기록된 속성을 제공합니다. 이러한 "
+"기록에는 모든 실행에 대한 일관된 비용 또는 노력 측정이 포함되지 않습니다."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph5}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:798
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 temporary lifetimes:{ph1} the {ph2}earlier context review{ph3} and"
+" {ph4}complete cold reconstruction{ph5}."
+msgstr ""
+"{ph0}TH09 임시 객체 수명:{ph1} {ph2}이전 컨텍스트 검토{ph3} 및 {ph4}소스에서 깔끔한 재컴파일을 통해 확인된 "
+"완전한 재구성{ph5}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:810
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 Front callback:{ph1} {ph2}non-exact diagnostic regions{ph3}, "
+"{ph4}Astra's new graph{ph5} and its {ph6}accepted recompile replay{ph7}."
+msgstr ""
+"{ph0}TH09 Front 콜백:{ph1} {ph2}일치하지 않는 진단 영역{ph3}, {ph4}Astra의 새로운 제어 흐름 "
+"그래프{ph5} 및 {ph6}승인된 재컴파일 확인{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:826
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Compiler knowledge:{ph1} {ph2}TH095 identifier-bucket reuse{ph3}, "
+"{ph4}TH04 player source and linker order{ph5} and {ph6}Luna's TH09 enemy-"
+"spawn closure{ph7}."
+msgstr ""
+"{ph0}컴파일러 지식:{ph1} {ph2}TH095 식별자 버킷 동작 재사용{ph3}, {ph4}TH04 플레이어 소스 코드 및 링커 "
+"순서{ph5} 및 {ph6}Luna의 TH09 적 생성 기능에 대한 완전한 재구성{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:842
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Checks and diagnostics:{ph1} {ph2}TH08 floating-literal audit{ph3}, "
+"{ph4}TH08 numerical investigation{ph5} and {ph6}TH09 replay-save "
+"reconstruction{ph7}."
+msgstr ""
+"{ph0}검사 및 진단:{ph1} {ph2}TH08 부동 소수점 상수 감사{ph3}, {ph4}TH08 수치 조사{ph5} 및 "
+"{ph6}TH09 재생 저장 재구성{ph7}."
+
+#: website/public/blog/reverse-engineering-models/index.html:859
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The proposed specialist and RL comparisons are future experiments. The "
+"project histories motivate them; no trained specialist was evaluated for "
+"this essay."
+msgstr ""
+"제안한 특화 모델과 RL의 비교는 앞으로 해 볼 실험이다. 프로젝트 이력이 그 동기를 제공하지만, 이 글에서 학습된 특화 모델을 평가한 "
+"것은 아니다."
+
+#: website/public/blog/reverse-engineering-models/index.html:6
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model? | REA"
+msgstr "리버스 엔지니어링에 더 큰 모델이 필요할까? | REA"
+
+#: website/public/blog/reverse-engineering-models/index.html:7
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What Touhou reconstruction taught me about general models, specialist models"
+" and learning to propose better hypotheses from compiler feedback."
+msgstr ""
+"Touhou 재구성을 통해 일반 모델, 전문 모델 및 컴파일러 피드백을 통해 더 나은 가설을 제안하는 방법에 대해 배운 내용."
+
+#: website/public/blog/reverse-engineering-models/index.html:240
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "On this page"
+msgstr "이 페이지에"
+
+#: website/public/blog/reverse-engineering-models/index.html:253
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Models and reverse engineering essay"
+msgstr "모델 및 리버스 엔지니어링 에세이"
+
+#: website/public/blog/reverse-engineering-models/index.html:491
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Selected reconstruction experiments"
+msgstr "선정된 재구성 실험"
+
+#: website/public/blog/reverse-engineering-models/index.html:883
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Back to top"
+msgstr "맨 위로"
+
+#. {ph0}: <a
+#. href="https://github.com/morluto/rea/blob/main/website/evidence/reverse-
+#. engineering-models.md" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:776
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Detailed evidence notes{ph1} include the recorded comparisons and "
+"experiment context."
+msgstr "{ph0}상세 증거 기록{ph1}에는 비교 결과와 실험 맥락이 담겨 있다."
+
+#~ msgctxt "page:blog/index.html"
+#~ msgid "By N0zoM1z0 · 13 October 2026 · Draft for review"
+#~ msgstr "작성: N0zoM1z0 · 2026년 10월 13일 · 검토용 초안"
 
 #~ msgctxt "page:index.html"
 #~ msgid "Setup guide"

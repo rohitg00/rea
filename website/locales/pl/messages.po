@@ -32,18 +32,18 @@ msgid "Thoughts on reverse engineering."
 msgstr "Myśli o inżynierii odwrotnej."
 
 #. {ph0}: <br />
-#: website/public/blog/index.html:200
+#: website/public/blog/index.html:214
 #, python-brace-format
 msgctxt "page:blog/index.html"
 msgid "Game reconstruction{ph0}Essay"
 msgstr "Rekonstrukcja gry{ph0}Esej"
 
-#: website/public/blog/index.html:202
+#: website/public/blog/index.html:216
 msgctxt "page:blog/index.html"
 msgid "The industrial revolution in reverse engineering"
 msgstr "Rewolucja przemysłowa w inżynierii odwrotnej"
 
-#: website/public/blog/index.html:203
+#: website/public/blog/index.html:217
 msgctxt "page:blog/index.html"
 msgid ""
 "What manual RE and reconstructing TH08, TH095 and TH04 taught me about "
@@ -52,19 +52,20 @@ msgstr ""
 "Co Instrukcja RE i rekonstrukcji TH08, TH095 i TH04 nauczył mnie O agentów, "
 "weryfikacja i wiedza, że związki całej projektów."
 
-#: website/public/blog/index.html:208
+#: website/public/blog/index.html:207 website/public/blog/index.html:222
 msgctxt "page:blog/index.html"
 msgid "Read the article"
 msgstr "Przeczytaj artykuł"
 
-#: website/public/blog/index.html:211
+#: website/public/blog/index.html:225
 msgctxt "page:blog/index.html"
 msgid "By N0zoM1z0 · 10 October 2026"
 msgstr "Przez N0zoM1z0 * 10 października 2026"
 
 #. {ph0}: <span aria-hidden="true">
 #. {ph1}: </span>
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
+#: website/public/blog/reverse-engineering-models/index.html:883
 #: website/public/blog/touhou-reconstruction/index.html:1080
 #: website/public/examples/dino-lab/index.html:475
 #: website/public/faq/index.html:573
@@ -100,6 +101,8 @@ msgstr ""
 "doświadczenia z agentami REA i AI."
 
 #: website/public/blog/index.html:75 website/public/blog/index.html:88
+#: website/public/blog/reverse-engineering-models/index.html:75
+#: website/public/blog/reverse-engineering-models/index.html:88
 #: website/public/blog/touhou-reconstruction/index.html:75
 #: website/public/blog/touhou-reconstruction/index.html:88
 #: website/public/examples/dino-lab/index.html:75
@@ -136,6 +139,7 @@ msgstr ""
 "agentem kodującym."
 
 #: website/public/blog/index.html:108
+#: website/public/blog/reverse-engineering-models/index.html:108
 #: website/public/blog/touhou-reconstruction/index.html:108
 #: website/public/examples/dino-lab/index.html:109
 #: website/public/faq/index.html:108
@@ -156,6 +160,7 @@ msgid "REA home"
 msgstr "Strona główna REA"
 
 #: website/public/blog/index.html:112
+#: website/public/blog/reverse-engineering-models/index.html:112
 #: website/public/blog/touhou-reconstruction/index.html:112
 #: website/public/examples/dino-lab/index.html:113
 #: website/public/faq/index.html:112
@@ -176,6 +181,7 @@ msgid "Main navigation"
 msgstr "Główna nawigacja"
 
 #: website/public/blog/index.html:130
+#: website/public/blog/reverse-engineering-models/index.html:130
 #: website/public/blog/touhou-reconstruction/index.html:130
 #: website/public/examples/dino-lab/index.html:131
 #: website/public/faq/index.html:130
@@ -196,6 +202,7 @@ msgid "REA on GitHub"
 msgstr "REA na GitHub"
 
 #: website/public/blog/index.html:150
+#: website/public/blog/reverse-engineering-models/index.html:150
 #: website/public/blog/touhou-reconstruction/index.html:150
 #: website/public/examples/dino-lab/index.html:151
 #: website/public/faq/index.html:150
@@ -216,6 +223,7 @@ msgid "Join REA on Discord"
 msgstr "Dołącz do REA na Discordzie"
 
 #: website/public/blog/index.html:169
+#: website/public/blog/reverse-engineering-models/index.html:169
 #: website/public/blog/touhou-reconstruction/index.html:169
 #: website/public/examples/dino-lab/index.html:170
 #: website/public/faq/index.html:169
@@ -235,7 +243,7 @@ msgctxt "shared"
 msgid "Follow REA on X"
 msgstr "Obserwuj REA na X"
 
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
 msgctxt "page:blog/index.html"
 msgid "Back to top"
 msgstr "Do góry"
@@ -11618,6 +11626,7 @@ msgid "Same spacing: 256 ÷ 16 = 16 angle units = 22.5°"
 msgstr "Ten sam odstęp: 256 ÷ 16 = 16 jednostek kąta = 22,5°"
 
 #: website/public/blog/index.html:114
+#: website/public/blog/reverse-engineering-models/index.html:114
 #: website/public/blog/touhou-reconstruction/index.html:114
 #: website/public/examples/dino-lab/index.html:115
 #: website/public/faq/index.html:114
@@ -11638,6 +11647,7 @@ msgid "Showcases"
 msgstr "Przykłady"
 
 #: website/public/blog/index.html:115
+#: website/public/blog/reverse-engineering-models/index.html:115
 #: website/public/blog/touhou-reconstruction/index.html:115
 #: website/public/examples/dino-lab/index.html:116
 #: website/public/faq/index.html:115
@@ -11658,6 +11668,7 @@ msgid "Blog"
 msgstr "Blog"
 
 #: website/public/blog/index.html:113
+#: website/public/blog/reverse-engineering-models/index.html:113
 #: website/public/blog/touhou-reconstruction/index.html:113
 #: website/public/examples/dino-lab/index.html:114
 #: website/public/faq/index.html:113
@@ -11678,6 +11689,7 @@ msgid "Get started"
 msgstr "Pierwsze kroki"
 
 #: website/public/blog/index.html:116
+#: website/public/blog/reverse-engineering-models/index.html:116
 #: website/public/blog/touhou-reconstruction/index.html:116
 #: website/public/examples/dino-lab/index.html:117
 #: website/public/faq/index.html:116
@@ -11697,7 +11709,8 @@ msgctxt "shared"
 msgid "Guides"
 msgstr "Poradniki"
 
-#: website/public/blog/index.html:222
+#: website/public/blog/index.html:236
+#: website/public/blog/reverse-engineering-models/index.html:875
 #: website/public/blog/touhou-reconstruction/index.html:1072
 #: website/public/examples/dino-lab/index.html:467
 #: website/public/faq/index.html:565
@@ -11717,7 +11730,8 @@ msgctxt "shared"
 msgid "Source"
 msgstr "Kod źródłowy"
 
-#: website/public/blog/index.html:223
+#: website/public/blog/index.html:237
+#: website/public/blog/reverse-engineering-models/index.html:876
 #: website/public/blog/touhou-reconstruction/index.html:1073
 #: website/public/examples/dino-lab/index.html:468
 #: website/public/faq/index.html:566
@@ -11737,7 +11751,8 @@ msgctxt "shared"
 msgid "MIT license"
 msgstr "Licencja MIT"
 
-#: website/public/blog/index.html:224
+#: website/public/blog/index.html:238
+#: website/public/blog/reverse-engineering-models/index.html:877
 #: website/public/blog/touhou-reconstruction/index.html:1074
 #: website/public/examples/dino-lab/index.html:469
 #: website/public/faq/index.html:567
@@ -11757,7 +11772,8 @@ msgctxt "shared"
 msgid "Join the community"
 msgstr "Dołącz do społeczności"
 
-#: website/public/blog/index.html:225
+#: website/public/blog/index.html:239
+#: website/public/blog/reverse-engineering-models/index.html:878
 #: website/public/blog/touhou-reconstruction/index.html:1075
 #: website/public/examples/dino-lab/index.html:470
 #: website/public/faq/index.html:568
@@ -12722,6 +12738,1384 @@ msgstr ""
 "zapisów SAZ, MCP i publicznych umiejętności{ph1}. Wyeksportuj SAZ lub HAR "
 "1.2, aby uzyskać Evidence z zapisu w REA offline, lub połącz serwer MCP "
 "Everywhere, aby analizować zapisany ruch z agentem."
+
+#. {ph0}: <br />
+#: website/public/blog/index.html:200
+#, python-brace-format
+msgctxt "page:blog/index.html"
+msgid "Model specialization{ph0}Essay"
+msgstr "Modele specjalistyczne{ph0}Esej"
+
+#: website/public/blog/index.html:202
+msgctxt "page:blog/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "Czy inżynieria odwrotna potrzebuje większego modelu?"
+
+#: website/public/blog/index.html:203
+msgctxt "page:blog/index.html"
+msgid ""
+"What Touhou reconstruction suggests about general models, specialist models "
+"and learning from compiler feedback."
+msgstr ""
+"Co rekonstrukcja Touhou mówi o modelach ogólnych, modelach specjalistycznych"
+" i uczeniu się na podstawie informacji zwrotnych z kompilatora."
+
+#: website/public/blog/index.html:210
+msgctxt "page:blog/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "Przez N0zoM1z0 · 13 października 2026 r"
+
+#: website/public/blog/reverse-engineering-models/index.html:103
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Skip to content"
+msgstr "Przejdź do treści"
+
+#. {ph0}: <a href="../../">
+#. {ph1}: </a>
+#. {ph2}: <a href="../">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:194
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Home{ph1} / {ph2}Blog{ph3} / Models and RE"
+msgstr ""
+"{ph0}Strona główna{ph1} / {ph2}Blog{ph3} / Modele i inżynieria odwrotna"
+
+#: website/public/blog/reverse-engineering-models/index.html:197
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Essay"
+msgstr "Esej"
+
+# Reviewed for technical meaning and readability; preserve the distinction
+# between historical evidence and proposed experiments.
+#: website/public/blog/reverse-engineering-models/index.html:198
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "Czy inżynieria odwrotna potrzebuje większego modelu?"
+
+#: website/public/blog/reverse-engineering-models/index.html:199
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "Przez N0zoM1z0 · 13 października 2026 r"
+
+#: website/public/blog/reverse-engineering-models/index.html:201
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Takeaway"
+msgstr "Najważniejsze"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:203
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Model capability changes the hypotheses an agent can find.{ph1} Later "
+"sessions have solved problems that earlier work left unresolved."
+msgstr ""
+"{ph0}Możliwości modelu wpływają na to, jakie hipotezy może postawić agent "
+"AI.{ph1} Późniejsze sesje rozwiązały problemy, które nie zostały rozwiązane "
+"wcześniej."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:211
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A familiar compiler gives specialization something concrete to "
+"learn.{ph1} Some exact matches depend on narrow, reusable source patterns."
+msgstr ""
+"{ph0}Znany kompilator oferuje konkretne wzorce do nauki dla "
+"wyspecjalizowanego modelu.{ph1} Niektóre dokładne dopasowania kodu "
+"maszynowego zależą od konkretnych wzorców kodu źródłowego, które można "
+"ponownie wykorzystać."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#: website/public/blog/reverse-engineering-models/index.html:218
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Give repository knowledge a fair comparison.{ph1} A smaller model with "
+"good retrieval may already know enough to make progress."
+msgstr ""
+"{ph0}W rzetelnym porównaniu uwzględnij wiedzę o repozytorium.{ph1} Mniejszy "
+"model z dobrym wyszukiwaniem wiedzy może już mieć wystarczającą ilość "
+"informacji, aby poczynić postępy."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:223
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Train the next useful experiment, and test its oracle.{ph1} The value "
+"of feedback depends on what the checker actually verifies."
+msgstr ""
+"{ph0}Wytrenuj model, aby wybrał kolejny przydatny eksperyment i przetestuj "
+"jego moduł weryfikujący.{ph1} Opinia jest użyteczna tylko w takim stopniu, w"
+" jakim moduł sprawdzający weryfikuje właściwe rzeczy."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:230
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Measure accepted reconstruction against time and cost.{ph1} That is the"
+" result I want from the whole agent."
+msgstr ""
+"{ph0}Oceń zweryfikowane wyniki rekonstrukcji pod względem czasu i "
+"kosztów.{ph1} Właśnie to chcę zmierzyć w przypadku pełnego przepływu pracy "
+"agenta AI."
+
+#: website/public/blog/reverse-engineering-models/index.html:241
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "In this article"
+msgstr "W tym artykule"
+
+#. {ph0}: <a href="#model-capability">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:243
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What better models changed{ph1}"
+msgstr "{ph0}Co zmieniły silniejsze modele{ph1}"
+
+#. {ph0}: <a href="#specialization">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:244
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Why specialize?{ph1}"
+msgstr "{ph0}Dlaczego się specjalizować?{ph1}"
+
+#. {ph0}: <a href="#repository-knowledge">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:245
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Where experience lives{ph1}"
+msgstr "{ph0}Gdzie należy przechowywać to doświadczenie?{ph1}"
+
+#. {ph0}: <a href="#learning-search">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:246
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Learning the next experiment{ph1}"
+msgstr "{ph0}Nauka kolejnego przydatnego eksperymentu{ph1}"
+
+#. {ph0}: <a href="#re-and-rl">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:247
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}RE and reinforcement learning{ph1}"
+msgstr "{ph0}Inżynieria odwrotna i uczenie się przez wzmacnianie{ph1}"
+
+#. {ph0}: <a href="#oracle">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:248
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}When the oracle is wrong{ph1}"
+msgstr "{ph0}Gdy osoba sprawdzająca myli się{ph1}"
+
+#. {ph0}: <a href="#comparison">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:249
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}A comparison worth running{ph1}"
+msgstr "{ph0}Porównanie warte przeprowadzenia{ph1}"
+
+#. {ph0}: <a href="#future-agent">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:250
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What kind of agent?{ph1}"
+msgstr "{ph0}Jakiego rodzaju agenta AI to sugeruje?{ph1}"
+
+#: website/public/blog/reverse-engineering-models/index.html:258
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What better models changed"
+msgstr "Co zmieniły silniejsze modele"
+
+#: website/public/blog/reverse-engineering-models/index.html:259
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Since August 2026, I have been exploring how much reverse engineering an "
+"agent can carry out with access to a program and a way to check its work. "
+"Most of my experience comes from reconstructing games, especially Touhou. As"
+" I have changed models, the repositories have kept a record of what each "
+"session managed to recover."
+msgstr ""
+"Od sierpnia 2026 roku badam, ile inżynierii wstecznej może dokonać agent "
+"mając dostęp do programu i możliwość sprawdzenia jego działania. Większość "
+"mojego doświadczenia pochodzi z rekonstrukcji gier, szczególnie Touhou. "
+"Ponieważ zmieniałem modele, repozytoria prowadziły rejestr tego, co udało "
+"się odzyskać w każdej sesji."
+
+#: website/public/blog/reverse-engineering-models/index.html:267
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of that work aims at exact reconstruction: we compile the maintained "
+"source under a pinned historical toolchain and check whether it reproduces "
+"the target function. When a later model succeeds where earlier work stalled,"
+" the source changes show what made that progress possible."
+msgstr ""
+"Duża część tych prac ma na celu dokładną rekonstrukcję: kompilujemy "
+"utrzymywane źródło w ramach historycznego zestawu narzędzi ze stałymi "
+"wersjami i sprawdzamy, czy odtwarza ono funkcję docelową. Kiedy późniejszy "
+"model odniesie sukces tam, gdzie wcześniejsze prace utknęły w martwym "
+"punkcie, zmiany źródłowe pokazują, co umożliwiło ten postęp."
+
+#: website/public/blog/reverse-engineering-models/index.html:274
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The temporary values had to stay alive together"
+msgstr "Zmienne tymczasowe wymagały nakładających się okresów istnienia"
+
+#: website/public/blog/reverse-engineering-models/index.html:275
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of a TH09 attack function's logic had already been reconstructed, but "
+"the compiler still stored temporary results differently from the original. "
+"The remaining problem was how long those results needed to stay alive and "
+"when their storage could be reused."
+msgstr ""
+"Duża część logiki funkcji ataku TH09 została już zrekonstruowana, ale "
+"kompilator nadal przechowywał tymczasowe wyniki inaczej niż oryginał. "
+"Pozostałym problemem było to, jak długo wyniki były potrzebne do zachowania "
+"żywotności i kiedy można było ponownie wykorzystać ich pamięć."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:282
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A {ph0}GPT-6-Sol checkpoint{ph1} recorded this mismatch after testing "
+"several ordinary source arrangements. When {ph2}GPT-6.1-Sol returned to the "
+"problem{ph3}, it found a useful hypothesis about how long those temporary "
+"values needed to stay alive."
+msgstr ""
+"{ph0}GPT-6-Sol rekord sesji{ph1} zgłosił tę niezgodność po przetestowaniu "
+"kilku zwykłych ustaleń kodu źródłowego. Kiedy {ph2}GPT-6.1-Sol ponownie "
+"zbadał problem{ph3}, zaproponował użyteczną hipotezę dotyczącą czasu życia "
+"tych zmiennych tymczasowych."
+
+#: website/public/blog/reverse-engineering-models/index.html:296
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The function produced temporary results and copied them into animation "
+"positions. In C++, a temporary result stays alive until the expression using"
+" it finishes. Grouping the real operations into one expression kept those "
+"results alive together, so the compiler could no longer reuse the same "
+"storage for all of them."
+msgstr ""
+"Funkcja wygenerowała tymczasowe wyniki i skopiowała je do pozycji animacji. "
+"W C++ tymczasowy wynik pozostaje aktywny aż do zakończenia wyrażenia, które "
+"go używa. Grupowanie rzeczywistych operacji w jedno wyrażenie utrzymywało te"
+" wyniki razem, więc kompilator nie mógł już ponownie używać tej samej "
+"pamięci dla nich wszystkich."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:303
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"One result still shared storage with a value used later for collision "
+"checks. Giving that value its own lifetime resolved the remaining overlap. "
+"After several targeted experiments, {ph0}a clean rebuild confirmed that the "
+"full function matched{ph1}."
+msgstr ""
+"Jeden wynik nadal współdzielił pamięć o wartości używanej później do "
+"sprawdzania kolizji. Nadanie tej wartości własnego czasu życia rozwiązało "
+"pozostałe nakładanie się. Po kilku ukierunkowanych eksperymentach "
+"{ph0}czysta rekompilacja ze źródła potwierdziła, że ​​pełna funkcja jest "
+"zgodna{ph1}."
+
+#: website/public/blog/reverse-engineering-models/index.html:312
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What interests me is how the discovery and the tests worked together. The "
+"lifetime hypothesis gave the agent a new direction; compiler feedback helped"
+" it refine that hypothesis into a source arrangement that matched."
+msgstr ""
+"Ciekawi mnie, jak odkrycie i testy wzajemnie się wspierały. Hipoteza "
+"dotycząca czasu życia obiektów tymczasowych nadała agentowi AI nowy "
+"kierunek. Informacje zwrotne od kompilatora pomogły mu udoskonalić tę "
+"hipotezę w celu uzyskania pasującego układu kodu źródłowego."
+
+#: website/public/blog/reverse-engineering-models/index.html:318
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A different control-flow graph"
+msgstr "Inny wykres przepływu sterowania"
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:319
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A second TH09 function shows why that new direction can matter. Here, the "
+"obstacle was how several branches shared their final work. "
+"{ph0}GPT-6.1-Sol's earlier work{ph1} got parts of the function to match, but"
+" the branches still joined up differently from the original."
+msgstr ""
+"Druga funkcja TH09 pokazuje, dlaczego ten nowy kierunek może mieć znaczenie."
+" Tutaj przeszkodą był sposób, w jaki kilka oddziałów podzieliło się swoją "
+"końcową pracą. We wcześniejszej pracy {ph0}GPT-6.1-Sol{ph1} części funkcji "
+"pasowały, ale gałęzie nadal łączyły się inaczej niż w oryginale."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:330
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}GPT-6-Astra changed the surrounding control-flow graph{ph1}. The main "
+"paths now led to a shared final update and return. In that source structure,"
+" the compiler combined the branches in the same way as the original. The "
+"complete function matched, and a {ph2}separate rebuild check confirmed "
+"it{ph3}."
+msgstr ""
+"{ph0}GPT-6-Astra zmienił otaczający wykres przepływu sterowania{ph1}. Główne"
+" ścieżki prowadziły teraz do wspólnej ostatecznej aktualizacji i powrotu. W "
+"tej strukturze źródłowej kompilator połączył gałęzie w taki sam sposób jak "
+"oryginał. Pełna funkcja została zgodna i {ph2}potwierdziła to osobna "
+"kontrola odbudowy{ph3}."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:342
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Changing the representation opened a more productive search space.{ph1}"
+" Both cases give me a reason to take general model capability seriously: an "
+"agent can keep trying local variations for a long time before finding a "
+"better way to express the surrounding work."
+msgstr ""
+"{ph0}Zmiana reprezentacji otworzyła bardziej produktywną przestrzeń "
+"poszukiwań.{ph1} Obydwa przypadki dają mi powód, aby poważnie traktować "
+"możliwości modelu ogólnego: agent może przez długi czas testować lokalne "
+"odmiany, zanim znajdzie lepszy sposób na wyrażenie otaczającej pracy."
+
+#: website/public/blog/reverse-engineering-models/index.html:351
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"At the same time, the later sessions started with earlier source and "
+"recorded failures. That accumulated work was part of their advantage. The "
+"history lets us inspect the discoveries and their checks; a controlled "
+"comparison would help separate the effect of the model from the experience "
+"it inherited."
+msgstr ""
+"Jednocześnie późniejsze sesje rozpoczynały się od wcześniejszych źródeł i "
+"odnotowanych awarii. Ta skumulowana praca była częścią ich przewagi. "
+"Historia pozwala nam na wgląd w odkrycia i ich sprawdzenie; kontrolowane "
+"porównanie pomogłoby oddzielić wpływ modelu od odziedziczonego przez niego "
+"doświadczenia."
+
+#: website/public/blog/reverse-engineering-models/index.html:358
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is where the question becomes interesting to me. Some of the progress "
+"came from finding a new representation, while much of the remaining work "
+"involved testing source forms against a familiar compiler. How much needs "
+"broad reasoning ability, and how much could a model learn through repeated "
+"experience with that compiler and code?"
+msgstr ""
+"Właśnie dlatego to pytanie jest dla mnie interesujące. Pewien postęp "
+"nastąpił po znalezieniu nowej reprezentacji. Większość pozostałej pracy "
+"polegała na testowaniu różnych rozwiązań kodu źródłowego w porównaniu ze "
+"znanym kompilatorem. Ile z tego wymaga szerokiej zdolności rozumowania? Ile "
+"model może się nauczyć, wielokrotnie pracując z tym kompilatorem i kodem?"
+
+#: website/public/blog/reverse-engineering-models/index.html:368
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why might a specialist do well?"
+msgstr ""
+"Dlaczego wyspecjalizowany model sztucznej inteligencji może się sprawdzić?"
+
+#: website/public/blog/reverse-engineering-models/index.html:369
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Touhou gives us a concrete reason to expect that experience to help. Much of"
+" the game code comes from the same author, ZUN, so recurring habits are a "
+"reasonable starting assumption. The repositories back that up with useful "
+"examples: related loops and helper arrangements have supplied hypotheses "
+"across games."
+msgstr ""
+"Touhou daje nam konkretny powód, aby oczekiwać, że to doświadczenie pomoże. "
+"Duża część kodu gry pochodzi od tego samego autora, ZUN, więc powtarzające "
+"się nawyki są rozsądnym założeniem wyjściowym. Repozytoria potwierdzają to "
+"przydatnymi przykładami: powiązane pętle i układy pomocnicze dostarczyły "
+"hipotez w różnych grach."
+
+#: website/public/blog/reverse-engineering-models/index.html:376
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those source patterns become more specific when we include the compiler. "
+"Under a particular version and set of options, small changes in source can "
+"produce repeatable differences in machine code. Some of those differences "
+"are surprisingly obscure."
+msgstr ""
+"Te wzorce źródłowe stają się bardziej szczegółowe, gdy dołączymy kompilator."
+" W przypadku określonej wersji i zestawu opcji niewielkie zmiany w źródle "
+"mogą powodować powtarzalne różnice w kodzie maszynowym. Niektóre z tych "
+"różnic są zaskakująco niejasne."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: <code>Supervisor::LoadDat</code>
+#. {ph4}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:382
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In TH095, for example, {ph0}even the name used for a local variable could "
+"change where VC7.1 stored it{ph1}. Moving the declaration alone did not "
+"solve the layout, but an earlier background function had revealed a naming "
+"pattern that affected the compiler's choice. That gave us a more promising "
+"hypothesis for {ph2}the reconstruction of {ph3}{ph4}."
+msgstr ""
+"Na przykład w TH095 {ph0}nawet nazwa zmiennej lokalnej może mieć wpływ na "
+"miejsce przechowywania jej przez VC7.1{ph1}. Przeniesienie deklaracji nie "
+"rozwiązało układu przechowywania. Jednak wcześniejsza funkcja tła ujawniła "
+"wzorzec nazewnictwa, który wpłynął na wybór kompilatora. Sugerowało to "
+"bardziej obiecującą hipotezę dotyczącą {ph2}rekonstrukcji {ph3}{ph4}."
+
+#: website/public/blog/reverse-engineering-models/index.html:396
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reusing that pattern for the file-size variable produced the required layout"
+" without adding storage. The full function then matched."
+msgstr ""
+"Ponowne użycie tego wzorca dla zmiennej rozmiaru pliku pozwoliło uzyskać "
+"wymagany układ bez dodawania pamięci. Pełna funkcja została wówczas "
+"dopasowana."
+
+#: website/public/blog/reverse-engineering-models/index.html:401
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is the sort of narrow detail a general model may not know when it "
+"arrives. A specialist trained on this compiler could encounter many such "
+"cases and learn which source variations are worth testing first."
+msgstr ""
+"Jest to bardzo specyficzny szczegół, o którym model sztucznej inteligencji "
+"ogólnego przeznaczenia może nie wiedzieć, kiedy po raz pierwszy napotka "
+"problem. Model wyspecjalizowany dla tego kompilatora mógłby zobaczyć wiele "
+"takich przypadków i dowiedzieć się, które odmiany kodu źródłowego warto "
+"przetestować w pierwszej kolejności."
+
+#: website/public/blog/reverse-engineering-models/index.html:407
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The opportunity is especially clear in final matching problems where we "
+"already understand the behavior. We are then asking which ordinary source "
+"form this compiler turns into the observed instructions. Specialization "
+"could help the model propose those forms more efficiently, while the target "
+"still determines which hypotheses survive."
+msgstr ""
+"Możliwość jest szczególnie wyraźna w przypadku końcowych problemów z "
+"dopasowywaniem, w których już rozumiemy zachowanie. Następnie pytamy, jaki "
+"zwykły układ kodu źródłowego ten kompilator przekształca w obserwowane "
+"instrukcje. Specjalizacja może pomóc modelowi w skuteczniejszym proponowaniu"
+" tych form, podczas gdy cel nadal określa, które hipotezy przetrwają."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:415
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The useful patterns would have to retain their context, though. TH08 uses an"
+" earlier Visual C++ version than TH095 and TH09. TH04 uses a different DOS-"
+"era compiler, and its {ph0}player reconstruction{ph1} needed different "
+"hypotheses about source patterns and how the compiled code was combined into"
+" an executable. Shared authorship gives us a prior, but each target tells us"
+" whether it applies. Distinguishing those contexts is part of what a "
+"specialist would need to learn."
+msgstr ""
+"Przydatne wzorce muszą zachować swój kontekst. TH08 używa wcześniejszej "
+"wersji Visual C++ niż TH095 i TH09. TH04 używa innego kompilatora z ery "
+"DOS-u. Do jego {ph0}rekonstrukcji kodu gracza{ph1} potrzebne były różne "
+"hipotezy dotyczące wzorców kodu źródłowego i sposobu łączenia skompilowanego"
+" kodu z plikiem wykonywalnym. Posiadanie tego samego autora daje nam wstępne"
+" oczekiwania, ale każdy cel mówi nam, czy ma to zastosowanie. Aby rozróżnić "
+"te konteksty, potrzebny byłby wyspecjalizowany model."
+
+#: website/public/blog/reverse-engineering-models/index.html:431
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Where should that experience live?"
+msgstr "Gdzie należy przechowywać to doświadczenie?"
+
+#. {ph0}: <a href="../touhou-reconstruction/">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:432
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before deciding to teach those patterns through model training, I would look"
+" at the knowledge we already keep in the repository. In the {ph0}previous "
+"essay{ph1}, I wrote about it becoming the project's working memory. That "
+"memory includes compiler lessons, along with the source and failed "
+"experiments that made them useful."
+msgstr ""
+"Zanim zdecydowałbym się uczyć tych wzorców poprzez szkolenie modelowe, "
+"sprawdziłbym wiedzę, którą już przechowujemy w repozytorium. W "
+"{ph0}poprzednim eseju{ph1} pisałem, że stanie się ona pamięcią roboczą "
+"projektu. Pamięć ta obejmuje lekcje kompilatora wraz ze źródłem i nieudanymi"
+" eksperymentami, które uczyniły je użytecznymi."
+
+#: website/public/blog/reverse-engineering-models/index.html:441
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"By retrieving that record, an agent can start with a known result and "
+"inspect how we reached it. It can also avoid alternatives that have already "
+"failed in the same context. The starting point improves without changing the"
+" model's weights."
+msgstr ""
+"Pobierając ten rekord, agent może zacząć od znanego wyniku i sprawdzić, w "
+"jaki sposób do niego dotarliśmy. Można również uniknąć alternatyw, które już"
+" zawiodły w tym samym kontekście. Punkt początkowy poprawia się bez zmiany "
+"przeszkolonych parametrów modelu."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:447
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"When reconstructing TH09's enemy-spawn function, a {ph0}GPT-6-Luna-max "
+"session{ph1} drew a hypothesis from TH08's corresponding source family. That"
+" earlier source suggested how to structure the loop and handle failures "
+"within it. TH09's own evidence supplied the game-specific details, and clean"
+" rebuilds confirmed the complete match."
+msgstr ""
+"Podczas rekonstrukcji funkcji TH09 służącej do tworzenia wrogów, podczas "
+"{ph0}GPT-6-Luna-max sesji{ph1} przyjęto hipotezę z powiązanego kodu "
+"źródłowego TH08. Ten wcześniejszy kod sugerował, jak zorganizować pętlę i "
+"poradzić sobie z błędami w niej występującymi. Zeznania TH09 dostarczyły "
+"szczegółów specyficznych dla gry. Przebudowa ze źródła potwierdziła, że "
+"​​cała funkcja jest zgodna."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:458
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}\"The model did not know that compiler quirk\" and \"the model could "
+"not use it\" are different problems.{ph1} Retrieval may solve the first, but"
+" turning that fact into a useful candidate still takes work. And if the "
+"candidate fails, the model must decide what the result means for its next "
+"attempt. Knowing the relevant pattern is only the beginning of that process."
+msgstr ""
+"{ph0}„Model nie wiedział, że dziwactwo kompilatora” i „model nie mógł go "
+"użyć” to różne problemy.{ph1} Pobranie może rozwiązać pierwszy, ale "
+"przekształcenie tego faktu w użyteczną kandydaturę nadal wymaga pracy. A "
+"jeśli potencjalny kod źródłowy zawiedzie, model musi zdecydować, co oznacza "
+"wynik przy następnej próbie. Znajomość odpowiedniego wzorca to dopiero "
+"początek tego procesu."
+
+#: website/public/blog/reverse-engineering-models/index.html:468
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For that reason, I would include a smaller general model with good retrieval"
+" in any comparison. Giving it the same library of experience would help us "
+"identify what training adds: better candidate generation, better decisions "
+"after feedback, or both."
+msgstr ""
+"Z tego powodu do każdego porównania uwzględniłbym mniejszy model sztucznej "
+"inteligencji ogólnego przeznaczenia z dobrym wyszukiwaniem. Zapewnienie tej "
+"samej biblioteki doświadczeń pomogłoby nam określić, co wnosi szkolenie: "
+"lepsze generowanie kandydatów, lepsze decyzje po otrzymaniu informacji "
+"zwrotnej lub jedno i drugie."
+
+#: website/public/blog/reverse-engineering-models/index.html:476
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Learning the next useful experiment"
+msgstr "Nauka kolejnego przydatnego eksperymentu"
+
+#: website/public/blog/reverse-engineering-models/index.html:477
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those decisions after feedback are what I would most like to study. In "
+"agentic reconstruction, the model proposes an explanation and tests it "
+"against the program. Even when the candidate fails, the result can narrow "
+"the remaining possibilities and suggest a more useful next experiment."
+msgstr ""
+"Najbardziej chciałbym się uczyć tych decyzji po otrzymaniu informacji "
+"zwrotnej. W rekonstrukcji agentowej model proponuje wyjaśnienie i testuje je"
+" w porównaniu z programem. Nawet jeśli potencjalny kod źródłowy zawiedzie, "
+"wynik może zawęzić pozostałe możliwości i zasugerować bardziej przydatny "
+"następny eksperyment."
+
+#: website/public/blog/reverse-engineering-models/index.html:484
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Consider the temporary-results example again. Its final source shows the "
+"arrangement that worked, but the route to that source contains more "
+"information. Each of the following experiments helped identify what still "
+"needed to change."
+msgstr ""
+"Rozważmy ponownie przykład wyników tymczasowych. Ostateczne źródło pokazuje "
+"układ, który zadziałał, ale trasa do tego źródła zawiera więcej informacji. "
+"Każdy z poniższych eksperymentów pomógł określić, co należy jeszcze zmienić."
+
+#: website/public/blog/reverse-engineering-models/index.html:497
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Experiment"
+msgstr "Eksperyment"
+
+#: website/public/blog/reverse-engineering-models/index.html:498
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What its result taught us"
+msgstr "Czego nauczył nas jego wynik"
+
+#: website/public/blog/reverse-engineering-models/index.html:503
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Try a different way to copy the results"
+msgstr "Wypróbuj inny sposób kopiowania wyników"
+
+#: website/public/blog/reverse-engineering-models/index.html:504
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The copy code changes, but the function still differs."
+msgstr "Kod kopiowania zmienia się, ale funkcja nadal jest inna."
+
+#: website/public/blog/reverse-engineering-models/index.html:509
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Use the returned values directly"
+msgstr "Użyj bezpośrednio zwróconych wartości"
+
+#: website/public/blog/reverse-engineering-models/index.html:510
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Copying follows the original pattern, but temporary storage still differs."
+msgstr ""
+"Kopiowanie odbywa się według oryginalnego wzorca, ale przechowywanie "
+"tymczasowe nadal się różni."
+
+#: website/public/blog/reverse-engineering-models/index.html:516
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the temporary results alive together"
+msgstr "Zachowaj ważność wszystkich zmiennych tymczasowych w tym samym czasie"
+
+#: website/public/blog/reverse-engineering-models/index.html:517
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"They get separate storage, but one still overlaps a value used later for "
+"collision checks."
+msgstr ""
+"Dostają oddzielną pamięć, ale jedna z nich nadal pokrywa się z wartością "
+"używaną później do sprawdzania kolizji."
+
+#: website/public/blog/reverse-engineering-models/index.html:523
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the collision-check value separate"
+msgstr "Zachowaj wartość kontroli kolizji oddzielnie"
+
+#: website/public/blog/reverse-engineering-models/index.html:524
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A clean rebuild confirms the complete match."
+msgstr "Czysta rekompilacja ze źródła potwierdza pełne dopasowanie."
+
+#: website/public/blog/reverse-engineering-models/index.html:529
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Selected experiments from the attack-function reconstruction above, grouped "
+"by what they taught us."
+msgstr ""
+"Wybrane eksperymenty z powyższej rekonstrukcji funkcji ataku, pogrupowane "
+"według tego, czego nas nauczyły."
+
+#: website/public/blog/reverse-engineering-models/index.html:533
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A training record that keeps this sequence can teach more than the final "
+"source alone. It connects each proposed change to an observed result and the"
+" next decision. Keeping ineffective variations matters too: they tell a "
+"later agent which hypotheses have already been tested in that context."
+msgstr ""
+"Zapis szkoleniowy zachowujący tę sekwencję może nauczyć więcej niż samo "
+"ostateczne źródło. Łączy każdą proponowaną zmianę z zaobserwowanym "
+"rezultatem i następną decyzją. Utrzymywanie nieefektywnych odmian również ma"
+" znaczenie: informują późniejszego agenta, które hipotezy zostały już "
+"przetestowane w tym kontekście."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:540
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}I would want the model to learn how to use feedback.{ph1} A neutral "
+"result is a reason to reconsider the variation; a changed mismatch may point"
+" to another cause. When local edits stop being informative, the agent should"
+" be able to revisit the source representation or inspect the evidence again."
+msgstr ""
+"{ph0}Chciałbym, żeby model nauczył się korzystać ze informacji "
+"zwrotnej.{ph1} Neutralny wynik jest powodem do ponownego rozważenia odmiany;"
+" zmieniona niezgodność może wskazywać na inną przyczynę. Kiedy lokalne "
+"zmiany przestaną mieć charakter informacyjny, agent powinien mieć możliwość "
+"ponownego przejrzenia reprezentacji źródłowej lub ponownego sprawdzenia "
+"dowodów."
+
+#: website/public/blog/reverse-engineering-models/index.html:549
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Learning to make those choices requires autonomy. Sometimes the useful next "
+"step is inspecting another caller rather than compiling another edit. A "
+"rigid sequence of required rewrites would remove that choice, along with "
+"part of the behavior we want the model to learn."
+msgstr ""
+"Nauka dokonywania takich wyborów wymaga autonomii. Czasami przydatnym "
+"następnym krokiem jest sprawdzenie innego obiektu wywołującego, zamiast "
+"kompilowania kolejnej edycji. Sztywna sekwencja wymaganych przeróbek usunie "
+"ten wybór wraz z częścią zachowań, których ma się nauczyć model."
+
+#: website/public/blog/reverse-engineering-models/index.html:558
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why RE is interesting for reinforcement learning"
+msgstr ""
+"Dlaczego inżynieria odwrotna jest interesująca w uczeniu się przez "
+"wzmacnianie"
+
+#: website/public/blog/reverse-engineering-models/index.html:559
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Bounded reconstruction gives us a practical environment for studying these "
+"choices. Once the target and compiler are pinned, many source experiments "
+"produce quick, repeatable feedback. The agent can compile a candidate, "
+"inspect the mismatch and use that observation to choose its next step."
+msgstr ""
+"Rekonstrukcja o ustalonym zakresie daje praktyczne środowisko do badania "
+"tych decyzji. Po ustaleniu wersji celu i kompilatora wiele eksperymentów z "
+"kodem źródłowym zapewnia szybką, powtarzalną informację zwrotną. Agent może "
+"skompilować kandydata, sprawdzić różnice i wybrać następny krok."
+
+#: website/public/blog/reverse-engineering-models/index.html:566
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reinforcement learning could train that decision-making process through the "
+"feedback it receives. A candidate accepted by a defined check gives us a "
+"concrete outcome, while the sequence of attempts lets us observe how much "
+"work it took to reach it."
+msgstr ""
+"Uczenie się przez wzmacnianie mogłoby szkolić proces podejmowania decyzji na"
+" podstawie otrzymywanych informacji zwrotnych. Kandydat przyjęty przez "
+"określony sprawdzian daje nam konkretny wynik, a sekwencja prób pozwala "
+"zaobserwować, ile pracy wymagało jego osiągnięcie."
+
+#. {ph0}: <a href="https://aclanthology.org/2024.emnlp-main.203/" >
+#. {ph1}: </a >
+#. {ph2}: <a href="https://arxiv.org/html/2606.16162v1">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:572
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"There is already research supporting this direction. {ph0}LLM4Decompile{ph1}"
+" studies models specialized for decompilation. {ph2}AutoDecompiler{ph3} "
+"trains multi-turn refinement using compiler and execution feedback. Their "
+"studies focus on functional recovery. For this work, I would use them as a "
+"starting point for the related task of finding source that matches a "
+"historical compiler's output."
+msgstr ""
+"Istnieją już badania potwierdzające ten kierunek. {ph0}LLM4Decompile{ph1} "
+"bada modele wyspecjalizowane w dekompilacji. {ph2}AutoDecompiler{ph3} "
+"trenuje udoskonalanie w wielu turach, korzystając z informacji zwrotnych od "
+"kompilatora i wykonania. Ich badania skupiają się na odzyskaniu funkcji. W "
+"tej pracy użyłbym ich jako punktu wyjścia do powiązanego zadania "
+"polegającego na znalezieniu źródła, które pasuje do danych wyjściowych "
+"historycznego kompilatora."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:584
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To reach such a well-defined task, though, we may first need to establish "
+"what a function owns or devise a new runtime measurement. In TH08, for "
+"example, a {ph0}collision difference led back to how the original program "
+"handled floating-point calculations{ph1}. Before the agent could test a "
+"useful correction, it had to work out what to measure."
+msgstr ""
+"Aby jednak osiągnąć tak dobrze zdefiniowane zadanie, być może będziemy "
+"musieli najpierw ustalić, jakie zasoby posiada funkcja, lub opracować nowy "
+"sposób obserwowania zachowania programu podczas wykonania. Na przykład w "
+"TH08 {ph0}różnica kolizji doprowadziła do tego, jak oryginalny program "
+"obsługiwał obliczenia zmiennoprzecinkowe{ph1}. Zanim agent mógł przetestować"
+" użyteczną korektę, musiał ustalić, co należy zmierzyć."
+
+#: website/public/blog/reverse-engineering-models/index.html:595
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This suggests another role for a broadly capable model: helping make the "
+"problem checkable in the first place. Once that check exists, we can "
+"investigate how far a learned search policy can get with it."
+msgstr ""
+"Sugeruje to inną rolę modelu o szerokich możliwościach: przede wszystkim "
+"pomoc w sprawdzeniu problemu. Gdy już to sprawdzimy, będziemy mogli "
+"sprawdzić, jak daleko może zajść w tym przypadku wyuczona polityka "
+"wyszukiwania."
+
+#: website/public/blog/reverse-engineering-models/index.html:603
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "When the oracle is wrong"
+msgstr "Gdy osoba sprawdzająca myli się"
+
+#: website/public/blog/reverse-engineering-models/index.html:604
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Once we train against that check, its coverage becomes part of what the "
+"model learns. I call the reference or checker an oracle. Even if it gives a "
+"repeatable answer, we still need to understand what that answer covers."
+msgstr ""
+"Gdy używamy sprawdzania podczas uczenia, jego zakres staje się częścią "
+"środowiska uczenia. Taki wzorzec lub moduł sprawdzający nazywam wyrocznią. "
+"Nawet powtarzalną odpowiedź trzeba rozumieć w granicach tego, co "
+"rzeczywiście sprawdza."
+
+#: website/public/blog/reverse-engineering-models/index.html:610
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"TH08 showed how much can hide outside that coverage. Some reconstructed "
+"functions passed their exact comparisons with wrong floating constants. The "
+"comparator adjusted relocated addresses before checking instructions, but it"
+" checked the values behind those addresses only when they had been "
+"explicitly recorded for verification. Other literal references could pass "
+"without their values being examined."
+msgstr ""
+"TH08 pokazał, jak wiele może ukryć się poza tym zasięgiem. Niektóre "
+"zrekonstruowane funkcje przeszły dokładne porównania z nieprawidłowymi "
+"stałymi zmiennoprzecinkowymi. Komparator korygował przeniesione adresy przed"
+" sprawdzeniem instrukcji, ale sprawdzał wartości za tymi adresami tylko "
+"wtedy, gdy zostały one wyraźnie zapisane w celu weryfikacji. Inne dosłowne "
+"odniesienia można pominąć bez sprawdzania ich wartości."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <code>1.0f</code>
+#. {ph3}: <code>32.0f</code>
+#: website/public/blog/reverse-engineering-models/index.html:619
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To close that gap, a {ph0}wider audit{ph1} found incorrect constants in "
+"functions that had already been accepted. In one calculation, the "
+"reconstructed source added {ph2} where the original added {ph3}."
+msgstr ""
+"Aby zaradzić tej luce, {ph0}szerszy audyt{ph1} wykrył nieprawidłowe stałe w "
+"funkcjach, które przeszły już weryfikację. W jednym obliczeniu do "
+"zrekonstruowanego kodu źródłowego dodano {ph2}, podczas gdy w oryginale "
+"dodano {ph3}."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:629
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A learner rewarded by the old check could learn to produce the wrong "
+"reconstruction.{ph1} We had not trained an RL model against this oracle; the"
+" observed failure was in the check itself. But using that check as a reward "
+"would have made the same blind spot part of the learning environment."
+msgstr ""
+"{ph0}Model nagrodzony starym testem weryfikacyjnym mógłby nauczyć się "
+"tworzyć niepoprawną rekonstrukcję.{ph1} Nie trenowaliśmy modelu RL przy "
+"użyciu tego modułu sprawdzającego. Niepowodzenie, które zaobserwowaliśmy, "
+"dotyczyło samego sprawdzenia. Ale gdybyśmy użyli tego jako nagrody, ten sam "
+"martwy punkt stałby się częścią środowiska uczenia się."
+
+#. {ph0}: <a href="https://arxiv.org/html/2609.05370v1" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:639
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A functional test can have a similar blind spot. {ph0}Differential-fuzzing "
+"research on LLM decompilers{ph1} has found behavior differences beyond the "
+"supplied tests. Passing those tests therefore needs to be read in terms of "
+"the cases they exercise, just as an instruction match needs to be read in "
+"terms of the bytes and data it checks."
+msgstr ""
+"Test funkcjonalny może mieć podobny martwy punkt. {ph0}Badania "
+"wykorzystujące różnicowe rozmycie w dekompilatorach LLM{ph1} wykazały "
+"różnice w zachowaniu poza dostarczonymi testami. Dlatego też musimy rozumieć"
+" zdanie egzaminu w kategoriach przypadków, w których występuje. Podobnie "
+"dopasowanie instrukcji należy rozumieć w kategoriach bajtów i danych, które "
+"sprawdza."
+
+#: website/public/blog/reverse-engineering-models/index.html:649
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before using either kind of check as a reward, I would test it with "
+"deliberate failures. I would also keep final acceptance outside the "
+"candidate's editable source, so the model has to satisfy the check through "
+"its reconstruction. Otherwise, something like a byte array copied from the "
+"target could satisfy a naive score without recovering useful source."
+msgstr ""
+"Zanim użyję jakiegokolwiek rodzaju kontroli weryfikacyjnej jako nagrody, "
+"przetestowałbym ją z celowo błędnymi wynikami. Chciałbym również, aby "
+"ostateczna akceptacja była oddzielona od kodu źródłowego, który agent AI "
+"może edytować. Model musi przejść weryfikację poprzez poprawną rekonstrukcję"
+" programu. W przeciwnym razie zwykłe skopiowanie tablicy bajtów z celu może "
+"oszukać naiwny system oceniania bez odzyskiwania przydatnego kodu "
+"źródłowego."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:657
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Improving the learner and improving its oracle belong to the same "
+"research problem.{ph1} As the learner gets better at optimizing the feedback"
+" we give it, understanding that feedback becomes more important too."
+msgstr ""
+"{ph0}Ulepszanie modelu i ulepszanie jego modułu sprawdzającego należą do "
+"tego samego problemu badawczego.{ph1} Im lepiej model optymalizuje "
+"otrzymywaną informację zwrotną, tym ważniejsze jest zrozumienie tej "
+"informacji."
+
+#: website/public/blog/reverse-engineering-models/index.html:667
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A comparison worth running"
+msgstr "Porównanie warte przeprowadzenia"
+
+#: website/public/blog/reverse-engineering-models/index.html:668
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"With those checks in place, I would start the comparison on a fixed VC7.1 "
+"task family. First, I would establish baselines for a strong general model "
+"and a smaller one. Adding repository knowledge to the smaller model would "
+"show what retrieval changes. From there, supervised specialization and an "
+"RL-trained version would let us examine what training adds."
+msgstr ""
+"Mając te kontrole, rozpocząłbym porównanie od ustalonej rodziny zadań VC7.1."
+" Najpierw ustaliłbym podstawy dla silnego modelu sztucznej inteligencji "
+"ogólnego przeznaczenia i mniejszego. Dodanie wiedzy o repozytorium do "
+"mniejszego modelu pokazałoby, jakie zmiany w pobieraniu. Następnie "
+"nadzorowana specjalizacja i wersja przeszkolona przez RL pozwolą nam "
+"sprawdzić, co dodaje szkolenie."
+
+#: website/public/blog/reverse-engineering-models/index.html:676
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To make those comparisons informative, each model would receive the same "
+"target evidence and tools. For the training-specific comparisons, I would "
+"keep the base model and available knowledge fixed as well. Repeated trials "
+"would help distinguish a reliable search strategy from a lucky candidate."
+msgstr ""
+"Aby porównania te miały charakter informacyjny, każdy model otrzymałby te "
+"same docelowe dowody i narzędzia. W przypadku porównań specyficznych dla "
+"szkoleń zachowałbym również stały model podstawowy i dostępną wiedzę. "
+"Powtarzane próby pomogłyby odróżnić niezawodną strategię wyszukiwania od "
+"potencjalnego rozwiązania, które odniosło sukces przez przypadek."
+
+#: website/public/blog/reverse-engineering-models/index.html:683
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would then separate two starting conditions: reconstructing a function "
+"from its instructions, and closing the last few differences in maintained "
+"source. A specialist might be excellent at the second task while a general "
+"model does much of the work needed to reach it. Measuring them separately "
+"would reveal that division of work."
+msgstr ""
+"Następnie oddzieliłbym dwa warunki początkowe: rekonstrukcję funkcji na "
+"podstawie jej instrukcji i zamknięcie kilku ostatnich różnic w utrzymywanym "
+"źródle. Wyspecjalizowany model sztucznej inteligencji może doskonale "
+"sprawdzić się w drugim zadaniu, podczas gdy model sztucznej inteligencji "
+"ogólnego przeznaczenia wykonuje większość pracy potrzebnej do jego "
+"osiągnięcia. Zmierzenie ich osobno ujawniłoby ten podział pracy."
+
+#: website/public/blog/reverse-engineering-models/index.html:691
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both tasks need genuinely held-out examples. Because related Touhou games "
+"share engine code, holding out a game's name would still allow nearly "
+"identical functions to appear in training. I would instead hold out source "
+"families and keep their accepted answers out of both training and retrieval."
+msgstr ""
+"Obydwa zadania wymagają przykładów testowych wyłączonych ze szkolenia i "
+"wyszukiwania. Powiązane gry Touhou udostępniają kod silnika. Wykluczenie "
+"jednej gry z treningu może w dalszym ciągu pozostawić prawie identyczne "
+"funkcje w zbiorze treningowym. Zamiast tego wykluczyłbym całe grupy "
+"powiązanego kodu źródłowego i trzymał ich zweryfikowane odpowiedzi poza "
+"danymi szkoleniowymi i biblioteką pobierania."
+
+#: website/public/blog/reverse-engineering-models/index.html:698
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"On those examples, the outcome would be complete, independently validated "
+"matches. Giving each model the same candidate or compile budget would help "
+"compare search quality. Measuring elapsed time and total cost, including "
+"compilation, would tell us whether that quality produces an efficient "
+"workflow. Training costs would need their own accounting too."
+msgstr ""
+"W przypadku tych przykładów wynikiem będą kompletne, niezależnie "
+"zweryfikowane dopasowania. Równe budżety na propozycje kandydatów lub próby "
+"kompilacji pomogłyby w porównaniu jakości wyszukiwania. Pomiar całkowitego "
+"czasu i kosztów, w tym kompilacji, pokazałby, czy ta jakość zapewnia "
+"efektywny przepływ pracy. Koszty szkoleń należy mierzyć osobno."
+
+#: website/public/blog/reverse-engineering-models/index.html:706
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both views matter because a cheaper proposal can become an expensive "
+"workflow if it causes more uninformative compiles. Conversely, a slower "
+"model may pay for itself by finding a useful experiment sooner. The "
+"comparison should capture those costs."
+msgstr ""
+"Obydwa pomiary mają znaczenie. Tania propozycja może prowadzić do "
+"kosztownego przepływu pracy, jeśli powoduje więcej kompilacji, które nie "
+"dostarczają żadnych przydatnych informacji. I odwrotnie, wolniejszy model "
+"może być bardziej ekonomiczny, jeśli wcześniej znajdzie przydatny "
+"eksperyment. Porównanie powinno uwzględniać te koszty."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:712
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Counting accepted results also keeps intermediate progress in perspective. "
+"One TH09 {ph0}replay-save candidate{ph1} looked promising because the "
+"compiled function had the expected size, but a full comparison still found "
+"substantial differences. Changes in how the compiler arranges instructions "
+"can also make a candidate look closer without resolving the underlying "
+"problem. Such diagnostics can guide the next experiment, but I would "
+"validate any reward for \"getting closer\" against the full acceptance "
+"check."
+msgstr ""
+"Liczenie zaakceptowanych wyników pozwala również zachować perspektywę "
+"postępu pośredniego. Jeden TH09 {ph0}kandydat do zapisania powtórki{ph1} "
+"wyglądał obiecująco, ponieważ skompilowana funkcja miała oczekiwany rozmiar,"
+" ale pełne porównanie nadal wykazało znaczne różnice. Zmiany w sposobie, w "
+"jaki kompilator organizuje instrukcje, mogą również sprawić, że kandydat "
+"wydaje się bliższy celowi bez rozwiązania podstawowego problemu. Taka "
+"diagnostyka może pomóc w kolejnym eksperymencie, ale każdą nagrodę za "
+"„zbliżenie się” porównałbym z pełną kontrolą akceptacji."
+
+#: website/public/blog/reverse-engineering-models/index.html:727
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would be interested in the pattern across these results. If a specialist "
+"does well within a familiar compiler family, does that advantage survive a "
+"toolchain change? And once both models have good retrieval, how much does "
+"training still add? The answers would help us decide where each kind of "
+"model is most useful."
+msgstr ""
+"Byłbym zainteresowany wzorcem tych wyników. Jeśli wyspecjalizowany model "
+"sztucznej inteligencji radzi sobie dobrze w znanej rodzinie kompilatorów, "
+"czy ta zaleta przetrwa zmianę w zestawie narzędzi? A kiedy oba modele "
+"sztucznej inteligencji będą dobrze odzyskiwane, ile jeszcze doda szkolenie? "
+"Odpowiedzi pomogłyby nam zdecydować, gdzie każdy rodzaj modelu jest "
+"najbardziej przydatny."
+
+#: website/public/blog/reverse-engineering-models/index.html:736
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What kind of agent does this suggest?"
+msgstr "Jakiego rodzaju agenta AI to sugeruje?"
+
+#: website/public/blog/reverse-engineering-models/index.html:737
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"If the models turn out to help at different stages, a useful arrangement "
+"might be a broad agent with access to a specialist. Once a task becomes a "
+"familiar compiler search, it could ask the specialist for candidates. If the"
+" results stop making sense, the broader agent could return to the target "
+"evidence or investigate the measurement itself."
+msgstr ""
+"Jeśli modele pomagają na różnych etapach, przydatny może być agent ogólny z "
+"dostępem do modelu specjalistycznego. Gdy zadanie sprowadza się do znanego "
+"problemu z kompilatorem, może poprosić specjalistę o kandydatów. Jeśli "
+"wyniki przestają mieć sens, agent ogólny może wrócić do danych celu albo "
+"zbadać sam pomiar."
+
+#: website/public/blog/reverse-engineering-models/index.html:745
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In that arrangement, specialization becomes a tool the agent can choose as "
+"the investigation develops. The agent keeps the freedom to change direction "
+"that made the earlier breakthroughs possible."
+msgstr ""
+"W takim układzie specjalizacja staje się narzędziem, które agent może wybrać"
+" w miarę rozwoju dochodzenia. Agent zachowuje swobodę zmiany kierunku, co "
+"umożliwiło wcześniejsze przełomy."
+
+#: website/public/blog/reverse-engineering-models/index.html:750
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This follows naturally from the industrial shift I described in the previous"
+" essay. Being able to run many more experiments changes how we organize the "
+"work. It also gives us a reason to ask which decisions need broad judgment "
+"and which improve through repeated experience with a particular craft."
+msgstr ""
+"Wynika to naturalnie z przemian w przemyśle, które opisałem w poprzednim "
+"eseju. Możliwość przeprowadzenia znacznie większej liczby eksperymentów "
+"zmienia sposób organizacji pracy. Daje nam to również powód, aby zadać sobie"
+" pytanie, które decyzje wymagają szerokiego osądu, a które można poprawić "
+"dzięki wielokrotnemu doświadczeniu z konkretnym rzemiosłem."
+
+#: website/public/blog/reverse-engineering-models/index.html:757
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For now, the strongest general model has earned its place in my workflow by "
+"opening problems I had left unresolved. Those successes are what make me "
+"want to examine the work more closely: how much depended on the model's "
+"breadth, and how much could be handled by a model trained in this particular"
+" kind of reconstruction?"
+msgstr ""
+"Na razie najsilniejszy model ogólny zasłużył na miejsce w moim przepływie "
+"pracy, rozwiązując problemy, których wcześniej nie rozwiązałem. Te sukcesy "
+"skłaniają mnie do zbadania procesu: jaka część zależała od szerokości jego "
+"możliwości, a jaką mógłby wykonać model uczony specjalnie do takiej "
+"rekonstrukcji?"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:765
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}The repositories give us a way to test the question.{ph1} I would like "
+"to use that record to build the comparison and see what we learn."
+msgstr ""
+"{ph0}Repozytoria umożliwiają nam przetestowanie pytania.{ph1} Chciałbym użyć"
+" tego rekordu do stworzenia porównania i zobaczenia, czego się dowiemy."
+
+#: website/public/blog/reverse-engineering-models/index.html:775
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Evidence and model attribution"
+msgstr "Dowody i modelowe przypisanie"
+
+#: website/public/blog/reverse-engineering-models/index.html:783
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The examples describe historical function-level comparisons recorded in the "
+"linked commits. Whole-game runtime checks are separate milestones. Source "
+"and matching records were reviewed on 13 October 2026."
+msgstr ""
+"Przykłady opisują historyczne porównania poziomów funkcji zarejestrowane w "
+"połączonych zatwierdzeniach. Sprawdzanie czasu działania całej gry to osobne"
+" kamienie milowe. Dokumenty źródłowe i pasujące sprawdzono 13 października "
+"2026 r."
+
+#. {ph0}: <code>gpt-dots</code>
+#. {ph1}: <code>gpt-web</code>
+#: website/public/blog/reverse-engineering-models/index.html:789
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The TH09 label {ph0} identifies GPT-6-Astra. {ph1} changed with the model "
+"used at the time, so that label alone does not identify an individual run. "
+"Explicit model names in the other cited commits establish their recorded "
+"attribution; the histories do not contain uniform per-run cost or effort "
+"measurements."
+msgstr ""
+"Etykieta TH09 {ph0} oznacza GPT-6-Astra. Model powiązany z {ph1} zmieniał "
+"się z biegiem czasu, więc sama etykieta nie może zidentyfikować modelu "
+"użytego w konkretnym przebiegu. Wyraźne nazwy modeli w innych cytowanych "
+"zatwierdzeniach zapewniają zarejestrowaną atrybucję. Historie te nie "
+"obejmują spójnych pomiarów kosztów i wysiłku dla każdego przebiegu."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph5}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:798
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 temporary lifetimes:{ph1} the {ph2}earlier context review{ph3} and"
+" {ph4}complete cold reconstruction{ph5}."
+msgstr ""
+"{ph0}TH09 okresy istnienia obiektów tymczasowych:{ph1} {ph2}wcześniejszy "
+"przegląd kontekstu{ph3} i {ph4}pełna rekonstrukcja zweryfikowana przez "
+"czystą rekompilację ze źródła{ph5}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:810
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 Front callback:{ph1} {ph2}non-exact diagnostic regions{ph3}, "
+"{ph4}Astra's new graph{ph5} and its {ph6}accepted recompile replay{ph7}."
+msgstr ""
+"{ph0}Callback Front w TH09:{ph1} {ph2}obszary diagnostyczne bez pełnej "
+"zgodności{ph3}, {ph4}nowy graf przepływu sterowania Astry{ph5} i "
+"{ph6}zaakceptowane sprawdzenie ponownej kompilacji{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:826
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Compiler knowledge:{ph1} {ph2}TH095 identifier-bucket reuse{ph3}, "
+"{ph4}TH04 player source and linker order{ph5} and {ph6}Luna's TH09 enemy-"
+"spawn closure{ph7}."
+msgstr ""
+"{ph0}Wiedza o kompilatorze:{ph1} {ph2}ponowne użycie zachowania grup "
+"identyfikatorów w TH095{ph3}, {ph4}kod gracza TH04 i kolejność "
+"linkowania{ph5} oraz {ph6}pełna rekonstrukcja funkcji tworzenia przeciwników"
+" TH09 przez Lunę{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:842
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Checks and diagnostics:{ph1} {ph2}TH08 floating-literal audit{ph3}, "
+"{ph4}TH08 numerical investigation{ph5} and {ph6}TH09 replay-save "
+"reconstruction{ph7}."
+msgstr ""
+"{ph0}Kontrola i diagnostyka:{ph1} {ph2}TH08 audyt stałej "
+"zmiennoprzecinkowej{ph3}, {ph4}TH08 badanie numeryczne{ph5} i {ph6}TH09 "
+"rekonstrukcja z zachowaniem powtórki{ph7}."
+
+#: website/public/blog/reverse-engineering-models/index.html:859
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The proposed specialist and RL comparisons are future experiments. The "
+"project histories motivate them; no trained specialist was evaluated for "
+"this essay."
+msgstr ""
+"Proponowane porównania wyspecjalizowanych modeli i szkolenia RL to przyszłe "
+"eksperymenty. Motywują ich historie projektów. Na potrzeby tego eseju nie "
+"oceniano żadnego wyszkolonego specjalistycznego modelu."
+
+#: website/public/blog/reverse-engineering-models/index.html:6
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model? | REA"
+msgstr "Czy inżynieria odwrotna potrzebuje większego modelu? | REA"
+
+#: website/public/blog/reverse-engineering-models/index.html:7
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What Touhou reconstruction taught me about general models, specialist models"
+" and learning to propose better hypotheses from compiler feedback."
+msgstr ""
+"Czego rekonstrukcja Touhou nauczyła mnie o modelach ogólnych, modelach "
+"specjalistycznych i nauce proponowania lepszych hipotez na podstawie "
+"informacji zwrotnych od kompilatora."
+
+#: website/public/blog/reverse-engineering-models/index.html:240
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "On this page"
+msgstr "Na tej stronie"
+
+#: website/public/blog/reverse-engineering-models/index.html:253
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Models and reverse engineering essay"
+msgstr "Modele i esej o inżynierii odwrotnej"
+
+#: website/public/blog/reverse-engineering-models/index.html:491
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Selected reconstruction experiments"
+msgstr "Wybrane eksperymenty rekonstrukcyjne"
+
+#: website/public/blog/reverse-engineering-models/index.html:883
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Back to top"
+msgstr "Do góry"
+
+#. {ph0}: <a
+#. href="https://github.com/morluto/rea/blob/main/website/evidence/reverse-
+#. engineering-models.md" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:776
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Detailed evidence notes{ph1} include the recorded comparisons and "
+"experiment context."
+msgstr ""
+"{ph0}Szczegółowe notatki o dowodach{ph1} zawierają zapisane porównania i "
+"kontekst eksperymentów."
+
+#~ msgctxt "page:blog/index.html"
+#~ msgid "By N0zoM1z0 · 13 October 2026 · Draft for review"
+#~ msgstr "Autor: N0zoM1z0 · 13 października 2026 · Szkic do przejrzenia"
 
 #~ msgctxt "page:index.html"
 #~ msgid "Setup guide"

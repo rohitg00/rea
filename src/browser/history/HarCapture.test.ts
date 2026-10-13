@@ -162,6 +162,19 @@ it("rejects identical duplicate core fields before schema validation", () => {
   expect(() => decodeHarCapture(text, [])).toThrow("duplicate");
 });
 
+it("names the violated HAR schema constraint without restating capture values", () => {
+  expect(() =>
+    decodeHarCapture(
+      JSON.stringify({
+        log: { creator: { name: "x", version: "1" }, entries: [] },
+      }),
+      [],
+    ),
+  ).toThrow(
+    "HAR schema validation failed: required (must have required property 'version').",
+  );
+});
+
 it("preserves prototype-named producer members through the capture boundary", () => {
   const text = JSON.stringify(historicalHar()).replace(
     '"cache":{}',

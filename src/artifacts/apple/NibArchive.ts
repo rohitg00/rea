@@ -134,7 +134,14 @@ export const decodeNibArchive = (
       const value = values.get(index);
       if (value === undefined) continue;
       const key = keys[value.key_index];
-      if (key !== undefined) fields[key] = value.value;
+      if (key !== undefined)
+        // Archive keys are data, including the legacy __proto__ setter name.
+        Object.defineProperty(fields, key, {
+          value: value.value,
+          enumerable: true,
+          configurable: true,
+          writable: true,
+        });
     }
     return [{ id, class_name: className, values: fields }];
   });
@@ -519,7 +526,8 @@ const decodeUtf8 = (
   label: string,
 ): string => {
   try {
-    return new TextDecoder("utf-8", { fatal: true }).decode(
+    // These are length-prefixed names, not standalone text documents.
+    return new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(
       bytes.subarray(start, end),
     );
   } catch (cause: unknown) {

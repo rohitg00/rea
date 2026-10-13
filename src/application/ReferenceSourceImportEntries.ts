@@ -104,7 +104,11 @@ const resolveInternalSpecifier = (
   ]);
   // Retain present runtime files first; substitute only a missing counterpart.
   // Counterparts cover explicit filenames, not directory/index resolution.
-  candidates.push(...typescriptEmittedSourceCandidates(fromPath, normalized));
+  candidates.push(
+    ...typescriptEmittedSourceCandidates(fromPath, normalized).map(
+      ({ path }) => path,
+    ),
+  );
   const match = lookupPath.resolveCandidates(candidates);
   return match === undefined
     ? { to: normalized, resolution: "unresolved" }

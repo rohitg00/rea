@@ -38,6 +38,13 @@ const afterValidation = async <T>(
   }
 };
 
+const assertReadActive = (signal: AbortSignal | undefined): void => {
+  if (signal?.aborted)
+    throw new ArtifactReaderFailure("cancelled", "Artifact read cancelled", {
+      cause: signal.reason,
+    });
+};
+
 /** Read one bounded regular file and reject replacement or in-place changes. */
 export const readStableArtifact = async (
   path: string,
@@ -46,7 +53,7 @@ export const readStableArtifact = async (
   fileSystem: StableArtifactFileSystem = FILE_SYSTEM,
   resourceScope?: ArtifactResourceScope,
 ): Promise<{ readonly bytes: Buffer; readonly sha256: string }> => {
-  signal?.throwIfAborted();
+  assertReadActive(signal);
   const before = await fileSystem.lstat(path);
   if (!before.isFile() || before.isSymbolicLink())
     throw new ArtifactReaderFailure(
@@ -84,7 +91,7 @@ export const readStableArtifact = async (
       autoClose: false,
       highWaterMark: 65536,
     })) {
-      signal?.throwIfAborted();
+      assertReadActive(signal);
       const value: unknown = chunk;
       if (!Buffer.isBuffer(value))
         throw new ArtifactReaderFailure(
@@ -120,6 +127,7 @@ export const readStableArtifact = async (
         "integrity",
         `Artifact changed during read: ${path}`,
       );
+    assertReadActive(signal);
     const bytes = Buffer.concat(chunks, count);
     return { bytes, sha256: createHash("sha256").update(bytes).digest("hex") };
   } catch (cause: unknown) {

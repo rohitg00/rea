@@ -8,7 +8,6 @@ import {
   parseNames,
   parseProcedures,
   parseRelatedAddresses,
-  parseSegmentImageBase,
   parseSegments,
 } from "./hopperValues.js";
 
@@ -66,19 +65,6 @@ describe("Hopper boundary values", () => {
       ok: true,
       value: ["fixture"],
     });
-    expect(
-      parseSegmentImageBase([
-        { image_base: "0x100000" },
-        { image_base: "0x100000" },
-      ]),
-    ).toBe("0x100000");
-    expect(
-      parseSegmentImageBase([
-        { image_base: "0x100000" },
-        { image_base: "0x200000" },
-      ]),
-    ).toBeUndefined();
-    expect(parseSegmentImageBase([{ name: "__TEXT" }])).toBeUndefined();
   });
 
   it.each([

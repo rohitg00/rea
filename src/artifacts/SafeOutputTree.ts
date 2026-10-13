@@ -585,6 +585,11 @@ const normalizeDestinationPath = (
       "path",
       `Windows destination cannot materialize artifact path as a regular file: ${path}; ':' denotes alternate data stream syntax.`,
     );
+  if (platform === "win32" && /[\u0001-\u001f]/u.test(path))
+    throw new ArtifactReaderFailure(
+      "path",
+      `Windows destination cannot materialize artifact path: ${JSON.stringify(path)}; Windows names cannot contain U+0001-U+001F.`,
+    );
   return path;
 };
 

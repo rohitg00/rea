@@ -27,6 +27,11 @@ const OPERATION = "inspect_web_network_capture";
 export class WebNetworkCaptureService {
   constructor(readonly port: WebNetworkCapturePort) {}
 
+  /** Release resources retained by the selected capture adapter. */
+  close(): Promise<void> {
+    return this.port.close?.() ?? Promise.resolve();
+  }
+
   /** Return selected complete records inline, without inventing live browser attribution. */
   async inspect(
     rawInput: unknown,

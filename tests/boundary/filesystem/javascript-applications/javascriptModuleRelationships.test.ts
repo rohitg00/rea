@@ -152,7 +152,7 @@ describe("TypeScript source module loader semantics", () => {
   });
 });
 
-describe("CommonJS and ESM module relationships", () => {
+describe("JavaScript module relationships", () => {
   it("composes bindings, re-exports, dynamic imports, and JSON modules", async () => {
     const root = await moduleFixture();
     const first = await reconstructJavaScriptFixture(root);
@@ -285,6 +285,122 @@ describe("CommonJS and ESM module relationships", () => {
       truncated: false,
     });
     expect(graph.limitations.join(" ")).toMatch(/incomplete/iu);
+  });
+});
+
+describe("Compiler-dependent TypeScript resolution", () => {
+  it("retains only compiler-independent targets for .ts static imports", async () => {
+    const root = await createTestTempDirectory("rea-ts-conditional-loader-");
+    await writeFixtureFiles(root, {
+      "package.json": '{"type":"commonjs"}',
+      "main.ts": `import { value as different } from "different";
+import { value as same } from "same";
+void different; void same;`,
+      "node_modules/different/package.json": JSON.stringify({
+        exports: {
+          ".": {
+            import: "./import.mjs",
+            require: "./require.cjs",
+          },
+        },
+      }),
+      "node_modules/different/import.mjs": "export const value = 'import';",
+      "node_modules/different/require.cjs": "exports.value = 'require';",
+      "node_modules/same/package.json": JSON.stringify({
+        exports: { ".": { import: "./shared.js", require: "./shared.js" } },
+      }),
+      "node_modules/same/shared.js": "export const value = 'shared';",
+    });
+
+    const { graph } = await reconstructJavaScriptFixture(root);
+    const different = findRelationshipEdge(graph, {
+      kind: "import",
+      specifier: "different",
+      localName: "different",
+    });
+    const same = findRelationshipEdge(graph, {
+      kind: "import",
+      specifier: "same",
+      localName: "same",
+      resolvedPath: "node_modules/same/shared.js",
+    });
+    const staticFinding = (specifier: string) =>
+      graph.edges.find(
+        ({ relation, properties }) =>
+          relation === "imports" &&
+          properties.kind === "static-import" &&
+          properties.specifier === specifier,
+      );
+
+    expect(
+      findSourceModule(graph, "main.ts")?.observations[0]?.properties,
+    ).toMatchObject({ module_format: "unknown" });
+    expect(different).toMatchObject({
+      properties: {
+        resolution_mode: "compiler-dependent",
+        resolution_status: "unavailable",
+        resolved_path: null,
+        conditional_resolutions: [
+          {
+            mode: "import",
+            resolution_status: "resolved",
+            resolved_path: "node_modules/different/import.mjs",
+          },
+          {
+            mode: "require",
+            resolution_status: "resolved",
+            resolved_path: "node_modules/different/require.cjs",
+          },
+        ],
+      },
+    });
+    expect(same).toMatchObject({
+      properties: {
+        resolution_mode: "compiler-dependent",
+        resolved_path: "node_modules/same/shared.js",
+        resolution_status: "resolved",
+      },
+      evidence: {
+        limitations: expect.arrayContaining([
+          expect.stringContaining(
+            "compiler-dependent without retained compiler options",
+          ),
+        ]),
+      },
+    });
+    expect(staticFinding("different")).toMatchObject({
+      properties: {
+        resolution_mode: "compiler-dependent",
+        resolution_status: "unavailable",
+        conditional_resolutions: [
+          {
+            mode: "import",
+            resolved_path: "node_modules/different/import.mjs",
+          },
+          {
+            mode: "require",
+            resolved_path: "node_modules/different/require.cjs",
+          },
+        ],
+      },
+      evidence: {
+        limitations: expect.arrayContaining([
+          expect.stringContaining(
+            "compiler-dependent without retained compiler options",
+          ),
+        ]),
+      },
+    });
+    expect(staticFinding("same")).toMatchObject({
+      properties: { resolved_path: "node_modules/same/shared.js" },
+      evidence: {
+        limitations: expect.arrayContaining([
+          expect.stringContaining(
+            "compiler-dependent without retained compiler options",
+          ),
+        ]),
+      },
+    });
   });
 });
 

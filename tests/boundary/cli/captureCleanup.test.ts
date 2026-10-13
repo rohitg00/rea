@@ -5,6 +5,7 @@ import { silentLogger } from "../../../src/logger.js";
 import { createEvidence } from "../../../src/domain/evidence.js";
 import { ProviderCleanupError } from "../../../src/domain/providerCleanupError.js";
 import { err } from "../../../src/domain/result.js";
+import { AnalysisInputError } from "../../../src/domain/analysisErrorCore.js";
 
 it.each([false, true])(
   "awaits cleanup retry and preserves completed output when retry failure is %s",
@@ -81,6 +82,111 @@ it.each([false, true])(
       });
   },
 );
+
+it("keeps the primary CLI failure when close throws an untyped error", async () => {
+  const cli = Cli.create("capture-cleanup-primary-test", { sync: false });
+  registerCaptureCommands(
+    cli,
+    silentLogger,
+    {},
+    {
+      inspectFields: async () => {
+        throw new Error("Unexpected field discovery call");
+      },
+      inspect: async () =>
+        err(
+          new AnalysisInputError("inspect_packet_capture", {
+            userMessage: "The selected capture input was rejected.",
+          }),
+        ),
+      close: async () => {
+        throw new Error("raw close failure");
+      },
+    },
+  );
+  let stdout = "";
+  await cli.serve(
+    [
+      "inspect-packet-capture",
+      "recording.pcap",
+      "--fields",
+      "ip.addr",
+      "--format",
+      "json",
+    ],
+    {
+      stdout: (text) => {
+        stdout += text;
+      },
+      exit: () => {},
+    },
+  );
+  expect(JSON.parse(stdout)).toMatchObject({
+    code: "cleanup_incomplete",
+    message: "The selected capture input was rejected.",
+    details: {
+      diagnostics: {
+        primary_error: { code: "invalid_request" },
+      },
+      resources: [],
+    },
+  });
+});
+
+it("closes the service and retains an unexpected producer rejection", async () => {
+  const cli = Cli.create("capture-producer-rejection-test", { sync: false });
+  let closed = false;
+  registerCaptureCommands(
+    cli,
+    silentLogger,
+    {},
+    {
+      inspectFields: async () => {
+        throw new Error("Unexpected field discovery call");
+      },
+      inspect: async () => {
+        throw new Error("raw producer failure");
+      },
+      close: async () => {
+        closed = true;
+        throw new Error("raw close failure");
+      },
+    },
+  );
+  let stdout = "";
+  await cli.serve(
+    [
+      "inspect-packet-capture",
+      "recording.pcap",
+      "--fields",
+      "ip.addr",
+      "--format",
+      "json",
+    ],
+    {
+      stdout: (text) => {
+        stdout += text;
+      },
+      exit: () => {},
+    },
+  );
+  expect(closed).toBe(true);
+  expect(JSON.parse(stdout)).toMatchObject({
+    code: "cleanup_incomplete",
+    details: {
+      diagnostics: {
+        primary_error: {
+          code: "execution_failure",
+          details: {
+            operation: "inspect_packet_capture",
+            provider_id: "tshark-capture",
+          },
+        },
+        cleanup_error: { code: "cleanup_incomplete" },
+      },
+    },
+  });
+});
 
 it("rejects an oversized selector budget before the CLI invokes its service", async () => {
   const cli = Cli.create("capture-selector-test", { sync: false });

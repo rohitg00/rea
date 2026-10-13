@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-import { moduleKindForJavaScriptReference } from "./JavaScriptArtifactPathResolution.js";
+import { moduleResolutionModeForJavaScriptReference } from "../../domain/javascript/javascriptModuleResolutionMode.js";
 import { setImmediate } from "node:timers/promises";
 
 import { resolveJavaScriptSourceMapReferences } from "../../domain/javascript/javascriptSourceMapPaths.js";
@@ -384,7 +384,10 @@ function* analyzeArtifactFileSteps<
     analysis.parse_status === "complete" || analysis.parse_status === "partial"
       ? yield* analyzeParsedJavaScriptSemanticsSteps(
           parsed,
-          moduleKindForJavaScriptReference(file.path, "static-import"),
+          moduleResolutionModeForJavaScriptReference(
+            file.path,
+            "static-import",
+          ),
         )
       : null;
   const projected =

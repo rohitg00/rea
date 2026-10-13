@@ -18,6 +18,7 @@ import type {
   JavaScriptModuleOrigin,
   JavaScriptSemanticModuleLink,
 } from "../../domain/javascript/javascriptSemanticIr.js";
+import { moduleResolutionModeForJavaScriptReference } from "../../domain/javascript/javascriptModuleResolutionMode.js";
 import type { JavaScriptArtifactFile } from "../../domain/javascript/javascriptArtifactFiles.js";
 import {
   addAstContainsEdge,
@@ -30,7 +31,7 @@ import {
   staticInferenceEvidence,
 } from "./JavaScriptArtifactGraphEvidence.js";
 import {
-  moduleKindForJavaScriptReference,
+  artifactPathResolutionProperties,
   moduleResolutionModeProperties,
   resolveArtifactPathByContext,
   type ArtifactPathResolution,
@@ -54,6 +55,7 @@ interface RelationshipInput {
 type ResolvedModuleTarget = {
   readonly node: ApplicationNode;
   readonly limitations: readonly string[];
+  readonly resolution?: ArtifactPathResolution;
 } & (
   | {
       readonly path: string;
@@ -287,7 +289,7 @@ const resolveModuleTarget = (
     sourcePath: input.file.path,
     context: "module-specifier",
     files: input.context.filesByPath,
-    moduleKind: moduleKindForJavaScriptReference(
+    moduleKind: moduleResolutionModeForJavaScriptReference(
       input.file.path,
       input.link.kind === "require" || input.link.kind === "commonjs-export"
         ? "require"
@@ -297,15 +299,12 @@ const resolveModuleTarget = (
   });
   if (resolution.resolution_status !== "resolved")
     return {
-      node: unresolvedModuleNode(
-        input,
-        specifier,
-        resolution.resolution_status,
-      ),
+      node: unresolvedModuleNode(input, specifier, resolution),
       path: null,
       file: null,
       status: resolution.resolution_status,
       limitations: resolution.limitations,
+      resolution,
     };
   const path = resolution.resolved_path;
   const file = input.context.filesByPath.get(path);
@@ -322,20 +321,24 @@ const resolveModuleTarget = (
     file,
     status: "resolved",
     limitations: resolution.limitations,
+    resolution,
   };
 };
 
 const unresolvedModuleNode = (
   input: RelationshipInput,
   specifier: string,
-  status: Exclude<ResolvedModuleTarget["status"], "resolved">,
+  resolution: Extract<
+    ArtifactPathResolution,
+    { resolution_status: Exclude<ResolvedModuleTarget["status"], "resolved"> }
+  >,
 ): ApplicationNode =>
   input.context.accumulator.addNode({
     kind: "javascript-module",
     identity: artifactLocalIdentity(
       input.file.sha256,
       "unresolved-semantic-module",
-      `${status}:${specifier}`,
+      `${resolution.resolution_status}:${specifier}`,
     ),
     observations: [
       {
@@ -343,7 +346,8 @@ const unresolvedModuleNode = (
         properties: {
           semantic_role: "module-reference",
           declared_specifier: specifier,
-          resolution_status: status,
+          resolution_status: resolution.resolution_status,
+          ...artifactPathResolutionProperties(resolution),
         },
         evidence: staticInferenceEvidence({
           sha256: input.file.sha256,
@@ -364,6 +368,9 @@ const moduleOriginForExport = (
 ): JavaScriptModuleOrigin | null => {
   if (link.specifier !== null)
     return {
+      ...(link.resolutionMode === undefined
+        ? {}
+        : { resolutionMode: link.resolutionMode }),
       specifier: link.specifier,
       importedPath: link.importedName === null ? [] : [link.importedName],
     };
@@ -393,6 +400,7 @@ const relationshipProperties = (
   exported_name: link.exportedName,
   resolved_path: target?.path ?? null,
   resolution_status: target?.status ?? null,
+  ...artifactPathResolutionProperties(target?.resolution),
   target_file_kind: target?.file?.kind ?? null,
   target_json_status:
     target?.file?.kind === "json" || target?.file?.kind === "package-json"
@@ -441,6 +449,7 @@ const moduleFormat = (
   const extension = posix.extname(path).toLowerCase();
   if (extension === ".mjs" || extension === ".mts") return "esm";
   if (extension === ".cjs" || extension === ".cts") return "commonjs";
+  if (extension === ".ts" || extension === ".tsx") return "unknown";
   const esm = ir.moduleLinks.some(({ kind }) =>
     ["import", "export", "re-export"].includes(kind),
   );

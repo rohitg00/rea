@@ -32,18 +32,18 @@ msgid "Thoughts on reverse engineering."
 msgstr "Suy nghĩ về kỹ thuật đảo ngược."
 
 #. {ph0}: <br />
-#: website/public/blog/index.html:200
+#: website/public/blog/index.html:214
 #, python-brace-format
 msgctxt "page:blog/index.html"
 msgid "Game reconstruction{ph0}Essay"
 msgstr "Tái thiết trò chơi{ph0}Bài luận"
 
-#: website/public/blog/index.html:202
+#: website/public/blog/index.html:216
 msgctxt "page:blog/index.html"
 msgid "The industrial revolution in reverse engineering"
 msgstr "Cuộc cách mạng công nghiệp trong kỹ thuật đảo ngược"
 
-#: website/public/blog/index.html:203
+#: website/public/blog/index.html:217
 msgctxt "page:blog/index.html"
 msgid ""
 "What manual RE and reconstructing TH08, TH095 and TH04 taught me about "
@@ -52,19 +52,20 @@ msgstr ""
 "NHỮNG gì HƯỚNG DẪN SỬ DỤNG LẠI VÀ tái TẠO TH08, TH095 và TH04 đã dạy tôi về "
 "các agent, xác minh và kiến thức mà các hợp chất trong các dự án."
 
-#: website/public/blog/index.html:208
+#: website/public/blog/index.html:207 website/public/blog/index.html:222
 msgctxt "page:blog/index.html"
 msgid "Read the article"
 msgstr "Đọc bài viết"
 
-#: website/public/blog/index.html:211
+#: website/public/blog/index.html:225
 msgctxt "page:blog/index.html"
 msgid "By N0zoM1z0 · 10 October 2026"
 msgstr "Bởi N0zoM1z0 * 10 tháng mười 2026"
 
 #. {ph0}: <span aria-hidden="true">
 #. {ph1}: </span>
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
+#: website/public/blog/reverse-engineering-models/index.html:883
 #: website/public/blog/touhou-reconstruction/index.html:1080
 #: website/public/examples/dino-lab/index.html:475
 #: website/public/faq/index.html:573
@@ -100,6 +101,8 @@ msgstr ""
 "REA và AI."
 
 #: website/public/blog/index.html:75 website/public/blog/index.html:88
+#: website/public/blog/reverse-engineering-models/index.html:75
+#: website/public/blog/reverse-engineering-models/index.html:88
 #: website/public/blog/touhou-reconstruction/index.html:75
 #: website/public/blog/touhou-reconstruction/index.html:88
 #: website/public/examples/dino-lab/index.html:75
@@ -136,6 +139,7 @@ msgstr ""
 "mã hóa của bạn."
 
 #: website/public/blog/index.html:108
+#: website/public/blog/reverse-engineering-models/index.html:108
 #: website/public/blog/touhou-reconstruction/index.html:108
 #: website/public/examples/dino-lab/index.html:109
 #: website/public/faq/index.html:108
@@ -156,6 +160,7 @@ msgid "REA home"
 msgstr "Trang chủ REA"
 
 #: website/public/blog/index.html:112
+#: website/public/blog/reverse-engineering-models/index.html:112
 #: website/public/blog/touhou-reconstruction/index.html:112
 #: website/public/examples/dino-lab/index.html:113
 #: website/public/faq/index.html:112
@@ -176,6 +181,7 @@ msgid "Main navigation"
 msgstr "Điều hướng chính"
 
 #: website/public/blog/index.html:130
+#: website/public/blog/reverse-engineering-models/index.html:130
 #: website/public/blog/touhou-reconstruction/index.html:130
 #: website/public/examples/dino-lab/index.html:131
 #: website/public/faq/index.html:130
@@ -196,6 +202,7 @@ msgid "REA on GitHub"
 msgstr "REA TRÊN GitHub"
 
 #: website/public/blog/index.html:150
+#: website/public/blog/reverse-engineering-models/index.html:150
 #: website/public/blog/touhou-reconstruction/index.html:150
 #: website/public/examples/dino-lab/index.html:151
 #: website/public/faq/index.html:150
@@ -216,6 +223,7 @@ msgid "Join REA on Discord"
 msgstr "Tham gia Discord của REA"
 
 #: website/public/blog/index.html:169
+#: website/public/blog/reverse-engineering-models/index.html:169
 #: website/public/blog/touhou-reconstruction/index.html:169
 #: website/public/examples/dino-lab/index.html:170
 #: website/public/faq/index.html:169
@@ -235,7 +243,7 @@ msgctxt "shared"
 msgid "Follow REA on X"
 msgstr "Theo DÕI REA Trên X"
 
-#: website/public/blog/index.html:230
+#: website/public/blog/index.html:244
 msgctxt "page:blog/index.html"
 msgid "Back to top"
 msgstr "Về đầu trang"
@@ -11594,6 +11602,7 @@ msgid "Same spacing: 256 ÷ 16 = 16 angle units = 22.5°"
 msgstr "Khoảng cách tương tự: 256 ÷ 16 = 16 đơn vị góc = 22,5°"
 
 #: website/public/blog/index.html:114
+#: website/public/blog/reverse-engineering-models/index.html:114
 #: website/public/blog/touhou-reconstruction/index.html:114
 #: website/public/examples/dino-lab/index.html:115
 #: website/public/faq/index.html:114
@@ -11614,6 +11623,7 @@ msgid "Showcases"
 msgstr "Ví dụ thực tế"
 
 #: website/public/blog/index.html:115
+#: website/public/blog/reverse-engineering-models/index.html:115
 #: website/public/blog/touhou-reconstruction/index.html:115
 #: website/public/examples/dino-lab/index.html:116
 #: website/public/faq/index.html:115
@@ -11634,6 +11644,7 @@ msgid "Blog"
 msgstr "Blog"
 
 #: website/public/blog/index.html:113
+#: website/public/blog/reverse-engineering-models/index.html:113
 #: website/public/blog/touhou-reconstruction/index.html:113
 #: website/public/examples/dino-lab/index.html:114
 #: website/public/faq/index.html:113
@@ -11654,6 +11665,7 @@ msgid "Get started"
 msgstr "Bắt đầu"
 
 #: website/public/blog/index.html:116
+#: website/public/blog/reverse-engineering-models/index.html:116
 #: website/public/blog/touhou-reconstruction/index.html:116
 #: website/public/examples/dino-lab/index.html:117
 #: website/public/faq/index.html:116
@@ -11673,7 +11685,8 @@ msgctxt "shared"
 msgid "Guides"
 msgstr "Hướng dẫn"
 
-#: website/public/blog/index.html:222
+#: website/public/blog/index.html:236
+#: website/public/blog/reverse-engineering-models/index.html:875
 #: website/public/blog/touhou-reconstruction/index.html:1072
 #: website/public/examples/dino-lab/index.html:467
 #: website/public/faq/index.html:565
@@ -11693,7 +11706,8 @@ msgctxt "shared"
 msgid "Source"
 msgstr "Mã nguồn"
 
-#: website/public/blog/index.html:223
+#: website/public/blog/index.html:237
+#: website/public/blog/reverse-engineering-models/index.html:876
 #: website/public/blog/touhou-reconstruction/index.html:1073
 #: website/public/examples/dino-lab/index.html:468
 #: website/public/faq/index.html:566
@@ -11713,7 +11727,8 @@ msgctxt "shared"
 msgid "MIT license"
 msgstr "Giấy phép MIT"
 
-#: website/public/blog/index.html:224
+#: website/public/blog/index.html:238
+#: website/public/blog/reverse-engineering-models/index.html:877
 #: website/public/blog/touhou-reconstruction/index.html:1074
 #: website/public/examples/dino-lab/index.html:469
 #: website/public/faq/index.html:567
@@ -11733,7 +11748,8 @@ msgctxt "shared"
 msgid "Join the community"
 msgstr "Tham gia cộng đồng"
 
-#: website/public/blog/index.html:225
+#: website/public/blog/index.html:239
+#: website/public/blog/reverse-engineering-models/index.html:878
 #: website/public/blog/touhou-reconstruction/index.html:1075
 #: website/public/examples/dino-lab/index.html:470
 #: website/public/faq/index.html:568
@@ -12691,6 +12707,1372 @@ msgstr ""
 "Everywhere: bản ghi SAZ, MCP và kỹ năng công khai{ph1}. Xuất SAZ ho?c HAR "
 "1.2 để lấy Evidence từ bản ghi trong REA ngoại tuyến, hoặc kết nối máy chủ "
 "MCP của Everywhere để kiểm tra lưu lượng đã ghi cùng trợ lý của bạn."
+
+#. {ph0}: <br />
+#: website/public/blog/index.html:200
+#, python-brace-format
+msgctxt "page:blog/index.html"
+msgid "Model specialization{ph0}Essay"
+msgstr "Mô hình chuyên biệt{ph0}Bài viết"
+
+#: website/public/blog/index.html:202
+msgctxt "page:blog/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "Kỹ thuật đảo ngược có cần mô hình lớn hơn không?"
+
+#: website/public/blog/index.html:203
+msgctxt "page:blog/index.html"
+msgid ""
+"What Touhou reconstruction suggests about general models, specialist models "
+"and learning from compiler feedback."
+msgstr ""
+"Những suy nghĩ từ việc tái dựng Touhou về mô hình tổng quát, mô hình chuyên "
+"biệt và cách học từ phản hồi của trình biên dịch."
+
+#: website/public/blog/index.html:210
+msgctxt "page:blog/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "Bởi N0zoM1z0 · 13 tháng 10 năm 2026"
+
+#: website/public/blog/reverse-engineering-models/index.html:103
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Skip to content"
+msgstr "Bỏ qua nội dung"
+
+#. {ph0}: <a href="../../">
+#. {ph1}: </a>
+#. {ph2}: <a href="../">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:194
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Home{ph1} / {ph2}Blog{ph3} / Models and RE"
+msgstr "{ph0}Home{ph1} / {ph2}Blog{ph3} / Mô hình và kỹ thuật đảo ngược"
+
+#: website/public/blog/reverse-engineering-models/index.html:197
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Essay"
+msgstr "Tiểu luận"
+
+# Reviewed for technical meaning and readability; preserve the distinction
+# between historical evidence and proposed experiments.
+#: website/public/blog/reverse-engineering-models/index.html:198
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model?"
+msgstr "Kỹ thuật đảo ngược có cần một mô hình lớn hơn không?"
+
+#: website/public/blog/reverse-engineering-models/index.html:199
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "By N0zoM1z0 · 13 October 2026"
+msgstr "Bởi N0zoM1z0 · 13 tháng 10 năm 2026"
+
+#: website/public/blog/reverse-engineering-models/index.html:201
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Takeaway"
+msgstr "Điểm chính"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:203
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Model capability changes the hypotheses an agent can find.{ph1} Later "
+"sessions have solved problems that earlier work left unresolved."
+msgstr ""
+"{ph0}Khả năng của mô hình ảnh hưởng đến những giả thuyết mà tác nhân AI có "
+"thể đề xuất.{ph1} Các phiên sau đã giải quyết các vấn đề mà công việc trước "
+"đó chưa được giải quyết."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:211
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A familiar compiler gives specialization something concrete to "
+"learn.{ph1} Some exact matches depend on narrow, reusable source patterns."
+msgstr ""
+"{ph0}Một trình biên dịch quen thuộc cung cấp các mẫu cụ thể để một mô hình "
+"chuyên biệt học.{ph1} Một số kết quả khớp mã máy chính xác phụ thuộc vào các"
+" mẫu mã nguồn cụ thể, có thể tái sử dụng."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#: website/public/blog/reverse-engineering-models/index.html:218
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Give repository knowledge a fair comparison.{ph1} A smaller model with "
+"good retrieval may already know enough to make progress."
+msgstr ""
+"{ph0}Bao gồm kiến thức kho lưu trữ trong một so sánh công bằng.{ph1} Một mô "
+"hình nhỏ hơn với khả năng truy xuất kiến thức tốt có thể đã có đủ thông tin "
+"để đạt được tiến bộ."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:223
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Train the next useful experiment, and test its oracle.{ph1} The value "
+"of feedback depends on what the checker actually verifies."
+msgstr ""
+"{ph0}Huấn luyện mô hình để chọn thử nghiệm hữu ích tiếp theo và kiểm tra "
+"công cụ xác minh của nó.{ph1} Phản hồi chỉ hữu ích trong phạm vi công cụ xác"
+" minh những điều đúng."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:230
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Measure accepted reconstruction against time and cost.{ph1} That is the"
+" result I want from the whole agent."
+msgstr ""
+"{ph0}Đánh giá kết quả tái thiết đã được xác minh cùng với thời gian và chi "
+"phí.{ph1} Đó là những gì tôi muốn đo lường cho quy trình làm việc hoàn chỉnh"
+" của tác nhân AI."
+
+#: website/public/blog/reverse-engineering-models/index.html:241
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "In this article"
+msgstr "Trong bài viết này"
+
+#. {ph0}: <a href="#model-capability">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:243
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What better models changed{ph1}"
+msgstr "{ph0}Mô hình mạnh hơn đã thay đổi điều gì?{ph1}"
+
+#. {ph0}: <a href="#specialization">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:244
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Why specialize?{ph1}"
+msgstr "{ph0}Tại sao nên chuyên môn hóa?{ph1}"
+
+#. {ph0}: <a href="#repository-knowledge">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:245
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Where experience lives{ph1}"
+msgstr "{ph0}Kinh nghiệm này nên được lưu trữ ở đâu?{ph1}"
+
+#. {ph0}: <a href="#learning-search">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:246
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}Learning the next experiment{ph1}"
+msgstr "{ph0}Học thí nghiệm hữu ích tiếp theo{ph1}"
+
+#. {ph0}: <a href="#re-and-rl">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:247
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}RE and reinforcement learning{ph1}"
+msgstr "{ph0}Học kỹ thuật đảo ngược và tăng cường{ph1}"
+
+#. {ph0}: <a href="#oracle">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:248
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}When the oracle is wrong{ph1}"
+msgstr "{ph0}Khi công cụ xác minh sai{ph1}"
+
+#. {ph0}: <a href="#comparison">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:249
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}A comparison worth running{ph1}"
+msgstr "{ph0}Một so sánh đáng chạy{ph1}"
+
+#. {ph0}: <a href="#future-agent">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:250
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "{ph0}What kind of agent?{ph1}"
+msgstr "{ph0}Điều này gợi ý loại tác nhân AI nào?{ph1}"
+
+#: website/public/blog/reverse-engineering-models/index.html:258
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What better models changed"
+msgstr "Mô hình mạnh hơn đã thay đổi điều gì?"
+
+#: website/public/blog/reverse-engineering-models/index.html:259
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Since August 2026, I have been exploring how much reverse engineering an "
+"agent can carry out with access to a program and a way to check its work. "
+"Most of my experience comes from reconstructing games, especially Touhou. As"
+" I have changed models, the repositories have kept a record of what each "
+"session managed to recover."
+msgstr ""
+"Kể từ tháng 8 năm 2026, tôi đã khám phá mức độ kỹ thuật đảo ngược mà một tác"
+" nhân có thể thực hiện khi có quyền truy cập vào một chương trình và cách "
+"kiểm tra công việc của nó. Phần lớn kinh nghiệm của tôi đến từ việc xây dựng"
+" lại trò chơi, đặc biệt là Touhou. Khi tôi thay đổi mô hình, các kho lưu trữ"
+" đã lưu giữ một bản ghi về những gì mỗi phiên đã khôi phục được."
+
+#: website/public/blog/reverse-engineering-models/index.html:267
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of that work aims at exact reconstruction: we compile the maintained "
+"source under a pinned historical toolchain and check whether it reproduces "
+"the target function. When a later model succeeds where earlier work stalled,"
+" the source changes show what made that progress possible."
+msgstr ""
+"Phần lớn công việc hướng tới tái dựng chính xác: biên dịch mã nguồn đang "
+"được duy trì bằng chuỗi công cụ lịch sử có phiên bản cố định, rồi kiểm tra "
+"xem nó có tái tạo hàm đích hay không. Khi mô hình sau giải quyết được điểm "
+"mà công việc trước bị mắc kẹt, thay đổi trong mã nguồn cho thấy điều gì đã "
+"giúp tiến triển."
+
+#: website/public/blog/reverse-engineering-models/index.html:274
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The temporary values had to stay alive together"
+msgstr "Các biến tạm thời cần có thời gian tồn tại chồng chéo"
+
+#: website/public/blog/reverse-engineering-models/index.html:275
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Much of a TH09 attack function's logic had already been reconstructed, but "
+"the compiler still stored temporary results differently from the original. "
+"The remaining problem was how long those results needed to stay alive and "
+"when their storage could be reused."
+msgstr ""
+"Phần lớn logic của hàm tấn công TH09 đã được xây dựng lại, nhưng trình biên "
+"dịch vẫn lưu trữ các kết quả tạm thời khác với kết quả ban đầu. Vấn đề còn "
+"lại là những kết quả đó cần tồn tại trong bao lâu và khi nào bộ nhớ của "
+"chúng có thể được sử dụng lại."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:282
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A {ph0}GPT-6-Sol checkpoint{ph1} recorded this mismatch after testing "
+"several ordinary source arrangements. When {ph2}GPT-6.1-Sol returned to the "
+"problem{ph3}, it found a useful hypothesis about how long those temporary "
+"values needed to stay alive."
+msgstr ""
+"Bản ghi phiên {ph0}GPT-6-Sol{ph1} đã báo cáo sự không khớp này sau khi kiểm "
+"tra một số cách sắp xếp mã nguồn thông thường. Khi {ph2}GPT-6.1-Sol kiểm tra"
+" lại vấn đề{ph3}, nó đã đề xuất một giả thuyết hữu ích về thời gian tồn tại "
+"của các biến tạm thời này."
+
+#: website/public/blog/reverse-engineering-models/index.html:296
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The function produced temporary results and copied them into animation "
+"positions. In C++, a temporary result stays alive until the expression using"
+" it finishes. Grouping the real operations into one expression kept those "
+"results alive together, so the compiler could no longer reuse the same "
+"storage for all of them."
+msgstr ""
+"Hàm này tạo ra các kết quả tạm thời và sao chép chúng vào các vị trí hoạt "
+"ảnh. Trong C++, kết quả tạm thời vẫn tồn tại cho đến khi biểu thức sử dụng "
+"nó kết thúc. Việc nhóm các hoạt động thực tế thành một biểu thức giúp giữ "
+"cho các kết quả đó tồn tại cùng nhau, do đó trình biên dịch không thể sử "
+"dụng lại cùng một bộ lưu trữ cho tất cả chúng nữa."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:303
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"One result still shared storage with a value used later for collision "
+"checks. Giving that value its own lifetime resolved the remaining overlap. "
+"After several targeted experiments, {ph0}a clean rebuild confirmed that the "
+"full function matched{ph1}."
+msgstr ""
+"Một kết quả vẫn được chia sẻ bộ nhớ với giá trị được sử dụng sau này để kiểm"
+" tra xung đột. Việc đưa ra giá trị đó trong thời gian tồn tại của chính nó "
+"đã giải quyết được sự chồng chéo còn lại. Sau một số thử nghiệm có mục tiêu,"
+" {ph0}việc biên dịch lại rõ ràng từ nguồn đã xác nhận rằng hàm đầy đủ khớp "
+"với{ph1}."
+
+#: website/public/blog/reverse-engineering-models/index.html:312
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What interests me is how the discovery and the tests worked together. The "
+"lifetime hypothesis gave the agent a new direction; compiler feedback helped"
+" it refine that hypothesis into a source arrangement that matched."
+msgstr ""
+"Tôi quan tâm đến việc khám phá và thử nghiệm hỗ trợ lẫn nhau như thế nào. "
+"Giả thuyết về thời gian tồn tại của đối tượng tạm thời đã mang lại cho tác "
+"nhân AI một hướng đi mới. Phản hồi của trình biên dịch đã giúp nó tinh chỉnh"
+" giả thuyết đó thành một cách sắp xếp mã nguồn phù hợp."
+
+#: website/public/blog/reverse-engineering-models/index.html:318
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A different control-flow graph"
+msgstr "Biểu đồ luồng điều khiển khác"
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:319
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A second TH09 function shows why that new direction can matter. Here, the "
+"obstacle was how several branches shared their final work. "
+"{ph0}GPT-6.1-Sol's earlier work{ph1} got parts of the function to match, but"
+" the branches still joined up differently from the original."
+msgstr ""
+"Hàm TH09 thứ hai cho biết tại sao hướng đi mới đó lại quan trọng. Ở đây, trở"
+" ngại là làm thế nào một số chi nhánh chia sẻ công việc cuối cùng của họ. "
+"Công việc trước đó của {ph0}GPT-6.1-Sol{ph1} có các phần của hàm khớp với "
+"nhau, nhưng các nhánh vẫn được nối với nhau khác với ban đầu."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph3}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:330
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}GPT-6-Astra changed the surrounding control-flow graph{ph1}. The main "
+"paths now led to a shared final update and return. In that source structure,"
+" the compiler combined the branches in the same way as the original. The "
+"complete function matched, and a {ph2}separate rebuild check confirmed "
+"it{ph3}."
+msgstr ""
+"{ph0}GPT-6-Astra đã thay đổi biểu đồ luồng điều khiển xung quanh{ph1}. Các "
+"đường dẫn chính hiện đã dẫn đến bản cập nhật cuối cùng được chia sẻ và quay "
+"trở lại. Trong cấu trúc nguồn đó, trình biên dịch kết hợp các nhánh giống "
+"như bản gốc. Chức năng hoàn chỉnh đã khớp và một cuộc kiểm tra xây dựng lại "
+"riêng biệt {ph2} đã xác nhận điều đó{ph3}."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:342
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Changing the representation opened a more productive search space.{ph1}"
+" Both cases give me a reason to take general model capability seriously: an "
+"agent can keep trying local variations for a long time before finding a "
+"better way to express the surrounding work."
+msgstr ""
+"{ph0}Việc thay đổi cách biểu diễn đã mở ra một không gian tìm kiếm hiệu quả "
+"hơn.{ph1} Cả hai trường hợp đều cho tôi lý do để xem xét nghiêm túc khả năng"
+" của mô hình chung: một tác nhân có thể tiếp tục thử các biến thể cục bộ "
+"trong một thời gian dài trước khi tìm ra cách tốt hơn để thể hiện công việc "
+"xung quanh."
+
+#: website/public/blog/reverse-engineering-models/index.html:351
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"At the same time, the later sessions started with earlier source and "
+"recorded failures. That accumulated work was part of their advantage. The "
+"history lets us inspect the discoveries and their checks; a controlled "
+"comparison would help separate the effect of the model from the experience "
+"it inherited."
+msgstr ""
+"Đồng thời, các phiên sau bắt đầu với nguồn trước đó và ghi lại lỗi. Công "
+"việc tích lũy đó là một phần lợi thế của họ. Lịch sử cho phép chúng ta kiểm "
+"tra những khám phá và kiểm tra chúng; một so sánh có kiểm soát sẽ giúp tách "
+"biệt tác động của mô hình khỏi trải nghiệm mà nó kế thừa."
+
+#: website/public/blog/reverse-engineering-models/index.html:358
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is where the question becomes interesting to me. Some of the progress "
+"came from finding a new representation, while much of the remaining work "
+"involved testing source forms against a familiar compiler. How much needs "
+"broad reasoning ability, and how much could a model learn through repeated "
+"experience with that compiler and code?"
+msgstr ""
+"Đây là điều làm cho câu hỏi trở nên thú vị đối với tôi. Một số tiến bộ đến "
+"từ việc tìm kiếm một đại diện mới. Phần lớn công việc còn lại liên quan đến "
+"việc kiểm tra các cách sắp xếp mã nguồn khác nhau dựa trên một trình biên "
+"dịch quen thuộc. Bao nhiêu trong số này đòi hỏi khả năng suy luận rộng? Một "
+"mô hình có thể học được bao nhiêu khi làm việc liên tục với trình biên dịch "
+"và mã đó?"
+
+#: website/public/blog/reverse-engineering-models/index.html:368
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why might a specialist do well?"
+msgstr "Tại sao một mô hình AI chuyên biệt có thể hoạt động tốt?"
+
+#: website/public/blog/reverse-engineering-models/index.html:369
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Touhou gives us a concrete reason to expect that experience to help. Much of"
+" the game code comes from the same author, ZUN, so recurring habits are a "
+"reasonable starting assumption. The repositories back that up with useful "
+"examples: related loops and helper arrangements have supplied hypotheses "
+"across games."
+msgstr ""
+"Touhou cho chúng ta lý do cụ thể để mong đợi trải nghiệm đó sẽ hữu ích. Phần"
+" lớn mã trò chơi đều đến từ cùng một tác giả, ZUN, vì vậy những thói quen "
+"lặp đi lặp lại là một giả định khởi đầu hợp lý. Các kho lưu trữ hỗ trợ điều "
+"đó bằng các ví dụ hữu ích: các vòng lặp liên quan và cách sắp xếp trợ giúp "
+"đã cung cấp các giả thuyết cho các trò chơi."
+
+#: website/public/blog/reverse-engineering-models/index.html:376
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those source patterns become more specific when we include the compiler. "
+"Under a particular version and set of options, small changes in source can "
+"produce repeatable differences in machine code. Some of those differences "
+"are surprisingly obscure."
+msgstr ""
+"Các mẫu nguồn đó trở nên cụ thể hơn khi chúng tôi đưa trình biên dịch vào. "
+"Trong một phiên bản và tập hợp các tùy chọn cụ thể, những thay đổi nhỏ về "
+"nguồn có thể tạo ra những khác biệt lặp lại trong mã máy. Một số trong những"
+" khác biệt đó mơ hồ một cách đáng ngạc nhiên."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: <code>Supervisor::LoadDat</code>
+#. {ph4}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:382
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In TH095, for example, {ph0}even the name used for a local variable could "
+"change where VC7.1 stored it{ph1}. Moving the declaration alone did not "
+"solve the layout, but an earlier background function had revealed a naming "
+"pattern that affected the compiler's choice. That gave us a more promising "
+"hypothesis for {ph2}the reconstruction of {ph3}{ph4}."
+msgstr ""
+"Ví dụ: trong TH095, {ph0}ngay cả tên biến cục bộ cũng có thể ảnh hưởng đến "
+"vị trí VC7.1 lưu trữ nó{ph1}. Việc di chuyển khai báo của nó không giải "
+"quyết được bố cục lưu trữ. Tuy nhiên, hàm nền trước đó đã tiết lộ kiểu đặt "
+"tên ảnh hưởng đến sự lựa chọn của trình biên dịch. Điều đó gợi ý một giả "
+"thuyết hứa hẹn hơn cho việc {ph2}tái tạo {ph3}{ph4}."
+
+#: website/public/blog/reverse-engineering-models/index.html:396
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reusing that pattern for the file-size variable produced the required layout"
+" without adding storage. The full function then matched."
+msgstr ""
+"Việc sử dụng lại mẫu đó cho biến kích thước tệp sẽ tạo ra bố cục cần thiết "
+"mà không cần thêm bộ nhớ. Các chức năng đầy đủ sau đó phù hợp."
+
+#: website/public/blog/reverse-engineering-models/index.html:401
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This is the sort of narrow detail a general model may not know when it "
+"arrives. A specialist trained on this compiler could encounter many such "
+"cases and learn which source variations are worth testing first."
+msgstr ""
+"Đây là một chi tiết rất cụ thể mà một mô hình AI đa năng có thể không biết "
+"khi lần đầu gặp sự cố. Một mô hình chuyên dụng cho trình biên dịch này có "
+"thể xem nhiều trường hợp như vậy và tìm hiểu xem biến thể mã nguồn nào đáng "
+"để thử nghiệm trước tiên."
+
+#: website/public/blog/reverse-engineering-models/index.html:407
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The opportunity is especially clear in final matching problems where we "
+"already understand the behavior. We are then asking which ordinary source "
+"form this compiler turns into the observed instructions. Specialization "
+"could help the model propose those forms more efficiently, while the target "
+"still determines which hypotheses survive."
+msgstr ""
+"Cơ hội đặc biệt rõ ràng trong các bài toán so khớp cuối cùng khi chúng ta đã"
+" hiểu rõ hành vi. Sau đó, chúng tôi sẽ hỏi trình biên dịch này sẽ chuyển sự "
+"sắp xếp mã nguồn thông thường nào thành các lệnh máy được quan sát. Sự "
+"chuyên môn hóa có thể giúp mô hình đề xuất các hình thức đó hiệu quả hơn, "
+"trong khi mục tiêu vẫn xác định giả thuyết nào tồn tại."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:415
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The useful patterns would have to retain their context, though. TH08 uses an"
+" earlier Visual C++ version than TH095 and TH09. TH04 uses a different DOS-"
+"era compiler, and its {ph0}player reconstruction{ph1} needed different "
+"hypotheses about source patterns and how the compiled code was combined into"
+" an executable. Shared authorship gives us a prior, but each target tells us"
+" whether it applies. Distinguishing those contexts is part of what a "
+"specialist would need to learn."
+msgstr ""
+"Các mẫu hữu ích phải đi kèm bối cảnh áp dụng. TH08 dùng phiên bản Visual C++"
+" cũ hơn TH095 và TH09. TH04 dùng một trình biên dịch khác thuộc thời DOS. "
+"{ph0}Việc tái dựng mã điều khiển người chơi{ph1} cần những giả thuyết khác "
+"về cách viết mã và cách liên kết thành tệp thực thi. Cùng tác giả là một giả"
+" định ban đầu; từng mục tiêu cho biết giả định đó có phù hợp không. Mô hình "
+"chuyên biệt cần học cách phân biệt các bối cảnh này."
+
+#: website/public/blog/reverse-engineering-models/index.html:431
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Where should that experience live?"
+msgstr "Kinh nghiệm này nên được lưu trữ ở đâu?"
+
+#. {ph0}: <a href="../touhou-reconstruction/">
+#. {ph1}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:432
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before deciding to teach those patterns through model training, I would look"
+" at the knowledge we already keep in the repository. In the {ph0}previous "
+"essay{ph1}, I wrote about it becoming the project's working memory. That "
+"memory includes compiler lessons, along with the source and failed "
+"experiments that made them useful."
+msgstr ""
+"Trước khi quyết định dạy những mẫu đó thông qua đào tạo mô hình, tôi sẽ xem "
+"xét kiến thức mà chúng tôi đã lưu giữ trong kho. Trong {ph0}bài luận "
+"trước{ph1}, tôi đã viết về việc nó trở thành bộ nhớ làm việc của dự án. Bộ "
+"nhớ đó bao gồm các bài học về trình biên dịch, cùng với nguồn và các thử "
+"nghiệm thất bại khiến chúng trở nên hữu ích."
+
+#: website/public/blog/reverse-engineering-models/index.html:441
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"By retrieving that record, an agent can start with a known result and "
+"inspect how we reached it. It can also avoid alternatives that have already "
+"failed in the same context. The starting point improves without changing the"
+" model's weights."
+msgstr ""
+"Bằng cách truy xuất bản ghi đó, nhân viên hỗ trợ có thể bắt đầu với kết quả "
+"đã biết và kiểm tra cách chúng tôi đạt được kết quả đó. Nó cũng có thể tránh"
+" được những lựa chọn thay thế đã thất bại trong cùng bối cảnh. Điểm bắt đầu "
+"được cải thiện mà không thay đổi các tham số đã huấn luyện của mô hình."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:447
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"When reconstructing TH09's enemy-spawn function, a {ph0}GPT-6-Luna-max "
+"session{ph1} drew a hypothesis from TH08's corresponding source family. That"
+" earlier source suggested how to structure the loop and handle failures "
+"within it. TH09's own evidence supplied the game-specific details, and clean"
+" rebuilds confirmed the complete match."
+msgstr ""
+"Trong khi xây dựng lại chức năng tạo kẻ thù của TH09, phiên {ph0}GPT-6-Luna-"
+"max{ph1} đã lấy một giả thuyết từ mã nguồn TH08 có liên quan. Mã trước đó đã"
+" đề xuất cách tổ chức vòng lặp và xử lý các lỗi bên trong nó. Bằng chứng "
+"riêng của TH09 đã cung cấp chi tiết cụ thể về trò chơi. Việc xây dựng lại từ"
+" nguồn đã xác nhận rằng toàn bộ hàm khớp với bản gốc."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:458
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}\"The model did not know that compiler quirk\" and \"the model could "
+"not use it\" are different problems.{ph1} Retrieval may solve the first, but"
+" turning that fact into a useful candidate still takes work. And if the "
+"candidate fails, the model must decide what the result means for its next "
+"attempt. Knowing the relevant pattern is only the beginning of that process."
+msgstr ""
+"{ph0}\"Mô hình không biết lỗi của trình biên dịch\" và \"mô hình không thể "
+"sử dụng nó\" là các vấn đề khác nhau.{ph1} Việc truy xuất có thể giải quyết "
+"được vấn đề đầu tiên, nhưng việc biến thực tế đó thành một mã ứng viên hữu "
+"ích vẫn cần nhiều công sức. Và nếu mã nguồn mã ứng viên không thành công, mô"
+" hình phải quyết định kết quả có ý nghĩa gì cho lần thử tiếp theo. Biết mẫu "
+"có liên quan chỉ là bước khởi đầu của quá trình đó."
+
+#: website/public/blog/reverse-engineering-models/index.html:468
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For that reason, I would include a smaller general model with good retrieval"
+" in any comparison. Giving it the same library of experience would help us "
+"identify what training adds: better candidate generation, better decisions "
+"after feedback, or both."
+msgstr ""
+"Vì lý do đó, tôi sẽ đưa vào một mô hình AI có mục đích chung nhỏ hơn với khả"
+" năng truy xuất tốt trong mọi so sánh. Cung cấp cho nó cùng một thư viện "
+"kinh nghiệm sẽ giúp chúng tôi xác định nội dung đào tạo bổ sung: tạo ứng "
+"viên tốt hơn, đưa ra quyết định tốt hơn sau khi phản hồi hoặc cả hai."
+
+#: website/public/blog/reverse-engineering-models/index.html:476
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Learning the next useful experiment"
+msgstr "Học thí nghiệm hữu ích tiếp theo"
+
+#: website/public/blog/reverse-engineering-models/index.html:477
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Those decisions after feedback are what I would most like to study. In "
+"agentic reconstruction, the model proposes an explanation and tests it "
+"against the program. Even when the candidate fails, the result can narrow "
+"the remaining possibilities and suggest a more useful next experiment."
+msgstr ""
+"Những quyết định sau khi được phản hồi là điều tôi muốn nghiên cứu nhất. "
+"Trong tái cấu trúc tác nhân, mô hình đề xuất một lời giải thích và kiểm tra "
+"nó dựa trên chương trình. Ngay cả khi mã nguồn ứng viên không thành công, "
+"kết quả có thể thu hẹp các khả năng còn lại và đề xuất thử nghiệm tiếp theo "
+"hữu ích hơn."
+
+#: website/public/blog/reverse-engineering-models/index.html:484
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Consider the temporary-results example again. Its final source shows the "
+"arrangement that worked, but the route to that source contains more "
+"information. Each of the following experiments helped identify what still "
+"needed to change."
+msgstr ""
+"Hãy xem xét lại ví dụ về kết quả tạm thời. Nguồn cuối cùng của nó cho thấy "
+"sự sắp xếp đã có hiệu quả nhưng đường dẫn đến nguồn đó chứa nhiều thông tin "
+"hơn. Mỗi thử nghiệm sau đây đã giúp xác định những gì vẫn cần thay đổi."
+
+#: website/public/blog/reverse-engineering-models/index.html:497
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Experiment"
+msgstr "Thử nghiệm"
+
+#: website/public/blog/reverse-engineering-models/index.html:498
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What its result taught us"
+msgstr "Kết quả của nó đã dạy chúng ta điều gì"
+
+#: website/public/blog/reverse-engineering-models/index.html:503
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Try a different way to copy the results"
+msgstr "Hãy thử một cách khác để sao chép kết quả"
+
+#: website/public/blog/reverse-engineering-models/index.html:504
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "The copy code changes, but the function still differs."
+msgstr "Mã sao chép thay đổi nhưng chức năng vẫn khác."
+
+#: website/public/blog/reverse-engineering-models/index.html:509
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Use the returned values directly"
+msgstr "Sử dụng trực tiếp các giá trị được trả về"
+
+#: website/public/blog/reverse-engineering-models/index.html:510
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Copying follows the original pattern, but temporary storage still differs."
+msgstr "Sao chép theo mẫu ban đầu, nhưng lưu trữ tạm thời vẫn khác."
+
+#: website/public/blog/reverse-engineering-models/index.html:516
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the temporary results alive together"
+msgstr "Giữ tất cả các biến tạm thời hợp lệ cùng một lúc"
+
+#: website/public/blog/reverse-engineering-models/index.html:517
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"They get separate storage, but one still overlaps a value used later for "
+"collision checks."
+msgstr ""
+"Chúng có bộ lưu trữ riêng biệt, nhưng một bộ vẫn chồng lên một giá trị được "
+"sử dụng sau này để kiểm tra va chạm."
+
+#: website/public/blog/reverse-engineering-models/index.html:523
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Keep the collision-check value separate"
+msgstr "Giữ riêng giá trị kiểm tra va chạm"
+
+#: website/public/blog/reverse-engineering-models/index.html:524
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A clean rebuild confirms the complete match."
+msgstr ""
+"Việc biên dịch lại rõ ràng từ nguồn xác nhận sự trùng khớp hoàn chỉnh."
+
+#: website/public/blog/reverse-engineering-models/index.html:529
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Selected experiments from the attack-function reconstruction above, grouped "
+"by what they taught us."
+msgstr ""
+"Các thử nghiệm được chọn từ quá trình tái cấu trúc chức năng tấn công ở "
+"trên, được nhóm theo những gì chúng đã dạy chúng ta."
+
+#: website/public/blog/reverse-engineering-models/index.html:533
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A training record that keeps this sequence can teach more than the final "
+"source alone. It connects each proposed change to an observed result and the"
+" next decision. Keeping ineffective variations matters too: they tell a "
+"later agent which hypotheses have already been tested in that context."
+msgstr ""
+"Một bản ghi huấn luyện lưu giữ trình tự này có thể dạy nhiều hơn chỉ riêng "
+"nguồn cuối cùng. Nó kết nối từng thay đổi được đề xuất với kết quả được quan"
+" sát và quyết định tiếp theo. Việc giữ lại các biến thể không hiệu quả cũng "
+"rất quan trọng: chúng cho tác nhân sau này biết những giả thuyết nào đã được"
+" kiểm tra trong bối cảnh đó."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:540
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}I would want the model to learn how to use feedback.{ph1} A neutral "
+"result is a reason to reconsider the variation; a changed mismatch may point"
+" to another cause. When local edits stop being informative, the agent should"
+" be able to revisit the source representation or inspect the evidence again."
+msgstr ""
+"{ph0}Tôi muốn mô hình học cách sử dụng phản hồi.{ph1} Kết quả trung lập là "
+"lý do để xem xét lại biến thể; sự không phù hợp đã thay đổi có thể chỉ ra "
+"một nguyên nhân khác. Khi các chỉnh sửa cục bộ không còn mang tính thông "
+"tin, nhân viên sẽ có thể xem lại phần trình bày nguồn hoặc kiểm tra lại bằng"
+" chứng."
+
+#: website/public/blog/reverse-engineering-models/index.html:549
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Learning to make those choices requires autonomy. Sometimes the useful next "
+"step is inspecting another caller rather than compiling another edit. A "
+"rigid sequence of required rewrites would remove that choice, along with "
+"part of the behavior we want the model to learn."
+msgstr ""
+"Học cách đưa ra những lựa chọn đó đòi hỏi sự tự chủ. Đôi khi, bước tiếp theo"
+" hữu ích là kiểm tra người gọi khác thay vì biên dịch một bản chỉnh sửa "
+"khác. Một chuỗi các lần viết lại bắt buộc một cách cứng nhắc sẽ loại bỏ lựa "
+"chọn đó, cùng với một phần hành vi mà chúng ta muốn mô hình học."
+
+#: website/public/blog/reverse-engineering-models/index.html:558
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Why RE is interesting for reinforcement learning"
+msgstr "Tại sao kỹ thuật đảo ngược lại thú vị cho việc học tăng cường"
+
+#: website/public/blog/reverse-engineering-models/index.html:559
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Bounded reconstruction gives us a practical environment for studying these "
+"choices. Once the target and compiler are pinned, many source experiments "
+"produce quick, repeatable feedback. The agent can compile a candidate, "
+"inspect the mismatch and use that observation to choose its next step."
+msgstr ""
+"Tái dựng trong phạm vi xác định là môi trường thực tế để nghiên cứu các lựa "
+"chọn này. Khi phiên bản của mục tiêu và trình biên dịch được cố định, nhiều "
+"thử nghiệm mã nguồn cho phản hồi nhanh và có thể lặp lại. Tác nhân có thể "
+"biên dịch mã ứng viên, xem khác biệt rồi chọn bước tiếp theo."
+
+#: website/public/blog/reverse-engineering-models/index.html:566
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Reinforcement learning could train that decision-making process through the "
+"feedback it receives. A candidate accepted by a defined check gives us a "
+"concrete outcome, while the sequence of attempts lets us observe how much "
+"work it took to reach it."
+msgstr ""
+"Học tăng cường có thể rèn luyện quá trình ra quyết định đó thông qua phản "
+"hồi mà nó nhận được. Một mã ứng viên được chấp nhận bởi một cuộc kiểm tra "
+"xác định sẽ cho chúng ta một kết quả cụ thể, trong khi trình tự các lần thử "
+"cho phép chúng ta quan sát xem cần bao nhiêu công sức để đạt được kết quả "
+"đó."
+
+#. {ph0}: <a href="https://aclanthology.org/2024.emnlp-main.203/" >
+#. {ph1}: </a >
+#. {ph2}: <a href="https://arxiv.org/html/2606.16162v1">
+#. {ph3}: </a>
+#: website/public/blog/reverse-engineering-models/index.html:572
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"There is already research supporting this direction. {ph0}LLM4Decompile{ph1}"
+" studies models specialized for decompilation. {ph2}AutoDecompiler{ph3} "
+"trains multi-turn refinement using compiler and execution feedback. Their "
+"studies focus on functional recovery. For this work, I would use them as a "
+"starting point for the related task of finding source that matches a "
+"historical compiler's output."
+msgstr ""
+"Đã có nghiên cứu hỗ trợ hướng này. {ph0}LLM4Decompile{ph1} nghiên cứu các mô"
+" hình chuyên dùng cho việc dịch ngược. {ph2}AutoDecompiler{ph3} đào tạo sàng"
+" lọc nhiều lượt bằng cách sử dụng phản hồi của trình biên dịch và thực thi. "
+"Nghiên cứu của họ tập trung vào phục hồi chức năng. Đối với công việc này, "
+"tôi sẽ sử dụng chúng làm điểm khởi đầu cho nhiệm vụ liên quan là tìm nguồn "
+"phù hợp với đầu ra của trình biên dịch lịch sử."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:584
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To reach such a well-defined task, though, we may first need to establish "
+"what a function owns or devise a new runtime measurement. In TH08, for "
+"example, a {ph0}collision difference led back to how the original program "
+"handled floating-point calculations{ph1}. Before the agent could test a "
+"useful correction, it had to work out what to measure."
+msgstr ""
+"Tuy nhiên, để đạt được nhiệm vụ được xác định rõ ràng như vậy, trước tiên "
+"chúng ta có thể cần thiết lập tài nguyên nào mà hàm sở hữu hoặc nghĩ ra cách"
+" mới để quan sát hành vi của chương trình khi chạy. Ví dụ: trong TH08, sự "
+"khác biệt về va chạm {ph0} dẫn đến cách chương trình ban đầu xử lý các phép "
+"tính dấu phẩy động{ph1}. Trước khi tác nhân có thể kiểm tra một sự điều "
+"chỉnh hữu ích, nó phải tìm ra những gì cần đo lường."
+
+#: website/public/blog/reverse-engineering-models/index.html:595
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This suggests another role for a broadly capable model: helping make the "
+"problem checkable in the first place. Once that check exists, we can "
+"investigate how far a learned search policy can get with it."
+msgstr ""
+"Điều này gợi ý một vai trò khác của một mô hình có khả năng rộng rãi: giúp "
+"làm cho vấn đề có thể được kiểm tra ngay từ đầu. Khi kiểm tra đó tồn tại, "
+"chúng tôi có thể điều tra xem chính sách tìm kiếm đã học có thể đi được bao "
+"xa."
+
+#: website/public/blog/reverse-engineering-models/index.html:603
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "When the oracle is wrong"
+msgstr "Khi công cụ xác minh sai"
+
+#: website/public/blog/reverse-engineering-models/index.html:604
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Once we train against that check, its coverage becomes part of what the "
+"model learns. I call the reference or checker an oracle. Even if it gives a "
+"repeatable answer, we still need to understand what that answer covers."
+msgstr ""
+"Khi dùng một phép kiểm tra để huấn luyện, phạm vi kiểm tra cũng trở thành "
+"một phần của môi trường học. Tôi gọi chuẩn tham chiếu hoặc công cụ kiểm tra "
+"đó là oracle. Ngay cả câu trả lời lặp lại được cũng cần được hiểu theo những"
+" gì nó thực sự xác minh."
+
+#: website/public/blog/reverse-engineering-models/index.html:610
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"TH08 showed how much can hide outside that coverage. Some reconstructed "
+"functions passed their exact comparisons with wrong floating constants. The "
+"comparator adjusted relocated addresses before checking instructions, but it"
+" checked the values behind those addresses only when they had been "
+"explicitly recorded for verification. Other literal references could pass "
+"without their values being examined."
+msgstr ""
+"TH08 cho thấy vấn đề có thể ẩn ngoài phạm vi kiểm tra. Một số hàm tái dựng "
+"dùng hằng số dấu phẩy động sai nhưng vẫn vượt qua so sánh chính xác. Bộ so "
+"sánh điều chỉnh địa chỉ tái định vị trước khi kiểm tra lệnh máy, nhưng chỉ "
+"kiểm tra giá trị tại các địa chỉ đó nếu chúng đã được ghi nhận rõ ràng để "
+"xác minh. Những tham chiếu hằng số khác có thể vượt qua mà không được kiểm "
+"tra giá trị."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph1}: </a >
+#. {ph2}: <code>1.0f</code>
+#. {ph3}: <code>32.0f</code>
+#: website/public/blog/reverse-engineering-models/index.html:619
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To close that gap, a {ph0}wider audit{ph1} found incorrect constants in "
+"functions that had already been accepted. In one calculation, the "
+"reconstructed source added {ph2} where the original added {ph3}."
+msgstr ""
+"Để giải quyết khoảng trống này, {ph0}kiểm tra rộng hơn{ph1} đã tìm thấy các "
+"hằng số không chính xác trong các hàm đã vượt qua quá trình xác minh. Trong "
+"một phép tính, mã nguồn được xây dựng lại đã thêm {ph2}, trong khi mã nguồn "
+"ban đầu được thêm {ph3}."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:629
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}A learner rewarded by the old check could learn to produce the wrong "
+"reconstruction.{ph1} We had not trained an RL model against this oracle; the"
+" observed failure was in the check itself. But using that check as a reward "
+"would have made the same blind spot part of the learning environment."
+msgstr ""
+"{ph0}Mô hình được khen thưởng bằng kiểm tra xác minh cũ có thể học cách tạo "
+"ra bản dựng lại không chính xác.{ph1} Chúng tôi không đào tạo mô hình RL "
+"bằng trình kiểm tra đó. Sự thất bại mà chúng tôi quan sát thấy nằm ở chính "
+"việc kiểm tra. Nhưng nếu chúng ta sử dụng nó như một phần thưởng thì điểm mù"
+" đó sẽ trở thành một phần của môi trường học tập."
+
+#. {ph0}: <a href="https://arxiv.org/html/2609.05370v1" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:639
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"A functional test can have a similar blind spot. {ph0}Differential-fuzzing "
+"research on LLM decompilers{ph1} has found behavior differences beyond the "
+"supplied tests. Passing those tests therefore needs to be read in terms of "
+"the cases they exercise, just as an instruction match needs to be read in "
+"terms of the bytes and data it checks."
+msgstr ""
+"Một bài kiểm tra chức năng có thể có điểm mù tương tự. {ph0}Nghiên cứu sử "
+"dụng tính năng làm mờ vi phân trên bộ giải mã LLM{ph1} đã tìm thấy những "
+"khác biệt về hành vi bên ngoài các thử nghiệm được cung cấp. Do đó, chúng ta"
+" cần hiểu một bài kiểm tra đạt theo các trường hợp mà nó thực hiện. Tương "
+"tự, một lệnh khớp phải được hiểu theo byte và dữ liệu mà nó xác minh."
+
+#: website/public/blog/reverse-engineering-models/index.html:649
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Before using either kind of check as a reward, I would test it with "
+"deliberate failures. I would also keep final acceptance outside the "
+"candidate's editable source, so the model has to satisfy the check through "
+"its reconstruction. Otherwise, something like a byte array copied from the "
+"target could satisfy a naive score without recovering useful source."
+msgstr ""
+"Trước khi sử dụng một trong hai loại kiểm tra xác minh làm phần thưởng, tôi "
+"sẽ kiểm tra nó với kết quả cố tình sai. Tôi cũng sẽ tách biệt sự chấp nhận "
+"cuối cùng với mã nguồn mà tác nhân AI có thể chỉnh sửa. Mô hình phải vượt "
+"qua quá trình xác minh bằng cách xây dựng lại chương trình một cách chính "
+"xác. Mặt khác, chỉ cần sao chép một mảng byte từ mục tiêu có thể đánh lừa "
+"một hệ thống tính điểm ngây thơ mà không khôi phục được mã nguồn hữu ích."
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:657
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Improving the learner and improving its oracle belong to the same "
+"research problem.{ph1} As the learner gets better at optimizing the feedback"
+" we give it, understanding that feedback becomes more important too."
+msgstr ""
+"{ph0}Cải thiện mô hình học và cải thiện công cụ xác minh là hai phần của "
+"cùng một vấn đề nghiên cứu.{ph1} Mô hình càng giỏi tối ưu phản hồi được cung"
+" cấp, chúng ta càng cần hiểu chính phản hồi đó."
+
+#: website/public/blog/reverse-engineering-models/index.html:667
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "A comparison worth running"
+msgstr "Một so sánh đáng chạy"
+
+#: website/public/blog/reverse-engineering-models/index.html:668
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"With those checks in place, I would start the comparison on a fixed VC7.1 "
+"task family. First, I would establish baselines for a strong general model "
+"and a smaller one. Adding repository knowledge to the smaller model would "
+"show what retrieval changes. From there, supervised specialization and an "
+"RL-trained version would let us examine what training adds."
+msgstr ""
+"Với những bước kiểm tra đó, tôi sẽ bắt đầu so sánh trên nhóm nhiệm vụ VC7.1 "
+"cố định. Đầu tiên, tôi sẽ thiết lập các đường cơ sở cho một mô hình AI có "
+"mục đích chung mạnh mẽ và một mô hình nhỏ hơn. Việc bổ sung kiến ​​thức về "
+"kho lưu trữ vào mô hình nhỏ hơn sẽ cho thấy những thay đổi trong quá trình "
+"truy xuất. Từ đó, chuyên môn hóa được giám sát và phiên bản được đào tạo RL "
+"sẽ cho phép chúng tôi kiểm tra nội dung đào tạo bổ sung."
+
+#: website/public/blog/reverse-engineering-models/index.html:676
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"To make those comparisons informative, each model would receive the same "
+"target evidence and tools. For the training-specific comparisons, I would "
+"keep the base model and available knowledge fixed as well. Repeated trials "
+"would help distinguish a reliable search strategy from a lucky candidate."
+msgstr ""
+"Để làm cho những so sánh đó trở nên hữu ích, mỗi mô hình sẽ nhận được các "
+"bằng chứng và công cụ mục tiêu giống nhau. Đối với các so sánh dành riêng "
+"cho đào tạo, tôi cũng sẽ giữ nguyên mô hình cơ sở và kiến ​​thức có sẵn. Các"
+" thử nghiệm lặp đi lặp lại sẽ giúp phân biệt một chiến lược tìm kiếm đáng "
+"tin cậy với một giải pháp ứng viên tình cờ thành công."
+
+#: website/public/blog/reverse-engineering-models/index.html:683
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would then separate two starting conditions: reconstructing a function "
+"from its instructions, and closing the last few differences in maintained "
+"source. A specialist might be excellent at the second task while a general "
+"model does much of the work needed to reach it. Measuring them separately "
+"would reveal that division of work."
+msgstr ""
+"Sau đó, tôi sẽ tách hai điều kiện bắt đầu: xây dựng lại một hàm từ các lệnh "
+"máy của nó và đóng một số khác biệt cuối cùng trong nguồn được duy trì. Một "
+"mô hình AI chuyên dụng có thể thực hiện xuất sắc nhiệm vụ thứ hai trong khi "
+"một mô hình AI có mục đích chung thực hiện phần lớn công việc cần thiết để "
+"đạt được nhiệm vụ đó. Việc đo lường chúng một cách riêng biệt sẽ tiết lộ sự "
+"phân chia công việc đó."
+
+#: website/public/blog/reverse-engineering-models/index.html:691
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both tasks need genuinely held-out examples. Because related Touhou games "
+"share engine code, holding out a game's name would still allow nearly "
+"identical functions to appear in training. I would instead hold out source "
+"families and keep their accepted answers out of both training and retrieval."
+msgstr ""
+"Cả hai nhiệm vụ đều cần loại trừ các mẫu thử nghiệm khỏi quá trình đào tạo "
+"và truy xuất. Trò chơi Touhou liên quan chia sẻ mã công cụ. Việc loại trừ "
+"một trò chơi khỏi quá trình huấn luyện vẫn có thể để lại các chức năng gần "
+"như giống hệt nhau trong tập huấn luyện. Thay vào đó, tôi sẽ loại trừ toàn "
+"bộ các nhóm mã nguồn có liên quan và loại bỏ các câu trả lời đã được xác "
+"minh của chúng khỏi cả dữ liệu huấn luyện và thư viện truy xuất."
+
+#: website/public/blog/reverse-engineering-models/index.html:698
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"On those examples, the outcome would be complete, independently validated "
+"matches. Giving each model the same candidate or compile budget would help "
+"compare search quality. Measuring elapsed time and total cost, including "
+"compilation, would tell us whether that quality produces an efficient "
+"workflow. Training costs would need their own accounting too."
+msgstr ""
+"Kết quả cần đo là các lần khớp hoàn chỉnh, được xác minh độc lập. Giới hạn "
+"số mã ứng viên hoặc số lần biên dịch bằng nhau giúp so sánh chất lượng tìm "
+"kiếm. Đo tổng thời gian và chi phí, kể cả biên dịch, cho biết chất lượng đó "
+"có tạo ra quy trình hiệu quả không. Chi phí huấn luyện cần tính riêng."
+
+#: website/public/blog/reverse-engineering-models/index.html:706
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Both views matter because a cheaper proposal can become an expensive "
+"workflow if it causes more uninformative compiles. Conversely, a slower "
+"model may pay for itself by finding a useful experiment sooner. The "
+"comparison should capture those costs."
+msgstr ""
+"Cả hai phép đo đều quan trọng. Một đề xuất rẻ tiền có thể dẫn đến một quy "
+"trình làm việc tốn kém nếu nó tạo ra nhiều lần biên dịch không cung cấp "
+"thông tin hữu ích. Ngược lại, một mô hình chậm hơn có thể tiết kiệm hơn nếu "
+"nó tìm thấy một thử nghiệm hữu ích sớm hơn. Việc so sánh nên bao gồm những "
+"chi phí này."
+
+#. {ph0}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:712
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"Counting accepted results also keeps intermediate progress in perspective. "
+"One TH09 {ph0}replay-save candidate{ph1} looked promising because the "
+"compiled function had the expected size, but a full comparison still found "
+"substantial differences. Changes in how the compiler arranges instructions "
+"can also make a candidate look closer without resolving the underlying "
+"problem. Such diagnostics can guide the next experiment, but I would "
+"validate any reward for \"getting closer\" against the full acceptance "
+"check."
+msgstr ""
+"Việc đếm các kết quả được chấp nhận cũng giúp duy trì tiến độ trung gian. "
+"Một TH09 {ph0}mã ứng viên lưu lại phát lại{ph1} có vẻ đầy hứa hẹn vì hàm "
+"được biên dịch có kích thước như mong đợi nhưng so sánh đầy đủ vẫn tìm thấy "
+"những khác biệt đáng kể. Những thay đổi trong cách trình biên dịch sắp xếp "
+"các lệnh máy cũng có thể khiến mã ứng viên có vẻ gần hơn mà không giải quyết"
+" được vấn đề cơ bản. Chẩn đoán như vậy có thể hướng dẫn thử nghiệm tiếp "
+"theo, nhưng tôi sẽ xác thực bất kỳ phần thưởng nào cho việc \"tiến gần hơn\""
+" so với kiểm tra chấp nhận hoàn toàn."
+
+#: website/public/blog/reverse-engineering-models/index.html:727
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"I would be interested in the pattern across these results. If a specialist "
+"does well within a familiar compiler family, does that advantage survive a "
+"toolchain change? And once both models have good retrieval, how much does "
+"training still add? The answers would help us decide where each kind of "
+"model is most useful."
+msgstr ""
+"Tôi sẽ quan tâm đến mô hình trên các kết quả này. Nếu một mô hình AI chuyên "
+"dụng hoạt động tốt trong dòng trình biên dịch quen thuộc, liệu lợi thế đó có"
+" tồn tại được khi thay đổi chuỗi công cụ không? Và một khi cả hai mô hình AI"
+" đều có khả năng truy xuất tốt thì việc đào tạo vẫn bổ sung thêm bao nhiêu? "
+"Câu trả lời sẽ giúp chúng ta quyết định xem mỗi loại mô hình sẽ hữu ích nhất"
+" ở đâu."
+
+#: website/public/blog/reverse-engineering-models/index.html:736
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "What kind of agent does this suggest?"
+msgstr "Điều này gợi ý loại tác nhân AI nào?"
+
+#: website/public/blog/reverse-engineering-models/index.html:737
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"If the models turn out to help at different stages, a useful arrangement "
+"might be a broad agent with access to a specialist. Once a task becomes a "
+"familiar compiler search, it could ask the specialist for candidates. If the"
+" results stop making sense, the broader agent could return to the target "
+"evidence or investigate the measurement itself."
+msgstr ""
+"Nếu các mô hình tỏ ra hữu ích ở các giai đoạn khác nhau, thì sự sắp xếp hữu "
+"ích có thể là một tác nhân rộng rãi có quyền truy cập vào một mô hình AI "
+"chuyên dụng. Khi một nhiệm vụ trở thành một công cụ tìm kiếm trình biên dịch"
+" quen thuộc, nó có thể yêu cầu mô hình AI chuyên biệt dành cho ứng viên. Nếu"
+" kết quả không còn có ý nghĩa nữa, tác nhân rộng hơn có thể quay lại bằng "
+"chứng mục tiêu hoặc tự điều tra phép đo."
+
+#: website/public/blog/reverse-engineering-models/index.html:745
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"In that arrangement, specialization becomes a tool the agent can choose as "
+"the investigation develops. The agent keeps the freedom to change direction "
+"that made the earlier breakthroughs possible."
+msgstr ""
+"Trong sự sắp xếp đó, sự chuyên môn hóa trở thành một công cụ mà đặc vụ có "
+"thể lựa chọn khi cuộc điều tra phát triển. Người đại diện có quyền tự do "
+"thay đổi hướng đi để có thể đạt được những đột phá trước đó."
+
+#: website/public/blog/reverse-engineering-models/index.html:750
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"This follows naturally from the industrial shift I described in the previous"
+" essay. Being able to run many more experiments changes how we organize the "
+"work. It also gives us a reason to ask which decisions need broad judgment "
+"and which improve through repeated experience with a particular craft."
+msgstr ""
+"Điều này diễn ra một cách tự nhiên từ sự chuyển dịch công nghiệp mà tôi đã "
+"mô tả trong bài viết trước. Việc có thể chạy nhiều thử nghiệm hơn sẽ thay "
+"đổi cách chúng ta tổ chức công việc. Nó cũng cho chúng ta lý do để hỏi những"
+" quyết định nào cần được đánh giá rộng rãi và quyết định nào được cải thiện "
+"thông qua kinh nghiệm lặp đi lặp lại với một nghề cụ thể."
+
+#: website/public/blog/reverse-engineering-models/index.html:757
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"For now, the strongest general model has earned its place in my workflow by "
+"opening problems I had left unresolved. Those successes are what make me "
+"want to examine the work more closely: how much depended on the model's "
+"breadth, and how much could be handled by a model trained in this particular"
+" kind of reconstruction?"
+msgstr ""
+"Hiện tại, mô hình tổng quát mạnh nhất đã có chỗ đứng trong quy trình của tôi"
+" vì giải quyết được những vấn đề trước đó còn bỏ ngỏ. Những thành công này "
+"khiến tôi muốn xem kỹ quá trình: bao nhiêu phần phụ thuộc vào năng lực rộng "
+"của mô hình, và bao nhiêu phần có thể giao cho một mô hình được huấn luyện "
+"riêng cho kiểu tái dựng này?"
+
+#. {ph0}: <strong >
+#. {ph1}: </strong >
+#: website/public/blog/reverse-engineering-models/index.html:765
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}The repositories give us a way to test the question.{ph1} I would like "
+"to use that record to build the comparison and see what we learn."
+msgstr ""
+"{ph0}Các kho lưu trữ cung cấp cho chúng tôi một cách để kiểm tra câu "
+"hỏi.{ph1} Tôi muốn sử dụng hồ sơ đó để xây dựng sự so sánh và xem những gì "
+"chúng tôi học được."
+
+#: website/public/blog/reverse-engineering-models/index.html:775
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Evidence and model attribution"
+msgstr "Bằng chứng và quy kết mô hình"
+
+#: website/public/blog/reverse-engineering-models/index.html:783
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The examples describe historical function-level comparisons recorded in the "
+"linked commits. Whole-game runtime checks are separate milestones. Source "
+"and matching records were reviewed on 13 October 2026."
+msgstr ""
+"Các ví dụ mô tả các so sánh cấp độ chức năng lịch sử được ghi lại trong các "
+"cam kết được liên kết. Kiểm tra thời gian chạy toàn bộ trò chơi là các cột "
+"mốc riêng biệt. Nguồn và hồ sơ trùng khớp đã được xem xét vào ngày 13 tháng "
+"10 năm 2026."
+
+#. {ph0}: <code>gpt-dots</code>
+#. {ph1}: <code>gpt-web</code>
+#: website/public/blog/reverse-engineering-models/index.html:789
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The TH09 label {ph0} identifies GPT-6-Astra. {ph1} changed with the model "
+"used at the time, so that label alone does not identify an individual run. "
+"Explicit model names in the other cited commits establish their recorded "
+"attribution; the histories do not contain uniform per-run cost or effort "
+"measurements."
+msgstr ""
+"Nhãn TH09 {ph0} có nghĩa là GPT-6-Astra. Mô hình được liên kết với {ph1} đã "
+"thay đổi theo thời gian, do đó, riêng nhãn đó không thể xác định được mô "
+"hình được sử dụng trong một lần chạy cụ thể. Tên mô hình rõ ràng trong các "
+"cam kết được trích dẫn khác cung cấp thông tin ghi nhận. Những lịch sử này "
+"không bao gồm các phép đo nhất quán về chi phí hoặc nỗ lực cho mỗi lần chạy."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/de63c0f9121963f3a6b1ab5471c4878625fd3425"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/52929ed7c299f1a5f29cc13964e22510145fd616"
+#. >
+#. {ph5}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:798
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 temporary lifetimes:{ph1} the {ph2}earlier context review{ph3} and"
+" {ph4}complete cold reconstruction{ph5}."
+msgstr ""
+"{ph0}TH09 thời gian tồn tại của đối tượng tạm thời:{ph1} {ph2}xem xét ngữ "
+"cảnh trước đó{ph3} và {ph4} việc xây dựng lại hoàn chỉnh được xác minh bằng "
+"cách biên dịch lại rõ ràng từ nguồn{ph5}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/f8d12d72aaf02212ee1b585a8f3f86d7ed000269"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/da33a646221198ceb7f3df2b96e2ca0e9b2f705f"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/5f825b28a862f8e1a6d4aea2f78a42f04c09a1c0"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:810
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}TH09 Front callback:{ph1} {ph2}non-exact diagnostic regions{ph3}, "
+"{ph4}Astra's new graph{ph5} and its {ph6}accepted recompile replay{ph7}."
+msgstr ""
+"{ph0}Callback Front của TH09:{ph1} {ph2}các vùng chẩn đoán chưa khớp{ph3}, "
+"{ph4}đồ thị luồng điều khiển mới của Astra{ph5} và {ph6}phép kiểm tra biên "
+"dịch lại đã được chấp nhận{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th095/commit/26bb64bdb093a13f73abd0ee8ae7ce199ee4658f"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th04/commit/6dce0a79d5b931f0e2a08475b90e0c33d2321b98"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/1eb843383941d00065622a9e353146c4bb96979e"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:826
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Compiler knowledge:{ph1} {ph2}TH095 identifier-bucket reuse{ph3}, "
+"{ph4}TH04 player source and linker order{ph5} and {ph6}Luna's TH09 enemy-"
+"spawn closure{ph7}."
+msgstr ""
+"{ph0}Kiến thức về trình biên dịch:{ph1} {ph2}TH095 tái sử dụng hành vi của "
+"nhóm nhận dạng{ph3}, {ph4}TH04 mã nguồn người chơi và thứ tự trình liên "
+"kết{ph5} và {ph6}Luna tái thiết hoàn toàn chức năng tạo kẻ thù của "
+"TH09{ph7}."
+
+#. {ph0}: <strong>
+#. {ph1}: </strong>
+#. {ph2}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78"
+#. >
+#. {ph3}: </a >
+#. {ph4}: <a
+#. href="https://github.com/N0zoM1z0/th08/commit/af9cb1d3e839b15a78b47ac1701506083cc82847"
+#. >
+#. {ph5}: </a >
+#. {ph6}: <a
+#. href="https://github.com/N0zoM1z0/th09/commit/ab72fd77728293fc0beacfc656ca701b0e266016"
+#. >
+#. {ph7}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:842
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Checks and diagnostics:{ph1} {ph2}TH08 floating-literal audit{ph3}, "
+"{ph4}TH08 numerical investigation{ph5} and {ph6}TH09 replay-save "
+"reconstruction{ph7}."
+msgstr ""
+"{ph0}Kiểm tra và chẩn đoán:{ph1} {ph2}kiểm tra hằng số dấu phẩy động của "
+"TH08{ph3}, {ph4}điều tra số học của TH08{ph5} và {ph6}tái dựng chức năng lưu"
+" replay của TH09{ph7}."
+
+#: website/public/blog/reverse-engineering-models/index.html:859
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"The proposed specialist and RL comparisons are future experiments. The "
+"project histories motivate them; no trained specialist was evaluated for "
+"this essay."
+msgstr ""
+"Những so sánh được đề xuất giữa các mô hình chuyên dụng và chương trình đào "
+"tạo RL là những thử nghiệm trong tương lai. Lịch sử dự án thúc đẩy họ. Không"
+" có mô hình chuyên ngành được đào tạo nào được đánh giá cho bài tiểu luận "
+"này."
+
+#: website/public/blog/reverse-engineering-models/index.html:6
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Does reverse engineering need a bigger model? | REA"
+msgstr "Kỹ thuật đảo ngược có cần một mô hình lớn hơn không? | REA"
+
+#: website/public/blog/reverse-engineering-models/index.html:7
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"What Touhou reconstruction taught me about general models, specialist models"
+" and learning to propose better hypotheses from compiler feedback."
+msgstr ""
+"Việc tái xây dựng Touhou đã dạy tôi điều gì về các mô hình chung, mô hình "
+"chuyên biệt và việc học cách đề xuất các giả thuyết tốt hơn từ phản hồi của "
+"trình biên dịch."
+
+#: website/public/blog/reverse-engineering-models/index.html:240
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "On this page"
+msgstr "Trên trang này"
+
+#: website/public/blog/reverse-engineering-models/index.html:253
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Models and reverse engineering essay"
+msgstr "Mô hình và tiểu luận kỹ thuật đảo ngược"
+
+#: website/public/blog/reverse-engineering-models/index.html:491
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Selected reconstruction experiments"
+msgstr "Các thí nghiệm tái thiết được chọn"
+
+#: website/public/blog/reverse-engineering-models/index.html:883
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid "Back to top"
+msgstr "Về đầu trang"
+
+#. {ph0}: <a
+#. href="https://github.com/morluto/rea/blob/main/website/evidence/reverse-
+#. engineering-models.md" >
+#. {ph1}: </a >
+#: website/public/blog/reverse-engineering-models/index.html:776
+#, python-brace-format
+msgctxt "page:blog/reverse-engineering-models/index.html"
+msgid ""
+"{ph0}Detailed evidence notes{ph1} include the recorded comparisons and "
+"experiment context."
+msgstr ""
+"{ph0}Ghi chú bằng chứng chi tiết{ph1} bao gồm các kết quả so sánh và bối "
+"cảnh thử nghiệm."
+
+#~ msgctxt "page:blog/index.html"
+#~ msgid "By N0zoM1z0 · 13 October 2026 · Draft for review"
+#~ msgstr "N0zoM1z0 · 13 tháng 10 năm 2026 · Bản nháp để góp ý"
 
 #~ msgctxt "page:index.html"
 #~ msgid "Setup guide"

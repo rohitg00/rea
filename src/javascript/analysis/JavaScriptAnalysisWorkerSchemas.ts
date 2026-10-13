@@ -475,7 +475,9 @@ const origin = z
   .strictObject({
     specifier: z.string(),
     importedPath: strings,
-    resolutionMode: z.enum(["import", "require"]).optional(),
+    resolutionMode: z
+      .enum(["import", "require", "compiler-dependent"])
+      .optional(),
   })
   .transform(({ resolutionMode, ...rest }) => ({
     ...rest,
@@ -530,7 +532,9 @@ const coverage = z
   });
 const moduleLink = z
   .strictObject({
-    resolutionMode: z.enum(["import", "require"]).optional(),
+    resolutionMode: z
+      .enum(["import", "require", "compiler-dependent"])
+      .optional(),
     kind: z.enum([
       "import",
       "type-import",

@@ -48,6 +48,7 @@ export class PwntoolsRecordedCrashProvider
           payload,
           snapshot,
           rootPath,
+          resources,
           diagnostics,
           options,
           runCommand,
@@ -120,6 +121,7 @@ export class PwntoolsRecordedCrashProvider
             const context = await inspectPwndbgCore({
               environment,
               rootPath,
+              resources,
               diagnostics,
               options,
               runCommand,

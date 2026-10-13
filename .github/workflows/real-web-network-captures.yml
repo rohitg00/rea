@@ -7,10 +7,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: real-web-network-captures-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
 env:
   HUSKY: "0"
   NODE_OPTIONS: --max-old-space-size=768

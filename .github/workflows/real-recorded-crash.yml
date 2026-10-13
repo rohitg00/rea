@@ -7,10 +7,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: real-recorded-crash-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
 env:
   NODE_OPTIONS: --max-old-space-size=768
   HUSKY: "0"

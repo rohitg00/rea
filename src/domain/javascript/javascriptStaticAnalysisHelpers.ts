@@ -691,6 +691,14 @@ export const registrationKey = (
     registration.runtime,
     registration.chunk_keys,
     String(registration.unknown_chunk_keys),
+    // Equal factory tables can be registered with different runtime callbacks.
+    // Both early collection and finalization must retain those recovered facts.
+    registration.runtime_require_name,
+    registration.runtime_module_cache_status,
+    registration.entry_module_keys,
+    String(registration.unknown_entry_module_keys),
+    registration.async_chunk_keys,
+    String(registration.unknown_async_chunk_keys),
     registration.modules.map(({ module_key: key, source_sha256: digest }) => [
       key,
       digest,

@@ -17,6 +17,7 @@ import {
   type RecordedCrash,
 } from "../../domain/native/recordedCrash.js";
 import { readStableArtifact } from "../../artifacts/readStableArtifact.js";
+import type { ArtifactResourceScope } from "../../artifacts/ArtifactResourceScope.js";
 import { AnalysisError } from "../../domain/analysisErrorBase.js";
 import {
   capturedPwntoolsOutput,
@@ -46,6 +47,7 @@ const replySchema = z.discriminatedUnion("ok", [
 export const inspectPwndbgCore = async ({
   environment,
   rootPath,
+  resources,
   diagnostics,
   options,
   runCommand,
@@ -53,6 +55,7 @@ export const inspectPwndbgCore = async ({
 }: {
   readonly environment: Readonly<NodeJS.ProcessEnv>;
   readonly rootPath: string;
+  readonly resources: ArtifactResourceScope;
   readonly diagnostics: AnalysisCapturedOutput;
   readonly options: ExecutionOptions | undefined;
   readonly runCommand: PwntoolsCommand;
@@ -178,11 +181,14 @@ export const inspectPwndbgCore = async ({
         replyPath,
         PWNTOOLS_LIMITS.outputBytes,
         options?.signal,
+        undefined,
+        resources,
       );
       reply = replySchema.parse(JSON.parse(raw.bytes.toString("utf8")));
     } catch (cause: unknown) {
       if (options?.signal?.aborted)
         throw new AnalysisCancelledError(OPERATION, {
+          cause,
           capturedOutput: recordedCrashStageOutput(diagnostics, output),
         });
       throw new AnalysisOutputError(
@@ -226,22 +232,22 @@ export const inspectPwndbgCore = async ({
     return { ...reply.value, diagnostics: output };
   } catch (cause: unknown) {
     if (cause instanceof AnalysisError && cause.cleanupIncomplete) throw cause;
-    if (
+    const primary =
       options?.signal?.aborted &&
       (cause === options.signal.reason ||
         (cause instanceof Error && cause.name === "AbortError"))
-    )
-      throw new AnalysisCancelledError(OPERATION, {
-        capturedOutput: recordedCrashStageOutput(diagnostics, output),
-      });
-    throw pwntoolsDecoderFailure(
-      cause,
-      "debugger",
-      gdb,
-      environment.REA_PWNTOOLS_PYTHON ?? "",
-      await readPwntoolsFailureEvidence(cause, stage),
-      failureContext,
-    );
+        ? new AnalysisCancelledError(OPERATION, {
+            capturedOutput: recordedCrashStageOutput(diagnostics, output),
+          })
+        : pwntoolsDecoderFailure(
+            cause,
+            "debugger",
+            gdb,
+            environment.REA_PWNTOOLS_PYTHON ?? "",
+            await readPwntoolsFailureEvidence(cause, stage, resources),
+            failureContext,
+          );
+    throw primary;
   }
 };
 
