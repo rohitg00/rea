@@ -26,6 +26,7 @@ import {
   type InspectSqliteDatabaseInput,
   SQLITE_PROVIDER_IDENTITY,
   sqliteInspectionParameters,
+  matchesSelectedSqliteDatabase,
 } from "../domain/sqlite/sqliteDatabase.js";
 import { isAbsolute } from "node:path";
 import { PrivateRuntimeRoot } from "../process/PrivateRuntimeRoot.js";
@@ -265,7 +266,23 @@ export class SqliteDatabaseProvider implements SqliteDatabasePort {
             ? undefined
             : { capturedOutput: retainedOutput },
         );
-      result = ok(createSqliteObservation(validated.data, input.path));
+      const observation = createSqliteObservation(validated.data, input.path);
+      if (
+        observation.subject === null ||
+        !matchesSelectedSqliteDatabase(
+          validated.data,
+          input,
+          observation.subject,
+        )
+      )
+        throw new AnalysisOutputError(
+          operation,
+          "SQLite worker changed the selected database identity, schema scope, table, columns, or row limit",
+          retainedOutput === undefined
+            ? undefined
+            : { capturedOutput: retainedOutput },
+        );
+      result = ok(observation);
     } catch (cause: unknown) {
       if (
         cause instanceof OwnedCommandFailure &&

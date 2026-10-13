@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { localPathStringSchema } from "../localPath.js";
 import type { JsonValue } from "../jsonValue.js";
+import type { EvidenceSubjectTarget } from "../evidence.js";
 
 /** Format identity is shared by discovery, catalog, and observed SQLite results. */
 export const SQLITE_PROVIDER_IDENTITY = {
@@ -233,3 +234,32 @@ export const sqliteSchemaScope = (
 ): SqliteDatabase["schema"]["scope"] =>
   input.schema_scope ??
   (input.table === undefined ? "inventory" : "selected_table");
+
+export const matchesSelectedSqliteDatabase = (
+  report: SqliteDatabase,
+  input: InspectSqliteDatabaseInput,
+  subject: EvidenceSubjectTarget,
+): boolean =>
+  report.artifact.path === input.path &&
+  subject.path === input.path &&
+  subject.sha256 === report.artifact.sha256 &&
+  subject.format === "file" &&
+  (report.wal === null || report.wal.path === `${input.path}-wal`) &&
+  report.schema.scope === sqliteSchemaScope(input) &&
+  (report.schema.scope !== "selected_table" ||
+    (report.schema.tables.length === 1 &&
+      report.schema.tables[0]?.name === input.table &&
+      report.schema.indexes.every((index) => index.table === input.table) &&
+      report.schema.triggers.every(
+        (trigger) => trigger.table === input.table,
+      ) &&
+      report.schema.views.length === 0)) &&
+  (input.table === undefined
+    ? report.rows === null
+    : report.rows?.table === input.table &&
+      report.rows.row_limit === (input.row_limit ?? SQLITE_ROW_LIMIT_DEFAULT) &&
+      (input.columns === undefined ||
+        (report.rows.columns.length === input.columns.length &&
+          report.rows.columns.every(
+            (name, index) => name === input.columns?.[index],
+          ))));

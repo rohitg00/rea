@@ -7,18 +7,11 @@ import {
   AnalysisInputError,
   AnalysisOutputError,
 } from "../../domain/analysisErrorCore.js";
-import {
-  createEvidence,
-  type Evidence,
-  type EvidenceSubjectTarget,
-} from "../../domain/evidence.js";
+import { createEvidence, type Evidence } from "../../domain/evidence.js";
 import {
   inspectSqliteDatabaseInputSchema,
   sqliteDatabaseSchema,
-  type InspectSqliteDatabaseInput,
-  type SqliteDatabase,
-  SQLITE_ROW_LIMIT_DEFAULT,
-  sqliteSchemaScope,
+  matchesSelectedSqliteDatabase,
   sqliteInspectionParameters,
 } from "../../domain/sqlite/sqliteDatabase.js";
 import { analysisInputErrorFromIssues } from "../../domain/inputIssueProjection.js";
@@ -26,35 +19,6 @@ import { err, ok, type Result } from "../../domain/result.js";
 import { jsonValueSchema } from "../../domain/jsonValue.js";
 
 const OPERATION = "inspect_sqlite_database";
-
-const matchesSelectedDatabase = (
-  report: SqliteDatabase,
-  input: InspectSqliteDatabaseInput,
-  subject: EvidenceSubjectTarget,
-): boolean =>
-  report.artifact.path === input.path &&
-  subject.path === input.path &&
-  subject.sha256 === report.artifact.sha256 &&
-  subject.format === "file" &&
-  (report.wal === null || report.wal.path === `${input.path}-wal`) &&
-  report.schema.scope === sqliteSchemaScope(input) &&
-  (report.schema.scope !== "selected_table" ||
-    (report.schema.tables.length === 1 &&
-      report.schema.tables[0]?.name === input.table &&
-      report.schema.indexes.every((index) => index.table === input.table) &&
-      report.schema.triggers.every(
-        (trigger) => trigger.table === input.table,
-      ) &&
-      report.schema.views.length === 0)) &&
-  (input.table === undefined
-    ? report.rows === null
-    : report.rows?.table === input.table &&
-      report.rows.row_limit === (input.row_limit ?? SQLITE_ROW_LIMIT_DEFAULT) &&
-      (input.columns === undefined ||
-        (report.rows.columns.length === input.columns.length &&
-          report.rows.columns.every(
-            (name, index) => name === input.columns?.[index],
-          ))));
 
 /** Shared snapshot inspection and caller-selection validation for CLI and MCP. */
 export class SqliteDatabaseService {
@@ -96,7 +60,7 @@ export class SqliteDatabaseService {
     if (
       !report.success ||
       execution.subject === null ||
-      !matchesSelectedDatabase(report.data, input.data, execution.subject)
+      !matchesSelectedSqliteDatabase(report.data, input.data, execution.subject)
     )
       return err(
         new AnalysisOutputError(
