@@ -203,11 +203,16 @@ output also streams without a single MCP frame.
 When the retained parent ID is unknown, use `get_evidence_bundle` with
 `detail: "summary"` and exact filters for operation, target SHA-256,
 analysis-profile digest or canonical procedure address. Select its returned
-Evidence ID for the next view instead of requesting the complete bundle.
+Evidence ID for the next view instead of requesting the complete bundle. For
+large discovery results, supply `offset` and `limit`, then follow
+`pagination.next_offset` until null. Filters apply before paging;
+`matching_records` counts every match. Omitted paging keeps all matching records.
+Finish discovery before adding view Evidence, or filter a stable producer
+operation: new matching records can shift offsets in the live ledger.
 `retention: "complete-record"` means the whole record is stored; native
 value-flow truncation and unknown metadata remain separate. For an exported
 portable bundle, use `rea inspect-evidence-bundle` with JSON containing `path`,
-`detail: "summary"` and the same `filters`. Reading that file still requires
+`detail: "summary"` and the same `filters`, `offset` and `limit`. Reading that file still requires
 validating its full contents within the local memory budget.
 
 A client can also truncate a successful tool result without a REA transport

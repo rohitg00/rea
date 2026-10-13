@@ -29,7 +29,7 @@ export const registerAnalysisViewCommands = (
       inputJson: z
         .string()
         .describe(
-          "JSON or JSON file with absolute path, detail and optional record filters",
+          "JSON or JSON file with absolute path, detail and optional record filters, offset and limit",
         ),
     }),
     run: ({ args }) =>

@@ -81,8 +81,19 @@ ID with `inspect_analysis_view`; neither discovery nor retained selection starts
 a provider. `retention: "complete-record"` describes stored Evidence, while
 `native_dossier.value_flow` independently reports truncation, unavailable or
 unknown metadata. Missing omission counts remain null. Summary output carries
-every matching record; actual transport admission still applies. Omitted
-`detail` preserves complete canonical bundle delivery; filters require summary.
+every matching record by default. Supply optional `offset` and `limit` to page
+the filtered canonical Evidence ID order, then follow `pagination.next_offset`
+until it is null. `matching_records` remains the full filtered count;
+`records.length` is the current page size. An omitted offset starts at zero,
+and an omitted limit returns every remaining match. Pagination metadata appears
+only when either option is supplied. Actual transport admission still applies,
+including when a single metadata record is too large. Omitted `detail` preserves
+complete canonical bundle delivery; filters and pagination require summary.
+
+Pages reflect the live Evidence ledger, not a pinned snapshot. Finish discovery
+before creating derived view Evidence, or filter a producer operation whose
+records will remain unchanged. Adding matching records between requests can
+shift offsets. Use an exported bundle for traversal of an immutable record set.
 
 `list_unknowns` returns every matching current head by default. For a smaller
 inline response, supply `offset` and `limit`, then follow `next_offset` until it
@@ -91,7 +102,7 @@ in stable unknown ID order. Filters apply before paging. Pages reflect current
 session state, so keep the unknown ledger unchanged while traversing it.
 
 For a portable exported bundle, the CLI shares this projection:
-`rea inspect-evidence-bundle '{"path":"/tmp/evidence.json","detail":"summary","filters":{"operation":"analyze_function"}}' --format json`.
+`rea inspect-evidence-bundle '{"path":"/tmp/evidence.json","detail":"summary","filters":{"operation":"analyze_function"},"offset":0,"limit":50}' --format json`.
 The CLI validates and materializes that local bundle under its existing memory
 budget; summary delivery does not make arbitrary large files cheap to import.
 

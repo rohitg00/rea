@@ -6,12 +6,16 @@ import { localPathStringSchema } from "../domain/localPath.js";
 import { processTraceSpecificationSchema } from "../domain/process/processTraceSpecification.js";
 import { evidenceSchema } from "../domain/evidence.js";
 import { prefixedDigestSchema } from "./../domain/digests.js";
-import { evidenceRecordFiltersSchema } from "../domain/evidenceRecordSummary.js";
+import {
+  evidenceRecordFiltersSchema,
+  evidenceRecordPageSchema,
+} from "../domain/evidenceRecordSummary.js";
 
 /** Complete retained Evidence, or selected discovery metadata without payloads. */
 export const getEvidenceBundleInputSchema = z.strictObject({
   detail: z.enum(["complete", "summary"]).default("complete"),
   filters: evidenceRecordFiltersSchema.optional(),
+  ...evidenceRecordPageSchema.shape,
 });
 
 /** Optional document selection for volatile navigation context. */

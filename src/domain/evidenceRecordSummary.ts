@@ -14,6 +14,28 @@ export const evidenceRecordFiltersSchema = z.strictObject({
 });
 export type EvidenceRecordFilters = z.infer<typeof evidenceRecordFiltersSchema>;
 
+export const evidenceRecordPageSchema = z.strictObject({
+  offset: z
+    .number()
+    .int()
+    .nonnegative()
+    .max(Number.MAX_SAFE_INTEGER)
+    .optional()
+    .describe(
+      "Zero-based offset after filtering the canonical Evidence ID order. Requires detail: summary.",
+    ),
+  limit: z
+    .number()
+    .int()
+    .positive()
+    .max(Number.MAX_SAFE_INTEGER)
+    .optional()
+    .describe(
+      "Maximum records to return. Omit to return every remaining match. Requires detail: summary.",
+    ),
+});
+export type EvidenceRecordPage = z.infer<typeof evidenceRecordPageSchema>;
+
 const countSchema = z.number().int().nonnegative();
 const nativeMetadataSchema = z.object({
   procedure: z.object({ address: z.string(), name: z.string().nullish() }),
@@ -61,6 +83,12 @@ export const evidenceBundleSummarySchema = z.strictObject({
   total_retained_records: countSchema,
   matching_records: countSchema,
   unknown_revisions: countSchema,
+  pagination: z
+    .strictObject({
+      offset: countSchema,
+      next_offset: countSchema.nullable(),
+    })
+    .exactOptional(),
   records: z.array(
     z.strictObject({
       evidence_id: evidenceSchema.shape.evidence_id,
@@ -118,11 +146,14 @@ const nativeSummary = (
 export const summarizeEvidenceBundle = (
   bundle: EvidenceBundle,
   filters: EvidenceRecordFilters = {},
+  page: EvidenceRecordPage = {},
 ): EvidenceBundleSummary => {
   const selectedFilters: Record<string, string> = {};
   for (const [field, value] of Object.entries(filters))
     if (value !== undefined) selectedFilters[field] = value;
   const records: EvidenceBundleSummary["records"] = [];
+  const offset = page.offset ?? 0;
+  let matchingRecords = 0;
   for (const evidence of bundle.records) {
     if (
       (filters.evidence_id !== undefined &&
@@ -135,11 +166,20 @@ export const summarizeEvidenceBundle = (
         filters.analysis_profile_digest !== evidence.analysis_profile?.digest)
     )
       continue;
-    const native = nativeSummary(evidence);
+    const native =
+      filters.procedure_address === undefined
+        ? undefined
+        : nativeSummary(evidence);
     if (
       filters.procedure_address !== undefined &&
-      (!native.available ||
+      (!native?.available ||
         filters.procedure_address !== native.procedure_address)
+    )
+      continue;
+    matchingRecords += 1;
+    if (
+      matchingRecords <= offset ||
+      (page.limit !== undefined && records.length >= page.limit)
     )
       continue;
     records.push({
@@ -152,15 +192,27 @@ export const summarizeEvidenceBundle = (
       analysis_profile_digest: evidence.analysis_profile?.digest ?? null,
       retention: "complete-record",
       limitation_count: evidence.limitations.length,
-      native_dossier: native,
+      native_dossier: native ?? nativeSummary(evidence),
     });
   }
   return {
     kind: "evidence-bundle-summary",
     filters: selectedFilters,
     total_retained_records: bundle.records.length,
-    matching_records: records.length,
+    matching_records: matchingRecords,
     unknown_revisions: bundle.unknowns.length,
     records,
+    ...(page.offset === undefined && page.limit === undefined
+      ? {}
+      : {
+          pagination: {
+            offset,
+            next_offset:
+              offset < matchingRecords &&
+              records.length < matchingRecords - offset
+                ? offset + records.length
+                : null,
+          },
+        }),
   };
 };

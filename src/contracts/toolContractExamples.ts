@@ -55,6 +55,8 @@ export const TOOL_EXAMPLE_OVERRIDES: Readonly<
   export_evidence_bundle: { path: "/tmp/evidence.json" },
   get_evidence_bundle: {
     detail: "summary",
+    offset: 0,
+    limit: 50,
     filters: { operation: "analyze_function", procedure_address: "0x1000" },
   },
   inspect_address_context: { address: "0x1000" },
