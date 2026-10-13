@@ -60,7 +60,6 @@ it.each(["rows", "schema"] as const)(
               };
             return (
               launched.cleanup?.() ??
-              launched.cleanup?.() ??
               cleanupOwnedProcessGroup(launched.ownership)
             );
           },
@@ -219,7 +218,6 @@ it.each([
           attempts += 1;
           if (cleanupAllowed)
             return (
-              launched.cleanup?.() ??
               launched.cleanup?.() ??
               cleanupOwnedProcessGroup(launched.ownership)
             );
