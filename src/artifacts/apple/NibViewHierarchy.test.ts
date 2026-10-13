@@ -15,6 +15,7 @@ const object = (id: number, parent?: number) => ({
 describe("serialized NIB view hierarchy bounds", () => {
   it("leaves archives without superview links to the legacy projection", () => {
     expect(projectNibViewHierarchy([object(0)], new Set([0]))).toEqual({
+      conflictedIds: new Set(),
       hierarchy: null,
       omitted: 0,
     });
@@ -27,6 +28,7 @@ describe("serialized NIB view hierarchy bounds", () => {
         new Set([0, 1, 2]),
       ),
     ).toEqual({
+      conflictedIds: new Set(),
       hierarchy: [
         {
           objectID: "0",
@@ -42,6 +44,7 @@ describe("serialized NIB view hierarchy bounds", () => {
 
   it("reports missing parents without inventing parentage", () => {
     expect(projectNibViewHierarchy([object(0, 99)], new Set([0]))).toEqual({
+      conflictedIds: new Set(),
       hierarchy: [],
       omitted: 1,
     });
@@ -59,7 +62,11 @@ describe("serialized NIB view hierarchy bounds", () => {
         ],
         new Set([0]),
       ),
-    ).toEqual({ hierarchy: [{ objectID: "0", children: [] }], omitted: 1 });
+    ).toEqual({
+      hierarchy: [{ objectID: "0", children: [] }],
+      omitted: 1,
+      conflictedIds: new Set(),
+    });
   });
 
   it("marks unsupported serialized parent values as incomplete", () => {
@@ -68,7 +75,7 @@ describe("serialized NIB view hierarchy bounds", () => {
         [{ id: 0, class_name: "NSView", values: { NSSuperview: "unknown" } }],
         new Set([0]),
       ),
-    ).toEqual({ hierarchy: null, omitted: 1 });
+    ).toEqual({ hierarchy: null, omitted: 1, conflictedIds: new Set() });
   });
 
   it("reports cyclic and self-referential parentage as incomplete", () => {
@@ -78,6 +85,7 @@ describe("serialized NIB view hierarchy bounds", () => {
         new Set([0, 1, 2]),
       ),
     ).toEqual({
+      conflictedIds: new Set(),
       hierarchy: [],
       omitted: 3,
     });
@@ -87,6 +95,7 @@ describe("serialized NIB view hierarchy bounds", () => {
     expect(
       projectNibViewHierarchy([object(0), object(1, 0)], new Set([1])),
     ).toEqual({
+      conflictedIds: new Set(),
       hierarchy: [],
       omitted: 1,
     });

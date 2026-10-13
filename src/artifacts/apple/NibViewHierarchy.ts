@@ -13,11 +13,13 @@ export const projectNibViewHierarchy = (
   reserveNode: () => boolean = () => true,
   maxNodes = 20_000,
 ) => {
-  const { parents, involved, invalid } = collectNibParents(
+  const { parents, involved, invalid, conflicted } = collectNibParents(
     objects,
     retainedIds,
   );
-  if (parents.size === 0) return { hierarchy: null, omitted: invalid };
+  const conflictedIds = new Set([...conflicted].map(String));
+  if (involved.size === 0)
+    return { hierarchy: null, omitted: invalid, conflictedIds };
   const children = new Map<number, number[]>();
   for (const [child, parent] of parents) {
     if (!retainedIds.has(parent) || !retainedIds.has(child)) continue;
@@ -29,7 +31,8 @@ export const projectNibViewHierarchy = (
   const pending: { id: number; depth: number; output: NibHierarchyNode[] }[] =
     [];
   for (const id of involved)
-    if (!parents.has(id)) pending.push({ id, depth: 0, output: roots });
+    if (retainedIds.has(id) && !parents.has(id))
+      pending.push({ id, depth: 0, output: roots });
   const visited = new Set<number>();
   while (pending.length > 0) {
     const item = pending.pop();
@@ -49,7 +52,8 @@ export const projectNibViewHierarchy = (
   }
   return {
     hierarchy: roots,
-    omitted: involved.size - visited.size + invalid,
+    omitted: involved.size - visited.size + invalid + conflicted.size,
+    conflictedIds,
   };
 };
 
@@ -59,6 +63,7 @@ export const mergeNibHierarchies = (
   recovered: NibHierarchyNode[],
   reserveNode: () => boolean = () => true,
   maxNodes = 20_000,
+  conflictedIds: ReadonlySet<string> = new Set(),
 ) => {
   const existing = new Map<string, NibHierarchyNode>();
   const owners = new Map<string, NibHierarchyNode[]>();
@@ -70,10 +75,18 @@ export const mergeNibHierarchies = (
   }));
   while (pending.length > 0) {
     const entry = pending.pop();
-    if (entry === undefined || existing.has(entry.node.objectID)) continue;
+    if (entry === undefined) break;
+    const conflicted =
+      entry.parent !== null && conflictedIds.has(entry.node.objectID);
+    if (conflicted) {
+      entry.output.splice(entry.output.indexOf(entry.node), 1);
+      if (!existing.has(entry.node.objectID)) legacy.push(entry.node);
+    }
+    if (existing.has(entry.node.objectID)) continue;
     existing.set(entry.node.objectID, entry.node);
-    owners.set(entry.node.objectID, entry.output);
-    if (entry.parent !== null) parents.set(entry.node.objectID, entry.parent);
+    owners.set(entry.node.objectID, conflicted ? legacy : entry.output);
+    if (entry.parent !== null && !conflicted)
+      parents.set(entry.node.objectID, entry.parent);
     pending.push(
       ...entry.node.children.map((node) => ({
         node,
@@ -158,6 +171,15 @@ const collectNibParents = (
 ) => {
   const parents = new Map<number, number>();
   const involved = new Set<number>();
+  const conflicted = new Set<number>();
+  const addParent = (child: number, parent: number): void => {
+    if (conflicted.has(child)) return;
+    const existing = parents.get(child);
+    if (existing !== undefined && existing !== parent) {
+      parents.delete(child);
+      conflicted.add(child);
+    } else parents.set(child, parent);
+  };
   let invalid = 0;
   for (const object of objects) {
     if (!retainedIds.has(object.id)) continue;
@@ -171,18 +193,18 @@ const collectNibParents = (
       object.class_name.replace(/\0+$/u, "") === "NSWindowTemplate" &&
       child !== null
     ) {
-      parents.set(child, object.id);
+      addParent(child, object.id);
       involved.add(object.id);
       involved.add(child);
     }
     const parent = reference(object.values.NSSuperview);
     if (invalidReference(object.values.NSSuperview)) invalid += 1;
     if (parent === null) continue;
-    parents.set(object.id, parent);
+    addParent(object.id, parent);
     involved.add(object.id);
     if (retainedIds.has(parent)) involved.add(parent);
   }
-  return { parents, involved, invalid };
+  return { parents, involved, invalid, conflicted };
 };
 
 const invalidReference = (value: JsonValue | undefined): boolean =>
