@@ -3,7 +3,7 @@
 <details>
 <summary>Okuma dilini seçin</summary>
 
-[English](../../README.md) · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · **Türkçe** · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md) · [Ελληνικά](README_el.md) · [Nederlands](README_nl.md) · [Svenska](README_sv.md) · [Čeština](README_cs.md) · [Română](README_ro.md)
+[🇺🇸&nbsp;English](../../README.md) · [🇨🇳&nbsp;简体中文](README_zh.md) · [🇹🇼&nbsp;繁體中文](README_zh-TW.md) · [🇯🇵&nbsp;日本語](README_ja.md) · [🇰🇷&nbsp;한국어](README_ko.md) · **🇹🇷&nbsp;Türkçe** · [🇷🇺&nbsp;Русский](README_ru.md) · [🇻🇳&nbsp;Tiếng Việt](README_vi.md) · [🇹🇭&nbsp;ไทย](README_th.md) · [🇩🇪&nbsp;Deutsch](README_de.md) · [🇪🇸&nbsp;Español](README_es.md) · [🇫🇷&nbsp;Français](README_fr.md) · [🇺🇦&nbsp;Українська](README_uk.md) · [🇵🇱&nbsp;Polski](README_pl.md) · [🇧🇷&nbsp;Português (Brasil)](README_pt-BR.md) · [🇸🇦&nbsp;العربية](README_ar.md) · [🇮🇷&nbsp;فارسی](README_fa.md) · [🇮🇩&nbsp;Bahasa Indonesia](README_id.md) · [🇮🇹&nbsp;Italiano](README_it.md) · [🇬🇷&nbsp;Ελληνικά](README_el.md) · [🇳🇱&nbsp;Nederlands](README_nl.md) · [🇸🇪&nbsp;Svenska](README_sv.md) · [🇨🇿&nbsp;Čeština](README_cs.md) · [🇷🇴&nbsp;Română](README_ro.md)
 
 </details>
 
