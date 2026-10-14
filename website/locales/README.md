@@ -120,6 +120,12 @@ Persian use right-to-left page layouts; code and numeric demos remain left to
 right. The two Notes target applications and the downloadable source archive
 remain the original investigation inputs.
 
+Dutch (`nl`), Swedish (`sv`), Czech (`cs`) and Romanian (`ro`) have translated
+READMEs. Their website catalogs currently translate the fallback notice only;
+website articles remain in English until their required messages are complete.
+Keep links from these READMEs to website articles pointed at the existing
+English pages during this work. Adding a README edition does not establish a translated website article.
+
 Greek (`el`) has a translated README and a partially translated website catalog.
 Incomplete website pages use the labeled English fallback until their required
 messages are translated and reviewed.

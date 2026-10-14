@@ -1,7 +1,11 @@
 <div align="center">
 
-**English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)
-· [Ελληνικά](docs/readme/README_el.md)
+<details>
+<summary>Read in your language</summary>
+
+**English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md) · [Ελληνικά](docs/readme/README_el.md) · [Nederlands](docs/readme/README_nl.md) · [Svenska](docs/readme/README_sv.md) · [Čeština](docs/readme/README_cs.md) · [Română](docs/readme/README_ro.md)
+
+</details>
 
 # REA: Reverse Engineer Anything
 
@@ -32,33 +36,9 @@
 > Follow the installation and release links from these official sources. A similar
 > repository name or copied README does not establish that a download is official.
 
-<div align="center">
-
-<br />
-
-<img src="docs/assets/rea-hopper-analysis.png" alt="REA launching its analysis bridge inside Hopper while inspecting a native binary" width="1200" />
-
-<br /><br />
-
-<table aria-label="REA community">
-<tr>
-<td align="center" width="360">
-  <a href="https://discord.gg/GkcryMnJDM">
-    <img src="docs/assets/discord.svg" height="42" alt="Discord" /><br />
-    <strong>Join the Reverse Engineering Community</strong>
-  </a><br />
-  <sub>Discord · Q&amp;A · Show and Tell</sub>
-</td>
-</tr>
-</table>
-
-<br />
-
-</div>
-
 ---
 
-See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
+Want to understand a feature in an app? Ask your agent to investigate it with REA. The agent can inspect the app without its source code, show the evidence, and use those findings to write and test an implementation for your project.
 
 REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
 
@@ -67,6 +47,15 @@ Setup registers REA with your agent and installs matching workflow instructions.
 > **[Visit the REA website](https://rea.tools/)** for setup instructions, illustrated guides, and real case studies.
 
 ## Quick start
+
+| I want to…                                             | Start here                                                               |
+| ------------------------------------------------------ | ------------------------------------------------------------------------ |
+| Ask my agent to investigate an app                     | [Set up your agent](#set-up-your-agent), then ask one concrete question. |
+| Inspect JavaScript or Electron without a native engine | [Use the terminal](#use-the-terminal) with a local directory or ASAR.    |
+| Choose a provider for another target                   | Check [targets and requirements](#what-you-can-analyze).                 |
+| Follow a completed reconstruction                      | Read the [showcases](#showcases).                                        |
+
+**Requirements:** Node.js 22.x (>=22.19), 24.x (>=24.11), or 26+, plus npm.
 
 On Linux, Ghidra, JADX, firmware tool launches and static JavaScript/Electron
 analysis require a procps-compatible `ps` on REA's `PATH` for process ownership
@@ -121,6 +110,14 @@ For native analysis, configure a provider first. See the
 [CLI and Evidence guide](docs/cli.md) for native commands, provider selection,
 snapshots and scripting.
 
+### Read your first result
+
+Check the target, source locations and coverage before drawing a conclusion.
+Results can contain unresolved imports, unavailable facts or limitations even
+when the command succeeds. Static relationships describe what was found in the
+supplied files. Use an appropriate runtime observation or focused test to confirm
+a claim about behavior.
+
 ### Update REA
 
 REA changes quickly, and new releases include frequent bug fixes. Keep your
@@ -147,6 +144,30 @@ npx rea-agents@latest setup
 Review the setup changes and restart your agent. For one-off CLI commands,
 use `npx rea-agents@latest` followed by the command. With Bun, use
 `bunx rea-agents@latest` in place of `npx rea-agents@latest`.
+
+<div align="center">
+
+<br />
+
+<img src="docs/assets/rea-hopper-analysis.png" alt="REA launching its analysis bridge inside Hopper while inspecting a native binary" width="1200" />
+
+<br /><br />
+
+<table aria-label="REA community">
+<tr>
+<td align="center" width="360">
+  <a href="https://discord.gg/GkcryMnJDM">
+    <img src="docs/assets/discord.svg" height="42" alt="Discord" /><br />
+    <strong>Join the Reverse Engineering Community</strong>
+  </a><br />
+  <sub>Discord · Q&amp;A · Show and Tell</sub>
+</td>
+</tr>
+</table>
+
+<br />
+
+</div>
 
 ## How REA works
 
